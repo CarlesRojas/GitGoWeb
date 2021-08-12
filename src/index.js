@@ -5,4 +5,15 @@ import App from "./App";
 // CSS
 import "./index.scss";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+// Contexts
+import UtilsProvider from "./contexts/Utils";
+import DataProvider from "./contexts/Data";
+
+ReactDOM.render(
+    <UtilsProvider>
+        <DataProvider>
+            <App />
+        </DataProvider>
+    </UtilsProvider>,
+    document.getElementById("root")
+);
