@@ -20,6 +20,7 @@ $tabletWidth: 1100px;
 $mobileWidth: 768px;
 
 $toolbarHeight: 3rem;
+$commitRowHeight: 2rem;
 
 // #######################################
 //      MIXINS
@@ -229,11 +230,32 @@ input[type="number"] {
 // #######################################
 
 .graph {
-    height: 100%;
     width: fit-content;
+    position: relative;
     flex-grow: 1;
-    background-color: rgb(196, 222, 255);
     display: flex;
+    overflow: auto;
+
+    .commits {
+        position: absolute;
+        width: 100%;
+
+        .commit {
+            height: $commitRowHeight * 0.9;
+            margin: $commitRowHeight * 0.1;
+            width: calc(100% - #{$commitRowHeight * 0.2});
+            border-radius: 0.2rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.05);
+            }
+
+            &.selected {
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
 }
 
 // #######################################
@@ -241,9 +263,10 @@ input[type="number"] {
 // #######################################
 
 .info {
-    height: 100%;
     min-width: 15rem;
-    background-color: rgb(196, 255, 211);
+    height: 100%;
+    background-color: rgba(196, 255, 211, 0.432);
+    z-index: 10;
 }
 
 // #######################################
@@ -251,9 +274,10 @@ input[type="number"] {
 // #######################################
 
 .branches {
-    height: 100%;
     width: 10rem;
-    background-color: rgb(255, 196, 247);
+    height: fit-content;
+    background-color: rgba(255, 196, 247, 0.411);
+    z-index: 10;
 }
 
 // #######################################
@@ -261,9 +285,10 @@ input[type="number"] {
 // #######################################
 
 .tree {
-    height: 100%;
     flex-grow: 1;
-    background-color: rgb(196, 241, 255);
+    height: fit-content;
+    background-color: rgba(196, 241, 255, 0.432);
+    z-index: 10;
 }
 
 // #######################################
@@ -271,7 +296,19 @@ input[type="number"] {
 // #######################################
 
 .messages {
-    height: 100%;
     flex-grow: 1;
-    background-color: rgb(246, 255, 196);
+    z-index: 10;
+    height: fit-content;
+    pointer-events: none;
+
+    .commit {
+        height: $commitRowHeight;
+        max-height: $commitRowHeight;
+        min-height: $commitRowHeight;
+        padding: ($commitRowHeight * 0.1) ($commitRowHeight * 0.4);
+        width: 100%;
+        font-size: 0.7rem;
+        font-weight: 600;
+        line-height: $commitRowHeight;
+    }
 }

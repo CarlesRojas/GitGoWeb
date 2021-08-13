@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import classnames from "classnames";
 
 // Components
 import Branches from "./Branches";
@@ -10,6 +11,12 @@ import jsonData from "../resources/commits.json";
 
 export default function Graph() {
     const [commits, setCommits] = useState([]);
+    const [selectedCommit, setSelectedCommit] = useState("");
+
+    const onCommitClick = (selectedHash) => {
+        if (selectedHash === selectedCommit) setSelectedCommit("");
+        else setSelectedCommit(selectedHash);
+    };
 
     // #################################################
     //   COMPONENT MOUNT
@@ -65,6 +72,11 @@ export default function Graph() {
 
     return (
         <div className="graph">
+            <div className="commits">
+                {commits.map(({ commit }) => {
+                    return <div key={commit.long} className={classnames("commit", { selected: commit.long === selectedCommit })} onClick={() => onCommitClick(commit.long)}></div>;
+                })}
+            </div>
             {branches}
             {tree}
             {messages}

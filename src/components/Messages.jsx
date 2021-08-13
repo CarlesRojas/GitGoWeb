@@ -1,5 +1,15 @@
 import React from "react";
 
-export default function Messages() {
-    return <div className="messages"></div>;
+export default function Messages({ commits }) {
+    return (
+        <div className="messages">
+            {commits.map(({ subject, commit }) => {
+                return (
+                    <div className="commit" key={commit.long}>
+                        {subject}
+                    </div>
+                );
+            })}
+        </div>
+    );
 }
