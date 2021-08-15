@@ -1,1152 +1,1152 @@
 [
 	{
 		"commit": {
-			"long": "3bf47e73f35c8c61d59093dcd94b3f797752ee67",
-			"short": "3bf47e73f"
+			"long": "66876b63d4cb184ce8903452f937f962d06b2560",
+			"short": "66876b63"
 		},
 		"tree": {
-			"long": "eb2a7c0c642b7ba9ad0958981567ff0a3f3dc5c5",
-			"short": "eb2a7c0c6"
+			"long": "9e371486b0c162755d133ca4926c835f15c9a7f9",
+			"short": "9e371486"
 		},
 		"author": {
-			"name": "Ross Nicoll",
-			"email": "jrn@jrn.me.uk",
-			"date": "2021-08-12T19:20:38.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-16T09:39:33.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-08-12T19:20:38.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-16T09:39:33.000Z"
 		},
-		"parent": "c9586396d20e2119f897aa90a7f7aaa1fceaf237 57303f1c0656817c0b80f20211423e50b9698a1b",
-		"subject": "Merge pull request #2437 from michilumin/1.14.4-mintxfee",
-		"body": "Adding startup logic where -paytxfee if lower than default, mintxfee is overridden"
+		"subject": "Export cache data for later upload",
+		"body": "",
+		"parent": "3dec0a62cdf9c50776d3e05ea6b8f870b05b8873"
 	},
 	{
 		"commit": {
-			"long": "c9586396d20e2119f897aa90a7f7aaa1fceaf237",
-			"short": "c9586396d"
+			"long": "3dec0a62cdf9c50776d3e05ea6b8f870b05b8873",
+			"short": "3dec0a62"
 		},
 		"tree": {
-			"long": "b9cf43b5a31caf338fe736c0642581a761d43869",
-			"short": "b9cf43b5a"
+			"long": "77a6116848bdcfa600bb11b0ad93a4e64953f0fd",
+			"short": "77a61168"
 		},
 		"author": {
-			"name": "Ross Nicoll",
-			"email": "jrn@jrn.me.uk",
-			"date": "2021-08-12T19:19:31.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-16T08:58:05.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-08-12T19:19:31.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-16T08:58:05.000Z"
 		},
-		"parent": "6150f6717a23e912769f9d8232774fb8e0baee2c f8813f8e134ef1994b595e06ee163b03f465d3c1",
-		"subject": "Merge pull request #2440 from michilumin/1.14.4-fees-reduced-minimums",
-		"body": "fees: Reduce minimum relay fee to 0.001 DOGE"
+		"subject": "Fix bugs full round + optimize fix duplicates.",
+		"body": "",
+		"parent": "df4d986cd109fc2c15738cd506a8cc7577d4a268"
 	},
 	{
 		"commit": {
-			"long": "f7b2735bea69373bac1f4f9a0211bea53fb3bfbd",
-			"short": "f7b2735be"
+			"long": "df4d986cd109fc2c15738cd506a8cc7577d4a268",
+			"short": "df4d986c"
 		},
 		"tree": {
-			"long": "44400eac94db0ed679ce7b3f667d3a9d7d423591",
-			"short": "44400eac9"
+			"long": "d0f521fa395deeb6f21e655264046a67d7b1275a",
+			"short": "d0f521fa"
 		},
 		"author": {
-			"name": "CarlesRojas",
-			"email": "carlesrojas@outlook.com",
-			"date": "2021-08-12T15:50:49.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-12T10:58:14.000Z"
 		},
 		"committer": {
-			"name": "CarlesRojas",
-			"email": "carlesrojas@outlook.com",
-			"date": "2021-08-12T15:50:49.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-12T10:58:14.000Z"
 		},
-		"parent": "672a38cc061f801b691d9a91cd720d0a414d2e63",
-		"subject": "Delete Commit",
-		"body": ""
+		"subject": "Markets Optimization",
+		"body": "* Delete all mc2 when creating mc1",
+		"parent": "0790437d498d1dec2cf0693d52d2754edf65c355 4f413173dc1899dd103e09e3d538882cf5c02fc2"
 	},
 	{
 		"commit": {
-			"long": "f8813f8e134ef1994b595e06ee163b03f465d3c1",
-			"short": "f8813f8e1"
+			"long": "0790437d498d1dec2cf0693d52d2754edf65c355",
+			"short": "0790437d"
 		},
 		"tree": {
-			"long": "b9cf43b5a31caf338fe736c0642581a761d43869",
-			"short": "b9cf43b5a"
+			"long": "93838be71beb5d2832d3df0d643b0ec5195258a6",
+			"short": "93838be7"
 		},
 		"author": {
-			"name": "Michi Lumin",
-			"email": "michi@luskwood.org",
-			"date": "2021-08-08T17:49:12.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-12T10:56:47.000Z"
 		},
 		"committer": {
-			"name": "michilumin",
-			"email": "skunkie@gmail.com",
-			"date": "2021-08-11T20:16:01.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-12T10:56:47.000Z"
 		},
-		"parent": "6150f6717a23e912769f9d8232774fb8e0baee2c",
-		"subject": "fees: Reduce minimum relay fee to 0.001 DOGE, final change from tx to 0.01",
-		"body": ""
+		"subject": "New Cache Fill",
+		"body": "* When filling cache with full round also export data into json files to store for backup.\n* Added cache to restore data from backups",
+		"parent": "a62c71eecf5a7c8ed6fa9600620d20769967e49d 49fdea68db79642ee53196c73312cf16aa4fe11f"
 	},
 	{
 		"commit": {
-			"long": "57303f1c0656817c0b80f20211423e50b9698a1b",
-			"short": "57303f1c0"
+			"long": "4f413173dc1899dd103e09e3d538882cf5c02fc2",
+			"short": "4f413173"
 		},
 		"tree": {
-			"long": "44de58e9d2055981629292dbecec4979510b08ae",
-			"short": "44de58e9d"
+			"long": "5f7c28428e06e2695984a211a20eac7aad4436a0",
+			"short": "5f7c2842"
 		},
 		"author": {
-			"name": "michilumin",
-			"email": "skunkie@gmail.com",
-			"date": "2021-08-07T00:17:14.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-12T09:56:44.000Z"
 		},
 		"committer": {
-			"name": "michilumin",
-			"email": "skunkie@gmail.com",
-			"date": "2021-08-11T19:44:29.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-12T09:56:44.000Z"
 		},
-		"parent": "6150f6717a23e912769f9d8232774fb8e0baee2c",
-		"subject": "Adding startup logic where -paytxfee if lower than default, implies -mintxfee is also lowered.",
-		"body": ""
+		"subject": "New flag for markets1 creation",
+		"body": "",
+		"parent": "f6447d98c6f363d8e3c22fe546a197d7e4b1594b"
 	},
 	{
 		"commit": {
-			"long": "6150f6717a23e912769f9d8232774fb8e0baee2c",
-			"short": "6150f6717"
+			"long": "f6447d98c6f363d8e3c22fe546a197d7e4b1594b",
+			"short": "f6447d98"
 		},
 		"tree": {
-			"long": "0f30ade43d6280221a52c8db771495c4a3e5d981",
-			"short": "0f30ade43"
+			"long": "666ed2a1e31e608c01d6d740d35856ca164ae3ca",
+			"short": "666ed2a1"
 		},
 		"author": {
-			"name": "Ross Nicoll",
-			"email": "jrn@jrn.me.uk",
-			"date": "2021-08-09T21:50:31.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-10T14:19:55.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-08-09T21:50:31.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-10T14:19:55.000Z"
 		},
-		"parent": "3a5a31c11361d15b974356a9aa006d9335cbd4d0 c42b38ea5110008f2d74abb02ee363ea9bb64188",
-		"subject": "Merge pull request #2439 from rnicoll/1.14.4-dust-limit-type-alt",
-		"body": "Use CAmount for amounts "
+		"subject": "Merge branch 'newFillCache' into marketsOptimization",
+		"body": "",
+		"parent": "3a5c505a7c810e065ef2440de13fbc530474c8db 49fdea68db79642ee53196c73312cf16aa4fe11f"
 	},
 	{
 		"commit": {
-			"long": "3a5a31c11361d15b974356a9aa006d9335cbd4d0",
-			"short": "3a5a31c11"
+			"long": "3a5c505a7c810e065ef2440de13fbc530474c8db",
+			"short": "3a5c505a"
 		},
 		"tree": {
-			"long": "8c66dd7cfe5d5a6a02456ada56195748c501dd89",
-			"short": "8c66dd7cf"
+			"long": "3981da06267f5d3841052ed681532ec91ccf74e6",
+			"short": "3981da06"
 		},
 		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-08-09T18:54:33.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-10T13:27:38.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-08-09T18:54:33.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-10T13:27:38.000Z"
 		},
-		"parent": "5db95e5a5f48eb76601946ea670ee3b2a33e2a4b 303be2e442744593d8211b520f9fe554b3bd31a2",
-		"subject": "Merge pull request #2417 from patricklodder/1.14-serialize-getheaders",
-		"body": "Reduce getheaders spam by serializing getheader requests per peer"
+		"subject": "New flag for daily ratios storage",
+		"body": "",
+		"parent": "e0151a380bc271b301380eb929335bc9269ecd6d"
 	},
 	{
 		"commit": {
-			"long": "c42b38ea5110008f2d74abb02ee363ea9bb64188",
-			"short": "c42b38ea5"
+			"long": "e0151a380bc271b301380eb929335bc9269ecd6d",
+			"short": "e0151a38"
 		},
 		"tree": {
-			"long": "4a7f5a91d3eb670b7c8fc19fcdd12969fa0f0ed6",
-			"short": "4a7f5a91d"
+			"long": "53345d158639801caa534bb3ecc3e3198a1a70b9",
+			"short": "53345d15"
 		},
 		"author": {
-			"name": "Ross Nicoll",
-			"email": "jrn@jrn.me.uk",
-			"date": "2021-08-08T20:41:35.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-10T11:25:25.000Z"
 		},
 		"committer": {
-			"name": "Ross Nicoll",
-			"email": "jrn@jrn.me.uk",
-			"date": "2021-08-08T20:41:35.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-10T11:25:25.000Z"
 		},
-		"parent": "672a38cc061f801b691d9a91cd720d0a414d2e63",
-		"subject": "Use CAmount for constant amounts too",
-		"body": ""
+		"subject": "Merge remote-tracking branch 'origin/marketsOptimization' into marketsOptimization",
+		"body": "",
+		"parent": "3bbd02636003862eef33bac990cbabebbd95cb6c 6524af58f53cbc6f5712cb5c5620195134e97252"
 	},
 	{
 		"commit": {
-			"long": "672a38cc061f801b691d9a91cd720d0a414d2e63",
-			"short": "672a38cc0"
+			"long": "3bbd02636003862eef33bac990cbabebbd95cb6c",
+			"short": "3bbd0263"
 		},
 		"tree": {
-			"long": "55ef4cd7c5f87c2ad5bbd2d26bb4bf4cf44006e8",
-			"short": "55ef4cd7c"
+			"long": "53345d158639801caa534bb3ecc3e3198a1a70b9",
+			"short": "53345d15"
 		},
 		"author": {
-			"name": "Ross Nicoll",
-			"email": "jrn@jrn.me.uk",
-			"date": "2021-08-07T06:44:32.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-10T11:25:19.000Z"
 		},
 		"committer": {
-			"name": "Ross Nicoll",
-			"email": "jrn@jrn.me.uk",
-			"date": "2021-08-08T17:36:15.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-10T11:25:19.000Z"
 		},
-		"parent": "5db95e5a5f48eb76601946ea670ee3b2a33e2a4b",
-		"subject": "Use CAmount for amounts",
-		"body": "Use CAmount rather than unsigned int for amounts for consistency\nwith other fee rate amounts.\n\nThis does change the type from unsigned int to unsigned int64, and\nwhile it is unlikely anyone would need a dust limit higher than\nunsigned int, again this ensures the theoretical maximum is in line\nwith other rates.\n"
+		"subject": "drop markets tables to omptimize markets deletion",
+		"body": "",
+		"parent": "7c6a8faf2e9b3f11ddfdc54e3d4164fa568f6538"
 	},
 	{
 		"commit": {
-			"long": "5db95e5a5f48eb76601946ea670ee3b2a33e2a4b",
-			"short": "5db95e5a5"
+			"long": "6524af58f53cbc6f5712cb5c5620195134e97252",
+			"short": "6524af58"
 		},
 		"tree": {
-			"long": "601ebf9d1837710dffdb5ff9b96e8acd903a4a9a",
-			"short": "601ebf9d1"
+			"long": "2285e1c34ba1dc504c9a4cfdab9fc5f70d2c9db9",
+			"short": "2285e1c3"
 		},
 		"author": {
-			"name": "Ross Nicoll",
-			"email": "jrn@jrn.me.uk",
-			"date": "2021-08-05T21:21:53.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-10T11:24:38.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-08-05T21:21:53.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-10T11:24:38.000Z"
 		},
-		"parent": "a88d53be2e46875ce95cffa31073081f40087214 2dc1adb7fe849f0be47b6e23b6b45702d8440893",
-		"subject": "Merge pull request #2348 from patricklodder/1.14-cfg-dust-limit",
-		"body": "[fees] introduce configurable hard dust limit"
+		"subject": "drop market tables for markets deletion",
+		"body": "",
+		"parent": "7c6a8faf2e9b3f11ddfdc54e3d4164fa568f6538"
 	},
 	{
 		"commit": {
-			"long": "2dc1adb7fe849f0be47b6e23b6b45702d8440893",
-			"short": "2dc1adb7f"
+			"long": "a62c71eecf5a7c8ed6fa9600620d20769967e49d",
+			"short": "a62c71ee"
 		},
 		"tree": {
-			"long": "601ebf9d1837710dffdb5ff9b96e8acd903a4a9a",
-			"short": "601ebf9d1"
+			"long": "94b97e5faee964c11f429040c9d69dbc88d57a46",
+			"short": "94b97e5f"
 		},
 		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-16T19:17:52.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-10T11:15:05.000Z"
 		},
 		"committer": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-08-05T16:24:20.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-10T11:15:05.000Z"
 		},
-		"parent": "4c46af04830cec3da6ecfbf677ef3d826a5892e6",
-		"subject": "[fees] Express policies in COIN instead of Koinu",
-		"body": ""
+		"subject": "Added dry run to profile update filter",
+		"body": "",
+		"parent": "5480566a7991bdd56c624b8aed6c335e3fcd656b"
 	},
 	{
 		"commit": {
-			"long": "4c46af04830cec3da6ecfbf677ef3d826a5892e6",
-			"short": "4c46af048"
+			"long": "49fdea68db79642ee53196c73312cf16aa4fe11f",
+			"short": "49fdea68"
 		},
 		"tree": {
-			"long": "8e2c6490458c57ff690788195b298cc4edd07891",
-			"short": "8e2c64904"
+			"long": "c8ac9334e65a19257ad97014eba83c4b2675c751",
+			"short": "c8ac9334"
 		},
 		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-06-26T22:37:10.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-09T09:03:15.000Z"
 		},
 		"committer": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-08-05T16:24:17.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-09T09:03:15.000Z"
 		},
-		"parent": "a88d53be2e46875ce95cffa31073081f40087214",
-		"subject": "[fees] introduce configurable hard dust limit",
-		"body": "Co-authored-by: Ross Nicoll <rnicoll@rnicoll.name>\n"
+		"subject": "Merge branch 'master' into newFillCache",
+		"body": "",
+		"parent": "e8af5270b61a3ebf7d96411e1d2c747c09932283 5480566a7991bdd56c624b8aed6c335e3fcd656b"
 	},
 	{
 		"commit": {
-			"long": "a88d53be2e46875ce95cffa31073081f40087214",
-			"short": "a88d53be2"
+			"long": "5480566a7991bdd56c624b8aed6c335e3fcd656b",
+			"short": "5480566a"
 		},
 		"tree": {
-			"long": "958e3542853d12a7b6c9d92ca2198abcfe926955",
-			"short": "958e35428"
+			"long": "34880d308d8f18765ba0c51d20ee9de630d7df19",
+			"short": "34880d30"
 		},
 		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-08-04T20:10:44.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-09T09:02:33.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-08-04T20:10:44.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-09T09:02:33.000Z"
 		},
-		"parent": "7ebedc2aa34b498b8005cc50f75db45a5c1ede07 14a2e1ba9644d0cc59c1f773d330a8f2674ab54b",
-		"subject": "Merge pull request #2415 from rnicoll/1.14.4-rbf-fee",
-		"body": "Reduce BIP125 replace by fee increment value"
+		"subject": "Updated filter companies",
+		"body": "",
+		"parent": "5918f4d1157530747ed3e395d20b851357f15e44"
 	},
 	{
 		"commit": {
-			"long": "14a2e1ba9644d0cc59c1f773d330a8f2674ab54b",
-			"short": "14a2e1ba9"
+			"long": "e8af5270b61a3ebf7d96411e1d2c747c09932283",
+			"short": "e8af5270"
 		},
 		"tree": {
-			"long": "958e3542853d12a7b6c9d92ca2198abcfe926955",
-			"short": "958e35428"
+			"long": "e23a26936825448ba6cde8e2ecf9a56f1e853a87",
+			"short": "e23a2693"
 		},
 		"author": {
-			"name": "Ross Nicoll",
-			"email": "jrn@jrn.me.uk",
-			"date": "2021-07-26T21:40:39.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-09T08:45:38.000Z"
 		},
 		"committer": {
-			"name": "Ross Nicoll",
-			"email": "jrn@jrn.me.uk",
-			"date": "2021-08-04T08:30:02.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-09T08:45:38.000Z"
 		},
-		"parent": "1d2380df56e2a5471a306a86fa76649075f12517",
-		"subject": "consensus: Fix a rare crash bug",
-		"body": "Fix a rare crash bug where no best chain can be activated, and therefore when trying\nto find the height of the best chain via the last block triggers a null pointer dereference.\n"
+		"subject": "Merge branch 'master' into newFillCache",
+		"body": "",
+		"parent": "a378f68cec6d7a57f8d89f1fcf21f844b4fe0ce5 5918f4d1157530747ed3e395d20b851357f15e44"
 	},
 	{
 		"commit": {
-			"long": "1d2380df56e2a5471a306a86fa76649075f12517",
-			"short": "1d2380df5"
+			"long": "5918f4d1157530747ed3e395d20b851357f15e44",
+			"short": "5918f4d1"
 		},
 		"tree": {
-			"long": "0546711ebaf02c7da86913024fa7dc32aaffec9b",
-			"short": "0546711eb"
+			"long": "f921c2927ef26122833fcd587a440e18866fec79",
+			"short": "f921c292"
 		},
 		"author": {
-			"name": "Michi Lumin",
-			"email": "michi@luskwood.org",
-			"date": "2021-07-21T19:58:12.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-09T08:45:30.000Z"
 		},
 		"committer": {
-			"name": "Ross Nicoll",
-			"email": "jrn@jrn.me.uk",
-			"date": "2021-08-04T08:29:35.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-09T08:45:30.000Z"
 		},
-		"parent": "7ebedc2aa34b498b8005cc50f75db45a5c1ede07",
-		"subject": "p2p: Reduce BIP125 replace by fee increment value",
-		"body": ""
+		"subject": "Added new update filter from ids file",
+		"body": "",
+		"parent": "d6aec9d94948bfa37067a63e70dbdd4bd9d2617b"
 	},
 	{
 		"commit": {
-			"long": "7ebedc2aa34b498b8005cc50f75db45a5c1ede07",
-			"short": "7ebedc2aa"
+			"long": "a378f68cec6d7a57f8d89f1fcf21f844b4fe0ce5",
+			"short": "a378f68c"
 		},
 		"tree": {
-			"long": "57ded1e321867d2237089774354ff6edf483b56c",
-			"short": "57ded1e32"
+			"long": "880b1c7daea32a057b3dc5758061ccae907ddabf",
+			"short": "880b1c7d"
 		},
 		"author": {
-			"name": "Ross Nicoll",
-			"email": "jrn@jrn.me.uk",
-			"date": "2021-08-04T08:28:08.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-09T07:52:23.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-08-04T08:28:08.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-09T07:52:23.000Z"
 		},
-		"parent": "246a103e9e0bd445d0162f46be0de97402219d99 0c3d683be4e6c0154b6666bdfd484aac3b4f2fe1",
-		"subject": "Merge pull request #2434 from patricklodder/1.14-activatebestchain-shutdown-fix",
-		"body": "bugfix: break ActivateBestChain() differently on shutdown"
+		"subject": "Merge branch 'master' into newFillCache",
+		"body": "",
+		"parent": "9f6f66da55ce85918cd555b04fdaaeb1047d97f7 d6aec9d94948bfa37067a63e70dbdd4bd9d2617b"
 	},
 	{
 		"commit": {
-			"long": "246a103e9e0bd445d0162f46be0de97402219d99",
-			"short": "246a103e9"
+			"long": "7c6a8faf2e9b3f11ddfdc54e3d4164fa568f6538",
+			"short": "7c6a8faf"
 		},
 		"tree": {
-			"long": "d14d37639f8ac538103035ba1263999f2a374d64",
-			"short": "d14d37639"
+			"long": "ebf11ac2e6d73f4d294b4e3e8fa52ddd886ce15c",
+			"short": "ebf11ac2"
 		},
 		"author": {
-			"name": "Ross Nicoll",
-			"email": "jrn@jrn.me.uk",
-			"date": "2021-08-03T22:35:05.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-09T07:52:07.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-08-03T22:35:05.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-09T07:52:07.000Z"
 		},
-		"parent": "290faedcc34d027620ffb0c6f94333b89ffec2b3 5c6017aad4b14e53fdc5cc6b210b04059cba39f5",
-		"subject": "Merge pull request #2428 from zachlatta/1.14.4-nixos-build-instructions",
-		"body": "Add build and setup instructions for NixOS"
+		"subject": "Optimize mc2 creation",
+		"body": "Now delete data from django, see if it's faster.",
+		"parent": "d6aec9d94948bfa37067a63e70dbdd4bd9d2617b"
 	},
 	{
 		"commit": {
-			"long": "0c3d683be4e6c0154b6666bdfd484aac3b4f2fe1",
-			"short": "0c3d683be"
+			"long": "d6aec9d94948bfa37067a63e70dbdd4bd9d2617b",
+			"short": "d6aec9d9"
 		},
 		"tree": {
-			"long": "0d01a3abce69f7768c292ac59a45d3c1635f5eb6",
-			"short": "0d01a3abc"
+			"long": "320e5ae80be54528671c063f5410b7f4014ceb6f",
+			"short": "320e5ae8"
 		},
 		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-08-03T22:07:58.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-09T07:50:38.000Z"
 		},
 		"committer": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-08-03T22:15:33.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-09T07:50:38.000Z"
 		},
-		"parent": "290faedcc34d027620ffb0c6f94333b89ffec2b3",
-		"subject": "bugfix: break ActivateBestChain() differently on shutdown",
-		"body": "Moves the break in ActivateBestChain() when a node is being shut\ndown from the beginning of the loop block to the end, allowing\npindexNewTip to be populated with chainActive.Tip() rather than\nits initial NULL value. Solves issues when shutting down nodes\nwhile inside the ActivateBestChain loop.\n"
+		"subject": "Fixed filter",
+		"body": "",
+		"parent": "a4cec1ed42964c718bfc66138aef3a712beb0da4"
 	},
 	{
 		"commit": {
-			"long": "5c6017aad4b14e53fdc5cc6b210b04059cba39f5",
-			"short": "5c6017aad"
+			"long": "9f6f66da55ce85918cd555b04fdaaeb1047d97f7",
+			"short": "9f6f66da"
 		},
 		"tree": {
-			"long": "56f264b65f2ab0250da4d30dd9c84c8d8e2dce06",
-			"short": "56f264b65"
+			"long": "1e25f4779a65cadaba166f84178da5cade7dc9b7",
+			"short": "1e25f477"
 		},
 		"author": {
-			"name": "Zach Latta",
-			"email": "zach@zachlatta.com",
-			"date": "2021-08-03T18:46:51.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-09T07:50:10.000Z"
 		},
 		"committer": {
-			"name": "Zach Latta",
-			"email": "zach@zachlatta.com",
-			"date": "2021-08-03T18:46:51.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-09T07:50:10.000Z"
 		},
-		"parent": "d80ddf324466ec18eed5df817ea852a96f3c8f68",
-		"subject": "Move shell.nix contents into separate file",
-		"body": ""
+		"subject": "Fixed copy files and backup storage in ryzen",
+		"body": "",
+		"parent": "18e9430a3c72d7c517ef4a6c196eb61985c6a396"
 	},
 	{
 		"commit": {
-			"long": "290faedcc34d027620ffb0c6f94333b89ffec2b3",
-			"short": "290faedcc"
+			"long": "18e9430a3c72d7c517ef4a6c196eb61985c6a396",
+			"short": "18e9430a"
 		},
 		"tree": {
-			"long": "0166c3ad4ba5b530580bd92f327d679891555904",
-			"short": "0166c3ad4"
+			"long": "99f5c98649efb8bc27ded9db2f4a06d19b9066dd",
+			"short": "99f5c986"
 		},
 		"author": {
-			"name": "xanimo",
-			"email": "dakoda@xanimo.net",
-			"date": "2021-08-01T08:36:55.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-05T10:57:14.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-08-01T08:36:55.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-05T10:57:14.000Z"
 		},
-		"parent": "7abb81b2ea3bd11e6d01476b2c1739d793006a83",
-		"subject": "tests: mempool_packages.py (#2433)",
-		"body": "* Bump fee to 1.0000 from 0.0001 to fix insufficient priority error"
+		"subject": "Merge branch 'master' into newFillCache",
+		"body": "",
+		"parent": "1977fa80cd6a98a25d031b80281d011ebdb05c2f a4cec1ed42964c718bfc66138aef3a712beb0da4"
 	},
 	{
 		"commit": {
-			"long": "7abb81b2ea3bd11e6d01476b2c1739d793006a83",
-			"short": "7abb81b2e"
+			"long": "a4cec1ed42964c718bfc66138aef3a712beb0da4",
+			"short": "a4cec1ed"
 		},
 		"tree": {
-			"long": "7765fbeda190b3630de9810f4b246a7c1c0c5e75",
-			"short": "7765fbeda"
+			"long": "e9d984d8746ce71f587399a0c3ab0a48db7ed562",
+			"short": "e9d984d8"
 		},
 		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-31T18:58:53.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-05T10:57:06.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-07-31T18:58:53.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-05T10:57:06.000Z"
 		},
-		"parent": "6bea578da04b0c8bf14b3d943243854c06857b63 575f734eec14b122b2e460dcefb56a54840ea479",
-		"subject": "Merge pull request #2368 from michilumin/1.14.4-fees",
-		"body": "1.14.4 fees backend improvements"
+		"subject": "Fixed bugs in exportDB and compress and backup weekly files if error",
+		"body": "",
+		"parent": "7c8ff860d9ba20372fd8a527ec410cc10a7bb5f0"
 	},
 	{
 		"commit": {
-			"long": "575f734eec14b122b2e460dcefb56a54840ea479",
-			"short": "575f734ee"
+			"long": "1977fa80cd6a98a25d031b80281d011ebdb05c2f",
+			"short": "1977fa80"
 		},
 		"tree": {
-			"long": "7765fbeda190b3630de9810f4b246a7c1c0c5e75",
-			"short": "7765fbeda"
+			"long": "ba4434190bcb28162c1c6ed367b1ad760d75b03e",
+			"short": "ba443419"
 		},
 		"author": {
-			"name": "Michi Lumin",
-			"email": "skunkie@gmail.com",
-			"date": "2021-05-06T21:30:55.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-05T10:46:14.000Z"
 		},
 		"committer": {
-			"name": "michilumin",
-			"email": "michi@dogecoin.com",
-			"date": "2021-07-30T22:07:22.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-05T10:46:14.000Z"
 		},
-		"parent": "6bea578da04b0c8bf14b3d943243854c06857b63",
-		"subject": "Initial back end framework to separate wallet and relay fees + dust.",
-		"body": ""
+		"subject": "Added export cache data to full round and restore from backup",
+		"body": "",
+		"parent": "bcefdd2efe41e82dec94e45ce5d11d5ae7ff87ea"
 	},
 	{
 		"commit": {
-			"long": "d80ddf324466ec18eed5df817ea852a96f3c8f68",
-			"short": "d80ddf324"
+			"long": "bcefdd2efe41e82dec94e45ce5d11d5ae7ff87ea",
+			"short": "bcefdd2e"
 		},
 		"tree": {
-			"long": "668d30d958f8f8f0eb88e58bbfdd044a01b050d0",
-			"short": "668d30d95"
+			"long": "c61805bdcab993f96dda6164aca4192cfa215bb2",
+			"short": "c61805bd"
 		},
 		"author": {
-			"name": "Zach Latta",
-			"email": "zach@zachlatta.com",
-			"date": "2021-07-30T16:09:11.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-04T13:44:38.000Z"
 		},
 		"committer": {
-			"name": "Zach Latta",
-			"email": "zach@zachlatta.com",
-			"date": "2021-07-30T16:09:11.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-04T13:44:38.000Z"
 		},
-		"parent": "6bea578da04b0c8bf14b3d943243854c06857b63",
-		"subject": "Add build and setup instructions for NixOS",
-		"body": ""
+		"subject": "Fix bugs in cacheMobile",
+		"body": "",
+		"parent": "a484c592af5ee59a2f15f05e5788a2b0aa7b1c75"
 	},
 	{
 		"commit": {
-			"long": "6bea578da04b0c8bf14b3d943243854c06857b63",
-			"short": "6bea578da"
+			"long": "a484c592af5ee59a2f15f05e5788a2b0aa7b1c75",
+			"short": "a484c592"
 		},
 		"tree": {
-			"long": "5636b60549b97e3ac09682142167095c38db1b16",
-			"short": "5636b6054"
+			"long": "934c3e8c17429cefe2feaff80a789b5d2c3fd893",
+			"short": "934c3e8c"
 		},
 		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-29T00:00:57.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-04T13:35:52.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-07-29T00:00:57.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-04T13:35:52.000Z"
 		},
-		"parent": "a7442cbfb032bf2fb69badc46f3dd7307c50bd2f 7e541072ce5ef7336b527b44b736c3aaa3cb066b",
-		"subject": "Merge pull request #2426 from xanimo/1.14.4-qa",
-		"body": "update qa/README.md to reflect working installation instructions"
+		"subject": "Merge branch 'master' into newFillCache",
+		"body": "",
+		"parent": "d5683489c7c227cac8fb9f81c7930e03da642fe8 7c8ff860d9ba20372fd8a527ec410cc10a7bb5f0"
 	},
 	{
 		"commit": {
-			"long": "7e541072ce5ef7336b527b44b736c3aaa3cb066b",
-			"short": "7e541072c"
+			"long": "7c8ff860d9ba20372fd8a527ec410cc10a7bb5f0",
+			"short": "7c8ff860"
 		},
 		"tree": {
-			"long": "5636b60549b97e3ac09682142167095c38db1b16",
-			"short": "5636b6054"
+			"long": "8b329e72750dfe99df136f4bd0a89304f99b040b",
+			"short": "8b329e72"
 		},
 		"author": {
-			"name": "Dakoda Greaves",
-			"email": "dakoda@xanimo.net",
-			"date": "2021-07-27T21:06:06.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-04T13:35:47.000Z"
 		},
 		"committer": {
-			"name": "Dakoda Greaves",
-			"email": "dakoda@xanimo.net",
-			"date": "2021-07-28T23:12:52.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-04T13:35:47.000Z"
 		},
-		"parent": "a7442cbfb032bf2fb69badc46f3dd7307c50bd2f",
-		"subject": "update qa/README.md to reflect working installation instructions",
-		"body": ""
+		"subject": "Added new logs to osiris_updatePrices",
+		"body": "",
+		"parent": "cfb4ba346355ffcc0570fdabe73a5a94eed99a0d"
 	},
 	{
 		"commit": {
-			"long": "a7442cbfb032bf2fb69badc46f3dd7307c50bd2f",
-			"short": "a7442cbfb"
+			"long": "d5683489c7c227cac8fb9f81c7930e03da642fe8",
+			"short": "d5683489"
 		},
 		"tree": {
-			"long": "641c722651d0e1c3697b261c91ce67e051aaf1e9",
-			"short": "641c72265"
+			"long": "c00051adb665fbfc9a812b625e71663770a92dbe",
+			"short": "c00051ad"
 		},
 		"author": {
-			"name": "Ross Nicoll",
-			"email": "jrn@jrn.me.uk",
-			"date": "2021-07-26T22:48:44.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-04T13:31:36.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-07-26T22:48:44.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-04T13:31:36.000Z"
 		},
-		"parent": "7e7f7e2cfd46485896aee6c97880c7c1c587b969 3c4b35f3c447d8f0f4b6858f33ad5db93cc7e208",
-		"subject": "Merge pull request #2423 from patricklodder/1.14-codeql-reduce-trigger",
-		"body": "[qa] reduce CodeQL triggers to exclude non-compiled code"
+		"subject": "Added export and import file cache data for mobile data",
+		"body": "",
+		"parent": "185b6267845c96f221887b200132d069a6d08568"
 	},
 	{
 		"commit": {
-			"long": "7e7f7e2cfd46485896aee6c97880c7c1c587b969",
-			"short": "7e7f7e2cf"
+			"long": "185b6267845c96f221887b200132d069a6d08568",
+			"short": "185b6267"
 		},
 		"tree": {
-			"long": "a200813f1d12377a97cd94ec770d6af8f46e9c29",
-			"short": "a200813f1"
+			"long": "6d201a2e216651de48953aec4ca2e610c232bccd",
+			"short": "6d201a2e"
 		},
 		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-25T19:38:21.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-04T12:58:37.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-07-25T19:38:21.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-04T12:58:37.000Z"
 		},
-		"parent": "cfef80c54c79c835b510b5337af0486f562582e2 9362186ba795b180c3d2cc42244d2a3f05bfeb5c",
-		"subject": "Merge pull request #2422 from rnicoll/1.14.4-rbf-fee-test",
-		"body": "Fixup replace-by-fee qa test values and now runs this test by default on CI"
+		"subject": "Fixed bugs in cacheMarkets",
+		"body": "",
+		"parent": "5c566543f77d5949ae4d831fbb4fd39adfc1581a"
 	},
 	{
 		"commit": {
-			"long": "cfef80c54c79c835b510b5337af0486f562582e2",
-			"short": "cfef80c54"
+			"long": "5c566543f77d5949ae4d831fbb4fd39adfc1581a",
+			"short": "5c566543"
 		},
 		"tree": {
-			"long": "4e9e4f9350fec5bae4c78ff0cb9839679cd42538",
-			"short": "4e9e4f935"
+			"long": "7f11a63f7963e190c52de86d79c3fb943b6d51a0",
+			"short": "7f11a63f"
 		},
 		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-25T19:12:49.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-04T12:32:57.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-07-25T19:12:49.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-04T12:32:57.000Z"
 		},
-		"parent": "f509487d3b8b60954500813e82fefa9237dc6974 c7a1b7c90cd6981321924991d7bd05f77a3cc7db",
-		"subject": "Merge pull request #2249 from rnicoll/1.14-fix-magic-numbers",
-		"body": "1.14 fix magic numbers"
+		"subject": "Merge branch 'master' into newFillCache",
+		"body": "",
+		"parent": "7fea741b0adfe4063a2dac3625d23f039b63c7b9 cfb4ba346355ffcc0570fdabe73a5a94eed99a0d"
 	},
 	{
 		"commit": {
-			"long": "9362186ba795b180c3d2cc42244d2a3f05bfeb5c",
-			"short": "9362186ba"
+			"long": "cfb4ba346355ffcc0570fdabe73a5a94eed99a0d",
+			"short": "cfb4ba34"
 		},
 		"tree": {
-			"long": "59f85cde6b76410b1d81c071cb25eb065f86f62b",
-			"short": "59f85cde6"
+			"long": "0c9d82bb70b465f241132eddb06cb180ad925b70",
+			"short": "0c9d82bb"
 		},
 		"author": {
-			"name": "Ross Nicoll",
-			"email": "jrn@jrn.me.uk",
-			"date": "2021-07-24T16:18:27.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-04T12:32:51.000Z"
 		},
 		"committer": {
-			"name": "Ross Nicoll",
-			"email": "jrn@jrn.me.uk",
-			"date": "2021-07-25T18:48:53.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-04T12:32:51.000Z"
 		},
-		"parent": "e4dccd20aef24a0aab547857898e34a31ae8e02e",
-		"subject": "tests: Fix replace-by-fee values for Dogecoin",
-		"body": ""
+		"subject": "Cherry picks from amazon",
+		"body": "",
+		"parent": "2be4d6601048286c757f26a995a5f23b1c8cc3a9"
 	},
 	{
 		"commit": {
-			"long": "3c4b35f3c447d8f0f4b6858f33ad5db93cc7e208",
-			"short": "3c4b35f3c"
+			"long": "7fea741b0adfe4063a2dac3625d23f039b63c7b9",
+			"short": "7fea741b"
 		},
 		"tree": {
-			"long": "9a937ed0a080992d0276e352b33bfd63f0ef9afb",
-			"short": "9a937ed0a"
+			"long": "5f1e8382bb4a0dabf5d4c5cbe1e742311100bd4e",
+			"short": "5f1e8382"
 		},
 		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-25T18:42:51.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-04T12:30:44.000Z"
 		},
 		"committer": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-25T18:45:45.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-04T12:30:44.000Z"
 		},
-		"parent": "f509487d3b8b60954500813e82fefa9237dc6974",
-		"subject": "[qa] reduce CodeQL triggers to exclude non-compiled code",
-		"body": "contrib, doc, share and qa do not compile production code, skip\nCodeQL on PRs to save everyone time and GitHub some cpu ticks.\n"
+		"subject": "Now export markets cached data and also import from file.",
+		"body": "",
+		"parent": "2be4d6601048286c757f26a995a5f23b1c8cc3a9"
 	},
 	{
 		"commit": {
-			"long": "c7a1b7c90cd6981321924991d7bd05f77a3cc7db",
-			"short": "c7a1b7c90"
+			"long": "2be4d6601048286c757f26a995a5f23b1c8cc3a9",
+			"short": "2be4d660"
 		},
 		"tree": {
-			"long": "4154255d908aea27914c24f6b0e2a67abca7f21e",
-			"short": "4154255d9"
+			"long": "e7cb6da63a053c198b71ff4b85c09b0bab8724eb",
+			"short": "e7cb6da6"
 		},
 		"author": {
-			"name": "geekwisdom",
-			"email": "braddet@gmail.com",
-			"date": "2021-05-20T10:24:54.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-02T12:59:52.000Z"
 		},
 		"committer": {
-			"name": "Ross Nicoll",
-			"email": "jrn@jrn.me.uk",
-			"date": "2021-07-25T18:32:23.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-02T12:59:52.000Z"
 		},
-		"parent": "e4dccd20aef24a0aab547857898e34a31ae8e02e",
-		"subject": "Trivial: Fix Magic Numbers in key and pubkey - fixes #1968",
-		"body": ""
+		"subject": "Now filter companies with prices older than 12.5 months.",
+		"body": "",
+		"parent": "e849ee70fee345e23cca8acd6fb0099bd4fedfcf"
 	},
 	{
 		"commit": {
-			"long": "f509487d3b8b60954500813e82fefa9237dc6974",
-			"short": "f509487d3"
+			"long": "e849ee70fee345e23cca8acd6fb0099bd4fedfcf",
+			"short": "e849ee70"
 		},
 		"tree": {
-			"long": "2ef3cb4cf1c24738c61494ccb11c09859d33088d",
-			"short": "2ef3cb4cf"
+			"long": "e2dbc6156587ac54a8ed329ddf3059b9a258c81d",
+			"short": "e2dbc615"
 		},
 		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-24T17:19:36.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-02T12:58:19.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-07-24T17:19:36.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-03-02T12:58:19.000Z"
 		},
-		"parent": "e4dccd20aef24a0aab547857898e34a31ae8e02e 36bde0efca8784b8c2f44b3d02ab641e4e205ce8",
-		"subject": "Merge pull request #2236 from sabotagebeats/fix/issues/2149",
-		"body": "Utils and libraries: Update ZMQ to 4.3.4"
+		"subject": "Updated restore data from backup and new log user data.",
+		"body": "",
+		"parent": "cba525a1bdc97216e9b4c260088b966af7cfedb5"
 	},
 	{
 		"commit": {
-			"long": "e4dccd20aef24a0aab547857898e34a31ae8e02e",
-			"short": "e4dccd20a"
+			"long": "cba525a1bdc97216e9b4c260088b966af7cfedb5",
+			"short": "cba525a1"
 		},
 		"tree": {
-			"long": "e5bec21f9634c578f2275a07c5afaf44386d5a56",
-			"short": "e5bec21f9"
+			"long": "da11e7622ca2b068b4780969e443e37cadff061a",
+			"short": "da11e762"
 		},
 		"author": {
-			"name": "Ross Nicoll",
-			"email": "jrn@jrn.me.uk",
-			"date": "2021-07-24T15:32:58.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-26T14:07:41.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-07-24T15:32:58.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-26T14:07:41.000Z"
 		},
-		"parent": "df3b708e8c6eec6a5c3aa104febac9b4297d796c cc0d6ada81a163b3c7dfa077e656357f93823cfc",
-		"subject": "Merge pull request #1941 from elybin/fixing-indonesian-translation",
-		"body": "Fixing indonesian (id_ID) translation"
+		"subject": "Added reset autoincrement values to weekly.",
+		"body": "",
+		"parent": "5948c05933325ae56ff3312a4e7ca008715606dd"
 	},
 	{
 		"commit": {
-			"long": "df3b708e8c6eec6a5c3aa104febac9b4297d796c",
-			"short": "df3b708e8"
+			"long": "3b4806707a477536073db2db228f38c5939b9767",
+			"short": "3b480670"
 		},
 		"tree": {
-			"long": "4c0c93b0638c798435ca5e7fc816a4ea585ad2f6",
-			"short": "4c0c93b06"
+			"long": "e3c0f43cc53eaaadbefb7cbd417dec1926692d13",
+			"short": "e3c0f43c"
 		},
 		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-23T21:17:00.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-26T13:41:54.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-07-23T21:17:00.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-26T13:41:54.000Z"
 		},
-		"parent": "2b9519ea1ee6ac692904f378e89e5d0bf6d4ed7c 8e46b60b2fb692310c2869caf85e138e4d495cb0",
-		"subject": "Merge pull request #2420 from nformant1/nformant1-patch-1",
-		"body": "Fix RPC port documentation in RPC help"
+		"subject": "Deploy v 1.0.4",
+		"body": "- Fix multimarkets prices\n- Daily IDL ratios to DB\n- Removed Banner Premium Users\n- Bug Banner Basic Users",
+		"parent": "b6bc757c207f974821241db1207fa50b20600e51 5948c05933325ae56ff3312a4e7ca008715606dd"
 	},
 	{
 		"commit": {
-			"long": "2b9519ea1ee6ac692904f378e89e5d0bf6d4ed7c",
-			"short": "2b9519ea1"
+			"long": "5948c05933325ae56ff3312a4e7ca008715606dd",
+			"short": "5948c059"
 		},
 		"tree": {
-			"long": "f8df2be898ac75afbae18b67f6cedc14b525014a",
-			"short": "f8df2be89"
+			"long": "e3c0f43cc53eaaadbefb7cbd417dec1926692d13",
+			"short": "e3c0f43c"
 		},
 		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-23T20:54:13.000Z"
+			"name": "Mar",
+			"email": "mar.gstocks@gmail.com",
+			"date": "2021-02-26T11:20:49.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-07-23T20:54:13.000Z"
+			"name": "Mar",
+			"email": "mar.gstocks@gmail.com",
+			"date": "2021-02-26T11:20:49.000Z"
 		},
-		"parent": "dad797d01b134a6dd663b4e749093da3ef09fa40 f4f7759649941820117d8c22f3d0a5b93cd8a200",
-		"subject": "Merge pull request #2418 from xanimo/1.14.4-fix-seed-init",
-		"body": "initialize fixed seeds"
+		"subject": "Merge branch 'bugsMaster' into master",
+		"body": "",
+		"parent": "cd1928c718b89e14a0bf09e86017255522674adf 33c990ea2e36a32d916eb79eeed1b014116f5ba4"
 	},
 	{
 		"commit": {
-			"long": "f4f7759649941820117d8c22f3d0a5b93cd8a200",
-			"short": "f4f775964"
+			"long": "33c990ea2e36a32d916eb79eeed1b014116f5ba4",
+			"short": "33c990ea"
 		},
 		"tree": {
-			"long": "f8df2be898ac75afbae18b67f6cedc14b525014a",
-			"short": "f8df2be89"
+			"long": "29c29fa64e2bfeec4025098c132623f592e1030b",
+			"short": "29c29fa6"
 		},
 		"author": {
-			"name": "Dakoda Greaves",
-			"email": "dakoda@xanimo.net",
-			"date": "2021-07-23T20:07:29.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-26T10:40:50.000Z"
 		},
 		"committer": {
-			"name": "Dakoda Greaves",
-			"email": "dakoda@xanimo.net",
-			"date": "2021-07-23T20:07:29.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-26T10:40:50.000Z"
 		},
-		"parent": "dad797d01b134a6dd663b4e749093da3ef09fa40",
-		"subject": "initialize fixed seeds",
-		"body": "seed initialization was commented out on mainnet\nand testnet.\n"
+		"subject": "Fixed small bugs.",
+		"body": "",
+		"parent": "7ca09a8ce63dbe2591556a16b02b48548ff3774b"
 	},
 	{
 		"commit": {
-			"long": "dad797d01b134a6dd663b4e749093da3ef09fa40",
-			"short": "dad797d01"
+			"long": "cd1928c718b89e14a0bf09e86017255522674adf",
+			"short": "cd1928c7"
 		},
 		"tree": {
-			"long": "c0da1caa7e8f678f6e81598b51509bcd6f407d79",
-			"short": "c0da1caa7"
+			"long": "5dae316c6863eeee97a6730b6875ec5cedba1165",
+			"short": "5dae316c"
 		},
 		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-22T20:44:32.000Z"
+			"name": "Jaume",
+			"email": "jaume.gstocks@gmail.com",
+			"date": "2021-02-25T17:23:05.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-07-22T20:44:32.000Z"
+			"name": "Jaume",
+			"email": "jaume.gstocks@gmail.com",
+			"date": "2021-02-25T17:23:05.000Z"
 		},
-		"parent": "97f95559c5ed8c986bcaee3252af5bf89e014f77 4f3851a722d7c3de451a5c05effebccfe6d2b380",
-		"subject": "Merge pull request #2308 from alamshafil/doge-tips",
-		"body": "[QT] Add tips section"
+		"subject": "Removed Banner Premium",
+		"body": "",
+		"parent": "f92b257b430ba4802b8cfb0d473ca559e6fce45c"
 	},
 	{
 		"commit": {
-			"long": "4f3851a722d7c3de451a5c05effebccfe6d2b380",
-			"short": "4f3851a72"
+			"long": "f92b257b430ba4802b8cfb0d473ca559e6fce45c",
+			"short": "f92b257b"
 		},
 		"tree": {
-			"long": "547146d6632ed3253ae701a910b50aa124dd81a8",
-			"short": "547146d66"
+			"long": "9f7f846c7bebd100dc6a8aa5f65085d0e61086a7",
+			"short": "9f7f846c"
 		},
 		"author": {
-			"name": "Shafil Alam",
-			"email": "36016500+alamshafil@users.noreply.github.com",
-			"date": "2021-06-14T04:54:13.000Z"
+			"name": "Jaume",
+			"email": "jaume.gstocks@gmail.com",
+			"date": "2021-02-25T15:50:37.000Z"
 		},
 		"committer": {
-			"name": "Shafil Alam",
-			"email": "36016500+alamshafil@users.noreply.github.com",
-			"date": "2021-07-22T20:04:57.000Z"
+			"name": "Jaume",
+			"email": "jaume.gstocks@gmail.com",
+			"date": "2021-02-25T15:50:37.000Z"
 		},
-		"parent": "313a2b172246916825ea93f66677c7ebbd725251",
-		"subject": "Add tips section",
-		"body": "Add more tips\n\nAllow QT translations\n\nFix tips\n"
+		"subject": "Bug Banners",
+		"body": "",
+		"parent": "0593bed676b07f05e7d7e1c5253dc694a67bdbe9"
 	},
 	{
 		"commit": {
-			"long": "303be2e442744593d8211b520f9fe554b3bd31a2",
-			"short": "303be2e44"
+			"long": "b6bc757c207f974821241db1207fa50b20600e51",
+			"short": "b6bc757c"
 		},
 		"tree": {
-			"long": "92b69f26c5f79f03344683ff1fc6642893ff0835",
-			"short": "92b69f26c"
+			"long": "4cdbd7664511acc3dee8ba896b82324f81576c3b",
+			"short": "4cdbd766"
 		},
 		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-21T20:29:32.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-25T12:56:04.000Z"
 		},
 		"committer": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-22T17:48:09.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-25T12:56:04.000Z"
 		},
-		"parent": "97f95559c5ed8c986bcaee3252af5bf89e014f77",
-		"subject": "Reduce getheaders spam by serializing getheader requests per peer",
-		"body": "Introduces a counter for getheader requests that have been sent to\na peer but are pending response, reducing the number of parallel\nrequests a node pushes out to its peers when needing to sync large\namounts of headers. All getheader requests are serialized during\ninitial sync, except when a non-connecting header is received,\nallowing the node to resolve issues with peers sending faulty\nblocks using the DoS mechanism, and when we get an inv for a block\nthat we do not know, because it's possible we're only connected to\nlegacy nodes that do not implement header announcement properly.\n"
+		"subject": "Deploy v 1.0.3",
+		"body": "- Added new logging user activity for campaigns",
+		"parent": "469e5d1d6b096d3c4c477ed391f62ed259e6ad63 3dccbac316b28b86193c038396ab6be8c3d7eb9b"
 	},
 	{
 		"commit": {
-			"long": "8e46b60b2fb692310c2869caf85e138e4d495cb0",
-			"short": "8e46b60b2"
+			"long": "0593bed676b07f05e7d7e1c5253dc694a67bdbe9",
+			"short": "0593bed6"
 		},
 		"tree": {
-			"long": "632f23fec92c6d81019086b09d82381205c0c457",
-			"short": "632f23fec"
+			"long": "40d9e592304baef7d348a4d6aff9870474b86e85",
+			"short": "40d9e592"
 		},
 		"author": {
-			"name": "nformant",
-			"email": "54002590+nformant1@users.noreply.github.com",
-			"date": "2021-07-22T08:49:47.000Z"
+			"name": "Jaume",
+			"email": "jaume.gstocks@gmail.com",
+			"date": "2021-02-25T12:53:58.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-07-22T08:49:47.000Z"
+			"name": "Jaume",
+			"email": "jaume.gstocks@gmail.com",
+			"date": "2021-02-25T12:53:58.000Z"
 		},
-		"parent": "97f95559c5ed8c986bcaee3252af5bf89e014f77",
-		"subject": "Update server.cpp",
-		"body": "Changed RPC port from 8332 (BTC) to 22555 (Dogecoin)"
+		"subject": "Merge remote-tracking branch 'origin/master'",
+		"body": "",
+		"parent": "31c842efd574b716d66dae4dfb6d346a073d4019 3dccbac316b28b86193c038396ab6be8c3d7eb9b"
 	},
 	{
 		"commit": {
-			"long": "97f95559c5ed8c986bcaee3252af5bf89e014f77",
-			"short": "97f95559c"
+			"long": "3dccbac316b28b86193c038396ab6be8c3d7eb9b",
+			"short": "3dccbac3"
 		},
 		"tree": {
-			"long": "8a96c3f3a080a204be3243dd2a32f3f327f1ba29",
-			"short": "8a96c3f3a"
+			"long": "4cdbd7664511acc3dee8ba896b82324f81576c3b",
+			"short": "4cdbd766"
 		},
 		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-20T20:51:27.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-25T12:53:18.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-07-20T20:51:27.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-25T12:53:18.000Z"
 		},
-		"parent": "72008c5a0eacd0783e6c1f9c39e86cb03d2e8872 164d0b2e83be39de1803d838594f6d3c547dc7c3",
-		"subject": "Merge pull request #2413 from dogecoin/revert-2342-issue-2340-depends-build-dependencies-readme",
-		"body": "Correct #2342 - \"added requirements to dependencies build README\""
+		"subject": "Merge branch 'newUsersData'",
+		"body": "",
+		"parent": "ccdb56af1c21cbf70de86e9153291f6904037ba6 eedb54fa6890cd1ff2deb87010d8dce5d26d29a2"
 	},
 	{
 		"commit": {
-			"long": "164d0b2e83be39de1803d838594f6d3c547dc7c3",
-			"short": "164d0b2e8"
+			"long": "31c842efd574b716d66dae4dfb6d346a073d4019",
+			"short": "31c842ef"
 		},
 		"tree": {
-			"long": "8a96c3f3a080a204be3243dd2a32f3f327f1ba29",
-			"short": "8a96c3f3a"
+			"long": "df38618bfbf81db5d9bc080507da7017f02b19d3",
+			"short": "df38618b"
 		},
 		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-20T18:55:16.000Z"
+			"name": "Jaume",
+			"email": "jaume.gstocks@gmail.com",
+			"date": "2021-02-25T12:50:41.000Z"
 		},
 		"committer": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-20T18:55:16.000Z"
+			"name": "Jaume",
+			"email": "jaume.gstocks@gmail.com",
+			"date": "2021-02-25T12:50:41.000Z"
 		},
-		"parent": "f9084e53d1edd5c4a316088fc5f4c2ebe19f7cc2",
-		"subject": "depends: Add required packages to build",
-		"body": ""
+		"subject": "Bug user scores",
+		"body": "",
+		"parent": "ccdb56af1c21cbf70de86e9153291f6904037ba6"
 	},
 	{
 		"commit": {
-			"long": "f9084e53d1edd5c4a316088fc5f4c2ebe19f7cc2",
-			"short": "f9084e53d"
+			"long": "469e5d1d6b096d3c4c477ed391f62ed259e6ad63",
+			"short": "469e5d1d"
 		},
 		"tree": {
-			"long": "59c76566b3a15a8c29d694ee1e2074f652082656",
-			"short": "59c76566b"
+			"long": "e5470fd58272eea1cb76b1eb75ee20a5d74240b5",
+			"short": "e5470fd5"
 		},
 		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-20T18:17:11.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-25T12:46:05.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-07-20T18:17:11.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-25T12:46:05.000Z"
 		},
-		"parent": "72008c5a0eacd0783e6c1f9c39e86cb03d2e8872",
-		"subject": "Revert \"added requirements to dependencies build README\"",
-		"body": ""
+		"subject": "Deploy v 1.0.2",
+		"body": "Merge branch 'master' into LATEST",
+		"parent": "9160f93ef512358babe011028ab0cbca70da5b70 ccdb56af1c21cbf70de86e9153291f6904037ba6"
 	},
 	{
 		"commit": {
-			"long": "36bde0efca8784b8c2f44b3d02ab641e4e205ce8",
-			"short": "36bde0efc"
+			"long": "ccdb56af1c21cbf70de86e9153291f6904037ba6",
+			"short": "ccdb56af"
 		},
 		"tree": {
-			"long": "cecf205c9909e8cad7008af9d5ecde9e523dd5d4",
-			"short": "cecf205c9"
+			"long": "e5470fd58272eea1cb76b1eb75ee20a5d74240b5",
+			"short": "e5470fd5"
 		},
 		"author": {
-			"name": "sabotagebeats",
-			"email": "27985126+sabotagebeats@users.noreply.github.com",
-			"date": "2021-06-02T23:07:10.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-25T12:44:33.000Z"
 		},
 		"committer": {
-			"name": "sabotagebeats",
-			"email": "27985126+sabotagebeats@users.noreply.github.com",
-			"date": "2021-07-18T22:06:51.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-25T12:44:33.000Z"
 		},
-		"parent": "72008c5a0eacd0783e6c1f9c39e86cb03d2e8872",
-		"subject": "Utils and libraries: Update ZMQ to 4.3.4",
-		"body": ""
+		"subject": "Merge branch 'LATEST'",
+		"body": "Conflicts:\n\tscripts/aws/UploadTextsIDL.sh\n",
+		"parent": "dcdbd34f2b8788cf6b5c36971fd4f3578bf30f64 9160f93ef512358babe011028ab0cbca70da5b70"
 	},
 	{
 		"commit": {
-			"long": "72008c5a0eacd0783e6c1f9c39e86cb03d2e8872",
-			"short": "72008c5a0"
+			"long": "dcdbd34f2b8788cf6b5c36971fd4f3578bf30f64",
+			"short": "dcdbd34f"
 		},
 		"tree": {
-			"long": "7ba4072e8dfa856dd3186b586680ca88ee9f6f4a",
-			"short": "7ba4072e8"
+			"long": "e5470fd58272eea1cb76b1eb75ee20a5d74240b5",
+			"short": "e5470fd5"
 		},
 		"author": {
-			"name": "Ross Nicoll",
-			"email": "jrn@jrn.me.uk",
-			"date": "2021-07-18T21:14:40.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-25T12:41:47.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-07-18T21:14:40.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-25T12:41:47.000Z"
 		},
-		"parent": "c984ff17a4ed1f81b725f27c6c52194361280fef 7d81c1bb17c8bb173b5b5de4047d7c3c93a42da8",
-		"subject": "Merge pull request #2410 from patricklodder/1.14.4-explicit-gui-ci",
-		"body": "[ci] make dogecoin-qt builds explicit"
+		"subject": "Merge branch 'bugsMaster'",
+		"body": "",
+		"parent": "6a4ca09dad486b0d3d801dacb67afae1ecd9fb99 7ca09a8ce63dbe2591556a16b02b48548ff3774b"
 	},
 	{
 		"commit": {
-			"long": "7d81c1bb17c8bb173b5b5de4047d7c3c93a42da8",
-			"short": "7d81c1bb1"
+			"long": "6a4ca09dad486b0d3d801dacb67afae1ecd9fb99",
+			"short": "6a4ca09d"
 		},
 		"tree": {
-			"long": "7ba4072e8dfa856dd3186b586680ca88ee9f6f4a",
-			"short": "7ba4072e8"
+			"long": "3cbf42634679c236e1915a13e04d8654376c3d3d",
+			"short": "3cbf4263"
 		},
 		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-17T19:38:21.000Z"
+			"name": "mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-25T12:29:36.000Z"
 		},
 		"committer": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-17T19:38:21.000Z"
+			"name": "mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-25T12:29:36.000Z"
 		},
-		"parent": "c984ff17a4ed1f81b725f27c6c52194361280fef",
-		"subject": "ci: make dogecoin-qt builds explicit",
-		"body": "CI will not complain if there were an error with qt for builds that\ndo not explicitly specify that we want to build UI. This makes all\nbuilds expect QT except the i686-linux and armhf builds.\n"
+		"subject": "New Yoku url",
+		"body": "",
+		"parent": "778d2cc9b03dcaff13b67856cef230e045fc3ee8"
 	},
 	{
 		"commit": {
-			"long": "c984ff17a4ed1f81b725f27c6c52194361280fef",
-			"short": "c984ff17a"
+			"long": "778d2cc9b03dcaff13b67856cef230e045fc3ee8",
+			"short": "778d2cc9"
 		},
 		"tree": {
-			"long": "b89614187e2ce5768354ac4f8d9f78432cbef48f",
-			"short": "b89614187"
+			"long": "319e945b27f98574f97fdf79fd11051c2c81d60a",
+			"short": "319e945b"
 		},
 		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-17T17:39:24.000Z"
+			"name": "mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-25T12:29:03.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-07-17T17:39:24.000Z"
+			"name": "mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-25T12:29:03.000Z"
 		},
-		"parent": "869aad50af414884e24e6766a1058386665c92e3 023fc6d529657964e62ea481788aebf5abd0dfeb",
-		"subject": "Merge pull request #2312 from rnicoll/1.14.4-subsidy-tests",
-		"body": "Rewrite subsidy limit tests (1.14)"
+		"subject": "Bug Email and removed Iphone from frooter",
+		"body": "",
+		"parent": "5a21de87726b211dfa48b06a4f9d5d12d34ed495"
 	},
 	{
 		"commit": {
-			"long": "869aad50af414884e24e6766a1058386665c92e3",
-			"short": "869aad50a"
+			"long": "5a21de87726b211dfa48b06a4f9d5d12d34ed495",
+			"short": "5a21de87"
 		},
 		"tree": {
-			"long": "7953f3fbbe446d64ea6367dd7d986ac683b70ed3",
-			"short": "7953f3fbb"
+			"long": "40b5032c29e092d5e28c87ff6ab9965017b0812c",
+			"short": "40b5032c"
 		},
 		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-17T16:35:59.000Z"
+			"name": "mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-25T12:28:29.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-07-17T16:35:59.000Z"
+			"name": "mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-25T12:28:29.000Z"
 		},
-		"parent": "9d507be2aefebd8a980b51b78953e4e7a3f5c0a0 cf04b907ef658b0bf21309d2ed1984f0af3215d5",
-		"subject": "Merge pull request #2325 from rnicoll/1.14.4-libevent",
-		"body": "depends: Update libevent to 2.1.11"
+		"subject": "Bug Email and removed Iphone from frooter",
+		"body": "",
+		"parent": "fe5e2652bbd19d757bab3b742288b6ee780e886d"
 	},
 	{
 		"commit": {
-			"long": "9d507be2aefebd8a980b51b78953e4e7a3f5c0a0",
-			"short": "9d507be2a"
+			"long": "eedb54fa6890cd1ff2deb87010d8dce5d26d29a2",
+			"short": "eedb54fa"
 		},
 		"tree": {
-			"long": "ba933bc54ec73de24eb6e57ac5f972d0f098ace5",
-			"short": "ba933bc54"
+			"long": "66eec0b125af640e93c238d657e9dbdbe7a4d7f6",
+			"short": "66eec0b1"
 		},
 		"author": {
-			"name": "Ross Nicoll",
-			"email": "jrn@jrn.me.uk",
-			"date": "2021-07-15T20:08:25.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-25T12:04:06.000Z"
 		},
 		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-07-15T20:08:25.000Z"
+			"name": "Mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-25T12:04:06.000Z"
 		},
-		"parent": "102d3735f2e00fc2ca0950562051a6a51c098293 9e988ab26e0eaeffeeb32592d082ec31b6f15cfc",
-		"subject": "Merge pull request #2217 from pjhwa/qt-trans-ko-2214",
-		"body": "Fix errors of bitcoin_ko_KR.ts file for 1.14.4-dev"
+		"subject": "Updated documentation in log user data",
+		"body": "",
+		"parent": "60fefddd24ad068a271635fb7059d2a180a38317"
 	},
 	{
 		"commit": {
-			"long": "cc0d6ada81a163b3c7dfa077e656357f93823cfc",
-			"short": "cc0d6ada8"
+			"long": "60fefddd24ad068a271635fb7059d2a180a38317",
+			"short": "60fefddd"
 		},
 		"tree": {
-			"long": "63fc3003ff6411f08abbe8c0aea0bbd891574dad",
-			"short": "63fc3003f"
+			"long": "c1fad2456b309296d8a5bd0fdd8c59614ff6a15a",
+			"short": "c1fad245"
 		},
 		"author": {
-			"name": "Khakim Hudaya",
-			"email": "hamas182@gmail.com",
-			"date": "2021-07-15T16:56:13.000Z"
+			"name": "mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-25T11:57:31.000Z"
 		},
 		"committer": {
-			"name": "Khakim Hudaya",
-			"email": "hamas182@gmail.com",
-			"date": "2021-07-15T16:56:13.000Z"
+			"name": "mar",
+			"email": "marb.gstocks@gmail.com",
+			"date": "2021-02-25T11:57:31.000Z"
 		},
-		"parent": "5857ea327577aaf87e109976bdab71b03bc0febf",
-		"subject": "Fixing few missed words and making translation more casual",
-		"body": ""
+		"subject": "Fixed bug in log user data",
+		"body": "",
+		"parent": "b56c5ee28dc4d95330fdcf48706c17dce53c9cbd"
 	}
 ]
