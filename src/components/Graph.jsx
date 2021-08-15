@@ -18,6 +18,69 @@ export default function Graph() {
         else setSelectedCommit(selectedHash);
     };
 
+    const calculateGraph = (sortedCommits) => {
+        // Return if there are no commits
+        if (!sortedCommits.length) return [];
+
+        // Branches
+        var branches = [new Array(sortedCommits.length).fill(false)];
+
+        // Find parent I index
+        const findParent = (hash) => {
+            for (let i = 0; i < sortedCommits.length; i++) if (sortedCommits[i].commit.long === hash) return i;
+            return -1;
+        };
+
+        // Place branch
+        // const placeBranch = (minI, maxI, branch, i) => {
+        //     while (branch >= branches.length) branches.push(new Array(sortedCommits.length).fill(false));
+
+        //     if (i > maxI) return true;
+
+        //     if (!branches[branch][i]) {
+        //         if (placeBranch(minI, maxI, branch, i + 1)) {
+        //             branches[branch][i] = true;
+        //             return true;
+        //         } else return false;
+        //     } else return false;
+        // };
+
+        // // Find Start and Finish of a branch
+        // const getMaxI = (currCommitI, minI) => {
+        //     // Set commit as explored
+        //     sortedCommits[currCommitI].explored = true;
+
+        //     // No Parent
+        //     if (!("parent" in sortedCommits[currCommitI]) || sortedCommits[currCommitI].parent.length <= 0) {
+        //     }
+
+        //     // One Parent
+        //     else if (sortedCommits[currCommitI].parent.length === 1) {
+        //     }
+
+        //     // Two Parents
+        //     else {
+        //     }
+
+        //     for (let i = 0; i < sortedCommits[currCommitI].parent.length; i++) {
+        //         const parentI = findParent(sortedCommits[currCommitI].parent[i]);
+
+        //         // Parent not loaded
+        //         if (parentI < 0) return storedCommits.le;
+
+        //         // Parent already explored
+        //         if ("explored" in sortedCommits[parentI]) return getMaxI(parentI, minI);
+        //     }
+        // };
+
+        // // Get Graph
+        // getMaxI(0, 0);
+
+        // console.log(sortedCommits);
+
+        return [];
+    };
+
     // #################################################
     //   COMPONENT MOUNT
     // #################################################
@@ -46,7 +109,13 @@ export default function Graph() {
 
     // On component mount
     useEffect(() => {
-        setCommits(JSON.parse(JSON.stringify(jsonData)));
+        setCommits(
+            calculateGraph(
+                JSON.parse(JSON.stringify(jsonData)).map((commit) => {
+                    return { ...commit, parent: commit.parent.split(" ") };
+                })
+            )
+        );
 
         // Subscribe to events
         window.addEventListener("resize", onResize);
@@ -70,6 +139,7 @@ export default function Graph() {
     const tree = hidden.tree ? null : <Tree commits={commits} />;
     const messages = hidden.messages ? null : <Messages commits={commits} />;
 
+    console.log(commits);
     return (
         <div className="graph">
             <div className="commits">

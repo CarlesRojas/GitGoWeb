@@ -1,6 +1,52 @@
 [
 	{
 		"commit": {
+			"long": "3bf47e73f35c8c61d59093dcd94b3f797752ee67",
+			"short": "3bf47e73f"
+		},
+		"tree": {
+			"long": "eb2a7c0c642b7ba9ad0958981567ff0a3f3dc5c5",
+			"short": "eb2a7c0c6"
+		},
+		"author": {
+			"name": "Ross Nicoll",
+			"email": "jrn@jrn.me.uk",
+			"date": "2021-08-12T19:20:38.000Z"
+		},
+		"committer": {
+			"name": "GitHub",
+			"email": "noreply@github.com",
+			"date": "2021-08-12T19:20:38.000Z"
+		},
+		"parent": "c9586396d20e2119f897aa90a7f7aaa1fceaf237 57303f1c0656817c0b80f20211423e50b9698a1b",
+		"subject": "Merge pull request #2437 from michilumin/1.14.4-mintxfee",
+		"body": "Adding startup logic where -paytxfee if lower than default, mintxfee is overridden"
+	},
+	{
+		"commit": {
+			"long": "c9586396d20e2119f897aa90a7f7aaa1fceaf237",
+			"short": "c9586396d"
+		},
+		"tree": {
+			"long": "b9cf43b5a31caf338fe736c0642581a761d43869",
+			"short": "b9cf43b5a"
+		},
+		"author": {
+			"name": "Ross Nicoll",
+			"email": "jrn@jrn.me.uk",
+			"date": "2021-08-12T19:19:31.000Z"
+		},
+		"committer": {
+			"name": "GitHub",
+			"email": "noreply@github.com",
+			"date": "2021-08-12T19:19:31.000Z"
+		},
+		"parent": "6150f6717a23e912769f9d8232774fb8e0baee2c f8813f8e134ef1994b595e06ee163b03f465d3c1",
+		"subject": "Merge pull request #2440 from michilumin/1.14.4-fees-reduced-minimums",
+		"body": "fees: Reduce minimum relay fee to 0.001 DOGE"
+	},
+	{
+		"commit": {
 			"long": "f7b2735bea69373bac1f4f9a0211bea53fb3bfbd",
 			"short": "f7b2735be"
 		},
@@ -18,7 +64,54 @@
 			"email": "carlesrojas@outlook.com",
 			"date": "2021-08-12T15:50:49.000Z"
 		},
+		"parent": "672a38cc061f801b691d9a91cd720d0a414d2e63",
 		"subject": "Delete Commit",
+		"body": ""
+	},
+	{
+		"commit": {
+			"long": "f8813f8e134ef1994b595e06ee163b03f465d3c1",
+			"short": "f8813f8e1"
+		},
+		"tree": {
+			"long": "b9cf43b5a31caf338fe736c0642581a761d43869",
+			"short": "b9cf43b5a"
+		},
+		"author": {
+			"name": "Michi Lumin",
+			"email": "michi@luskwood.org",
+			"date": "2021-08-08T17:49:12.000Z"
+		},
+		"committer": {
+			"name": "michilumin",
+			"email": "skunkie@gmail.com",
+			"date": "2021-08-11T20:16:01.000Z"
+		},
+		"parent": "6150f6717a23e912769f9d8232774fb8e0baee2c",
+		"subject": "fees: Reduce minimum relay fee to 0.001 DOGE, final change from tx to 0.01",
+		"body": ""
+	},
+	{
+		"commit": {
+			"long": "57303f1c0656817c0b80f20211423e50b9698a1b",
+			"short": "57303f1c0"
+		},
+		"tree": {
+			"long": "44de58e9d2055981629292dbecec4979510b08ae",
+			"short": "44de58e9d"
+		},
+		"author": {
+			"name": "michilumin",
+			"email": "skunkie@gmail.com",
+			"date": "2021-08-07T00:17:14.000Z"
+		},
+		"committer": {
+			"name": "michilumin",
+			"email": "skunkie@gmail.com",
+			"date": "2021-08-11T19:44:29.000Z"
+		},
+		"parent": "6150f6717a23e912769f9d8232774fb8e0baee2c",
+		"subject": "Adding startup logic where -paytxfee if lower than default, implies -mintxfee is also lowered.",
 		"body": ""
 	},
 	{
@@ -40,6 +133,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-08-09T21:50:31.000Z"
 		},
+		"parent": "3a5a31c11361d15b974356a9aa006d9335cbd4d0 c42b38ea5110008f2d74abb02ee363ea9bb64188",
 		"subject": "Merge pull request #2439 from rnicoll/1.14.4-dust-limit-type-alt",
 		"body": "Use CAmount for amounts "
 	},
@@ -62,6 +156,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-08-09T18:54:33.000Z"
 		},
+		"parent": "5db95e5a5f48eb76601946ea670ee3b2a33e2a4b 303be2e442744593d8211b520f9fe554b3bd31a2",
 		"subject": "Merge pull request #2417 from patricklodder/1.14-serialize-getheaders",
 		"body": "Reduce getheaders spam by serializing getheader requests per peer"
 	},
@@ -84,6 +179,7 @@
 			"email": "jrn@jrn.me.uk",
 			"date": "2021-08-08T20:41:35.000Z"
 		},
+		"parent": "672a38cc061f801b691d9a91cd720d0a414d2e63",
 		"subject": "Use CAmount for constant amounts too",
 		"body": ""
 	},
@@ -106,6 +202,7 @@
 			"email": "jrn@jrn.me.uk",
 			"date": "2021-08-08T17:36:15.000Z"
 		},
+		"parent": "5db95e5a5f48eb76601946ea670ee3b2a33e2a4b",
 		"subject": "Use CAmount for amounts",
 		"body": "Use CAmount rather than unsigned int for amounts for consistency\nwith other fee rate amounts.\n\nThis does change the type from unsigned int to unsigned int64, and\nwhile it is unlikely anyone would need a dust limit higher than\nunsigned int, again this ensures the theoretical maximum is in line\nwith other rates.\n"
 	},
@@ -128,6 +225,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-08-05T21:21:53.000Z"
 		},
+		"parent": "a88d53be2e46875ce95cffa31073081f40087214 2dc1adb7fe849f0be47b6e23b6b45702d8440893",
 		"subject": "Merge pull request #2348 from patricklodder/1.14-cfg-dust-limit",
 		"body": "[fees] introduce configurable hard dust limit"
 	},
@@ -150,6 +248,7 @@
 			"email": "patricklodder@users.noreply.github.com",
 			"date": "2021-08-05T16:24:20.000Z"
 		},
+		"parent": "4c46af04830cec3da6ecfbf677ef3d826a5892e6",
 		"subject": "[fees] Express policies in COIN instead of Koinu",
 		"body": ""
 	},
@@ -172,6 +271,7 @@
 			"email": "patricklodder@users.noreply.github.com",
 			"date": "2021-08-05T16:24:17.000Z"
 		},
+		"parent": "a88d53be2e46875ce95cffa31073081f40087214",
 		"subject": "[fees] introduce configurable hard dust limit",
 		"body": "Co-authored-by: Ross Nicoll <rnicoll@rnicoll.name>\n"
 	},
@@ -194,6 +294,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-08-04T20:10:44.000Z"
 		},
+		"parent": "7ebedc2aa34b498b8005cc50f75db45a5c1ede07 14a2e1ba9644d0cc59c1f773d330a8f2674ab54b",
 		"subject": "Merge pull request #2415 from rnicoll/1.14.4-rbf-fee",
 		"body": "Reduce BIP125 replace by fee increment value"
 	},
@@ -216,6 +317,7 @@
 			"email": "jrn@jrn.me.uk",
 			"date": "2021-08-04T08:30:02.000Z"
 		},
+		"parent": "1d2380df56e2a5471a306a86fa76649075f12517",
 		"subject": "consensus: Fix a rare crash bug",
 		"body": "Fix a rare crash bug where no best chain can be activated, and therefore when trying\nto find the height of the best chain via the last block triggers a null pointer dereference.\n"
 	},
@@ -238,6 +340,7 @@
 			"email": "jrn@jrn.me.uk",
 			"date": "2021-08-04T08:29:35.000Z"
 		},
+		"parent": "7ebedc2aa34b498b8005cc50f75db45a5c1ede07",
 		"subject": "p2p: Reduce BIP125 replace by fee increment value",
 		"body": ""
 	},
@@ -260,6 +363,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-08-04T08:28:08.000Z"
 		},
+		"parent": "246a103e9e0bd445d0162f46be0de97402219d99 0c3d683be4e6c0154b6666bdfd484aac3b4f2fe1",
 		"subject": "Merge pull request #2434 from patricklodder/1.14-activatebestchain-shutdown-fix",
 		"body": "bugfix: break ActivateBestChain() differently on shutdown"
 	},
@@ -282,6 +386,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-08-03T22:35:05.000Z"
 		},
+		"parent": "290faedcc34d027620ffb0c6f94333b89ffec2b3 5c6017aad4b14e53fdc5cc6b210b04059cba39f5",
 		"subject": "Merge pull request #2428 from zachlatta/1.14.4-nixos-build-instructions",
 		"body": "Add build and setup instructions for NixOS"
 	},
@@ -304,6 +409,7 @@
 			"email": "patricklodder@users.noreply.github.com",
 			"date": "2021-08-03T22:15:33.000Z"
 		},
+		"parent": "290faedcc34d027620ffb0c6f94333b89ffec2b3",
 		"subject": "bugfix: break ActivateBestChain() differently on shutdown",
 		"body": "Moves the break in ActivateBestChain() when a node is being shut\ndown from the beginning of the loop block to the end, allowing\npindexNewTip to be populated with chainActive.Tip() rather than\nits initial NULL value. Solves issues when shutting down nodes\nwhile inside the ActivateBestChain loop.\n"
 	},
@@ -326,6 +432,7 @@
 			"email": "zach@zachlatta.com",
 			"date": "2021-08-03T18:46:51.000Z"
 		},
+		"parent": "d80ddf324466ec18eed5df817ea852a96f3c8f68",
 		"subject": "Move shell.nix contents into separate file",
 		"body": ""
 	},
@@ -348,6 +455,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-08-01T08:36:55.000Z"
 		},
+		"parent": "7abb81b2ea3bd11e6d01476b2c1739d793006a83",
 		"subject": "tests: mempool_packages.py (#2433)",
 		"body": "* Bump fee to 1.0000 from 0.0001 to fix insufficient priority error"
 	},
@@ -370,6 +478,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-07-31T18:58:53.000Z"
 		},
+		"parent": "6bea578da04b0c8bf14b3d943243854c06857b63 575f734eec14b122b2e460dcefb56a54840ea479",
 		"subject": "Merge pull request #2368 from michilumin/1.14.4-fees",
 		"body": "1.14.4 fees backend improvements"
 	},
@@ -392,6 +501,7 @@
 			"email": "michi@dogecoin.com",
 			"date": "2021-07-30T22:07:22.000Z"
 		},
+		"parent": "6bea578da04b0c8bf14b3d943243854c06857b63",
 		"subject": "Initial back end framework to separate wallet and relay fees + dust.",
 		"body": ""
 	},
@@ -414,6 +524,7 @@
 			"email": "zach@zachlatta.com",
 			"date": "2021-07-30T16:09:11.000Z"
 		},
+		"parent": "6bea578da04b0c8bf14b3d943243854c06857b63",
 		"subject": "Add build and setup instructions for NixOS",
 		"body": ""
 	},
@@ -436,6 +547,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-07-29T00:00:57.000Z"
 		},
+		"parent": "a7442cbfb032bf2fb69badc46f3dd7307c50bd2f 7e541072ce5ef7336b527b44b736c3aaa3cb066b",
 		"subject": "Merge pull request #2426 from xanimo/1.14.4-qa",
 		"body": "update qa/README.md to reflect working installation instructions"
 	},
@@ -458,6 +570,7 @@
 			"email": "dakoda@xanimo.net",
 			"date": "2021-07-28T23:12:52.000Z"
 		},
+		"parent": "a7442cbfb032bf2fb69badc46f3dd7307c50bd2f",
 		"subject": "update qa/README.md to reflect working installation instructions",
 		"body": ""
 	},
@@ -480,6 +593,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-07-26T22:48:44.000Z"
 		},
+		"parent": "7e7f7e2cfd46485896aee6c97880c7c1c587b969 3c4b35f3c447d8f0f4b6858f33ad5db93cc7e208",
 		"subject": "Merge pull request #2423 from patricklodder/1.14-codeql-reduce-trigger",
 		"body": "[qa] reduce CodeQL triggers to exclude non-compiled code"
 	},
@@ -502,6 +616,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-07-25T19:38:21.000Z"
 		},
+		"parent": "cfef80c54c79c835b510b5337af0486f562582e2 9362186ba795b180c3d2cc42244d2a3f05bfeb5c",
 		"subject": "Merge pull request #2422 from rnicoll/1.14.4-rbf-fee-test",
 		"body": "Fixup replace-by-fee qa test values and now runs this test by default on CI"
 	},
@@ -524,6 +639,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-07-25T19:12:49.000Z"
 		},
+		"parent": "f509487d3b8b60954500813e82fefa9237dc6974 c7a1b7c90cd6981321924991d7bd05f77a3cc7db",
 		"subject": "Merge pull request #2249 from rnicoll/1.14-fix-magic-numbers",
 		"body": "1.14 fix magic numbers"
 	},
@@ -546,6 +662,7 @@
 			"email": "jrn@jrn.me.uk",
 			"date": "2021-07-25T18:48:53.000Z"
 		},
+		"parent": "e4dccd20aef24a0aab547857898e34a31ae8e02e",
 		"subject": "tests: Fix replace-by-fee values for Dogecoin",
 		"body": ""
 	},
@@ -568,6 +685,7 @@
 			"email": "patricklodder@users.noreply.github.com",
 			"date": "2021-07-25T18:45:45.000Z"
 		},
+		"parent": "f509487d3b8b60954500813e82fefa9237dc6974",
 		"subject": "[qa] reduce CodeQL triggers to exclude non-compiled code",
 		"body": "contrib, doc, share and qa do not compile production code, skip\nCodeQL on PRs to save everyone time and GitHub some cpu ticks.\n"
 	},
@@ -590,6 +708,7 @@
 			"email": "jrn@jrn.me.uk",
 			"date": "2021-07-25T18:32:23.000Z"
 		},
+		"parent": "e4dccd20aef24a0aab547857898e34a31ae8e02e",
 		"subject": "Trivial: Fix Magic Numbers in key and pubkey - fixes #1968",
 		"body": ""
 	},
@@ -612,6 +731,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-07-24T17:19:36.000Z"
 		},
+		"parent": "e4dccd20aef24a0aab547857898e34a31ae8e02e 36bde0efca8784b8c2f44b3d02ab641e4e205ce8",
 		"subject": "Merge pull request #2236 from sabotagebeats/fix/issues/2149",
 		"body": "Utils and libraries: Update ZMQ to 4.3.4"
 	},
@@ -634,6 +754,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-07-24T15:32:58.000Z"
 		},
+		"parent": "df3b708e8c6eec6a5c3aa104febac9b4297d796c cc0d6ada81a163b3c7dfa077e656357f93823cfc",
 		"subject": "Merge pull request #1941 from elybin/fixing-indonesian-translation",
 		"body": "Fixing indonesian (id_ID) translation"
 	},
@@ -656,6 +777,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-07-23T21:17:00.000Z"
 		},
+		"parent": "2b9519ea1ee6ac692904f378e89e5d0bf6d4ed7c 8e46b60b2fb692310c2869caf85e138e4d495cb0",
 		"subject": "Merge pull request #2420 from nformant1/nformant1-patch-1",
 		"body": "Fix RPC port documentation in RPC help"
 	},
@@ -678,6 +800,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-07-23T20:54:13.000Z"
 		},
+		"parent": "dad797d01b134a6dd663b4e749093da3ef09fa40 f4f7759649941820117d8c22f3d0a5b93cd8a200",
 		"subject": "Merge pull request #2418 from xanimo/1.14.4-fix-seed-init",
 		"body": "initialize fixed seeds"
 	},
@@ -700,6 +823,7 @@
 			"email": "dakoda@xanimo.net",
 			"date": "2021-07-23T20:07:29.000Z"
 		},
+		"parent": "dad797d01b134a6dd663b4e749093da3ef09fa40",
 		"subject": "initialize fixed seeds",
 		"body": "seed initialization was commented out on mainnet\nand testnet.\n"
 	},
@@ -722,6 +846,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-07-22T20:44:32.000Z"
 		},
+		"parent": "97f95559c5ed8c986bcaee3252af5bf89e014f77 4f3851a722d7c3de451a5c05effebccfe6d2b380",
 		"subject": "Merge pull request #2308 from alamshafil/doge-tips",
 		"body": "[QT] Add tips section"
 	},
@@ -744,6 +869,7 @@
 			"email": "36016500+alamshafil@users.noreply.github.com",
 			"date": "2021-07-22T20:04:57.000Z"
 		},
+		"parent": "313a2b172246916825ea93f66677c7ebbd725251",
 		"subject": "Add tips section",
 		"body": "Add more tips\n\nAllow QT translations\n\nFix tips\n"
 	},
@@ -766,6 +892,7 @@
 			"email": "patricklodder@users.noreply.github.com",
 			"date": "2021-07-22T17:48:09.000Z"
 		},
+		"parent": "97f95559c5ed8c986bcaee3252af5bf89e014f77",
 		"subject": "Reduce getheaders spam by serializing getheader requests per peer",
 		"body": "Introduces a counter for getheader requests that have been sent to\na peer but are pending response, reducing the number of parallel\nrequests a node pushes out to its peers when needing to sync large\namounts of headers. All getheader requests are serialized during\ninitial sync, except when a non-connecting header is received,\nallowing the node to resolve issues with peers sending faulty\nblocks using the DoS mechanism, and when we get an inv for a block\nthat we do not know, because it's possible we're only connected to\nlegacy nodes that do not implement header announcement properly.\n"
 	},
@@ -788,6 +915,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-07-22T08:49:47.000Z"
 		},
+		"parent": "97f95559c5ed8c986bcaee3252af5bf89e014f77",
 		"subject": "Update server.cpp",
 		"body": "Changed RPC port from 8332 (BTC) to 22555 (Dogecoin)"
 	},
@@ -810,6 +938,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-07-20T20:51:27.000Z"
 		},
+		"parent": "72008c5a0eacd0783e6c1f9c39e86cb03d2e8872 164d0b2e83be39de1803d838594f6d3c547dc7c3",
 		"subject": "Merge pull request #2413 from dogecoin/revert-2342-issue-2340-depends-build-dependencies-readme",
 		"body": "Correct #2342 - \"added requirements to dependencies build README\""
 	},
@@ -832,6 +961,7 @@
 			"email": "patricklodder@users.noreply.github.com",
 			"date": "2021-07-20T18:55:16.000Z"
 		},
+		"parent": "f9084e53d1edd5c4a316088fc5f4c2ebe19f7cc2",
 		"subject": "depends: Add required packages to build",
 		"body": ""
 	},
@@ -854,6 +984,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-07-20T18:17:11.000Z"
 		},
+		"parent": "72008c5a0eacd0783e6c1f9c39e86cb03d2e8872",
 		"subject": "Revert \"added requirements to dependencies build README\"",
 		"body": ""
 	},
@@ -876,6 +1007,7 @@
 			"email": "27985126+sabotagebeats@users.noreply.github.com",
 			"date": "2021-07-18T22:06:51.000Z"
 		},
+		"parent": "72008c5a0eacd0783e6c1f9c39e86cb03d2e8872",
 		"subject": "Utils and libraries: Update ZMQ to 4.3.4",
 		"body": ""
 	},
@@ -898,6 +1030,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-07-18T21:14:40.000Z"
 		},
+		"parent": "c984ff17a4ed1f81b725f27c6c52194361280fef 7d81c1bb17c8bb173b5b5de4047d7c3c93a42da8",
 		"subject": "Merge pull request #2410 from patricklodder/1.14.4-explicit-gui-ci",
 		"body": "[ci] make dogecoin-qt builds explicit"
 	},
@@ -920,6 +1053,7 @@
 			"email": "patricklodder@users.noreply.github.com",
 			"date": "2021-07-17T19:38:21.000Z"
 		},
+		"parent": "c984ff17a4ed1f81b725f27c6c52194361280fef",
 		"subject": "ci: make dogecoin-qt builds explicit",
 		"body": "CI will not complain if there were an error with qt for builds that\ndo not explicitly specify that we want to build UI. This makes all\nbuilds expect QT except the i686-linux and armhf builds.\n"
 	},
@@ -942,6 +1076,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-07-17T17:39:24.000Z"
 		},
+		"parent": "869aad50af414884e24e6766a1058386665c92e3 023fc6d529657964e62ea481788aebf5abd0dfeb",
 		"subject": "Merge pull request #2312 from rnicoll/1.14.4-subsidy-tests",
 		"body": "Rewrite subsidy limit tests (1.14)"
 	},
@@ -964,6 +1099,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-07-17T16:35:59.000Z"
 		},
+		"parent": "9d507be2aefebd8a980b51b78953e4e7a3f5c0a0 cf04b907ef658b0bf21309d2ed1984f0af3215d5",
 		"subject": "Merge pull request #2325 from rnicoll/1.14.4-libevent",
 		"body": "depends: Update libevent to 2.1.11"
 	},
@@ -986,6 +1122,7 @@
 			"email": "noreply@github.com",
 			"date": "2021-07-15T20:08:25.000Z"
 		},
+		"parent": "102d3735f2e00fc2ca0950562051a6a51c098293 9e988ab26e0eaeffeeb32592d082ec31b6f15cfc",
 		"subject": "Merge pull request #2217 from pjhwa/qt-trans-ko-2214",
 		"body": "Fix errors of bitcoin_ko_KR.ts file for 1.14.4-dev"
 	},
@@ -1008,95 +1145,8 @@
 			"email": "hamas182@gmail.com",
 			"date": "2021-07-15T16:56:13.000Z"
 		},
+		"parent": "5857ea327577aaf87e109976bdab71b03bc0febf",
 		"subject": "Fixing few missed words and making translation more casual",
-		"body": ""
-	},
-	{
-		"commit": {
-			"long": "5857ea327577aaf87e109976bdab71b03bc0febf",
-			"short": "5857ea327"
-		},
-		"tree": {
-			"long": "0c258dad705f75cb7b5894054f74c22c002332ce",
-			"short": "0c258dad7"
-		},
-		"author": {
-			"name": "Ross Nicoll",
-			"email": "jrn@jrn.me.uk",
-			"date": "2021-07-14T20:47:41.000Z"
-		},
-		"committer": {
-			"name": "Khakim Hudaya",
-			"email": "hamas182@gmail.com",
-			"date": "2021-07-15T15:59:35.000Z"
-		},
-		"subject": "Correct XML errors",
-		"body": ""
-	},
-	{
-		"commit": {
-			"long": "694e0b817650278b721d0eeddaf6aedd92e94eaf",
-			"short": "694e0b817"
-		},
-		"tree": {
-			"long": "073c3a6efdca03b802ca917ecbf65f1ddc29a512",
-			"short": "073c3a6ef"
-		},
-		"author": {
-			"name": "Khakim Hudaya",
-			"email": "hamas182@gmail.com",
-			"date": "2021-05-15T14:13:38.000Z"
-		},
-		"committer": {
-			"name": "Khakim Hudaya",
-			"email": "hamas182@gmail.com",
-			"date": "2021-07-15T15:59:35.000Z"
-		},
-		"subject": "Fixing indonesian translation",
-		"body": ""
-	},
-	{
-		"commit": {
-			"long": "102d3735f2e00fc2ca0950562051a6a51c098293",
-			"short": "102d3735f"
-		},
-		"tree": {
-			"long": "2c8aa2adb951a15c40401e7805ce0070d8050e5c",
-			"short": "2c8aa2adb"
-		},
-		"author": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-14T21:36:08.000Z"
-		},
-		"committer": {
-			"name": "GitHub",
-			"email": "noreply@github.com",
-			"date": "2021-07-14T21:36:08.000Z"
-		},
-		"subject": "Merge pull request #2395 from lee5378/1.14.4-dev",
-		"body": "Docs - Improve block/reward table formatting in primary readme"
-	},
-	{
-		"commit": {
-			"long": "1c12362df6058cf2658b9afc3173a8e570068b5f",
-			"short": "1c12362df"
-		},
-		"tree": {
-			"long": "34a65181b75440e803263042aaeb269539dc0def",
-			"short": "34a65181b"
-		},
-		"author": {
-			"name": "lee5378",
-			"email": "lee5378@alumni.uidaho.edu",
-			"date": "2021-07-13T22:23:16.000Z"
-		},
-		"committer": {
-			"name": "Patrick Lodder",
-			"email": "patricklodder@users.noreply.github.com",
-			"date": "2021-07-14T21:29:06.000Z"
-		},
-		"subject": "[doc] Display block subsidy in a nice looking table",
 		"body": ""
 	}
 ]
