@@ -21,6 +21,7 @@ $mobileWidth: 768px;
 
 $toolbarHeight: 3rem;
 $commitRowHeight: 2rem;
+$graphPadding: 4rem;
 
 // #######################################
 //      MIXINS
@@ -230,20 +231,20 @@ input[type="number"] {
 // #######################################
 
 .graph {
-    width: fit-content;
+    width: calc(100% - 15rem);
     position: relative;
     flex-grow: 1;
     display: flex;
     overflow: auto;
+    padding: $graphPadding;
 
     .commits {
         position: absolute;
-        width: 100%;
+        width: calc(100% - #{$graphPadding * 2});
 
         .commit {
             height: $commitRowHeight;
-            margin: 0 $commitRowHeight * 0.1;
-            width: calc(100% - #{$commitRowHeight * 0.2});
+            width: 100%;
             border-radius: 0.2rem;
             cursor: pointer;
 
@@ -254,6 +255,25 @@ input[type="number"] {
             &.selected {
                 background-color: rgba(0, 0, 0, 0.08);
             }
+        }
+    }
+
+    .gradient {
+        background: transparent;
+        position: fixed;
+        left: $graphPadding;
+        right: 15rem + $graphPadding;
+        height: $graphPadding;
+        z-index: 100;
+
+        &.top {
+            top: $toolbarHeight;
+            background: linear-gradient(180deg, rgba(245, 245, 245, 1) 80%, rgba(245, 245, 245, 0) 100%);
+        }
+
+        &.bottom {
+            bottom: 0;
+            background: linear-gradient(0deg, rgba(245, 245, 245, 1) 80%, rgba(245, 245, 245, 0) 100%);
         }
     }
 }
@@ -277,6 +297,8 @@ input[type="number"] {
     position: relative;
     height: fit-content;
     z-index: 10;
+    pointer-events: none;
+    overflow: visible;
 
     .node {
         position: relative;
@@ -344,6 +366,7 @@ input[type="number"] {
         width: 100%;
         font-size: 0.7rem;
         font-weight: 600;
-        line-height: $commitRowHeight * 0.9;
+        display: flex;
+        align-items: center;
     }
 }

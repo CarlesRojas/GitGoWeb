@@ -1,11 +1,11 @@
 import React, { useRef, useEffect, useState, memo } from "react";
 import classnames from "classnames";
 
-const Tree = memo(({ commits, numColumns, mappedCommits }) => {
+const Tree = memo(({ commits, numColumns, mappedCommits, branches }) => {
     // export default function Tree({ commits, numColumns, mappedCommits }) {
 
     // Colors for branches
-    const colors = useRef(["#82b4ff", "#de82ff", "#ff8282", "#ffb882", "#fffb82", "#b6ff82"]);
+    const colors = useRef(["#82b4ff", "#de82ff", "#ff8282", "#ffb882", "#82ffa1"]);
 
     // Node refs
     const nodes = useRef([]);
@@ -20,6 +20,22 @@ const Tree = memo(({ commits, numColumns, mappedCommits }) => {
     useEffect(() => {
         if (!nodes.current.length) return;
 
+        // Check if first on a branch
+        // const isFirstInBranch = (hash) => {
+        //     for (let i = 0; i < branches.length; i++) {
+        //         if ("commits" in branches[i] && branches[i].commits.length && hash === branches[i].commits[0]) return true;
+        //     }
+        //     return false;
+        // };
+
+        // Check if last on a branch
+        const isLastInBranch = (hash) => {
+            for (let i = 0; i < branches.length; i++) {
+                if ("commits" in branches[i] && branches[i].commits.length && hash === branches[i].commits[branches[i].commits.length - 1]) return true;
+            }
+            return false;
+        };
+
         var edgesInfo = [];
 
         // Save edge info in each commit
@@ -32,45 +48,50 @@ const Tree = memo(({ commits, numColumns, mappedCommits }) => {
 
             for (let j = 0; j < commits[i].parent.length; j++) {
                 const targetI = mappedCommits[commits[i].parent[j]];
-                if (!targetI) continue;
+                if (!targetI) {
+                    var targetCenterX = sourceCenterX;
+                    var targetCenterY = nodes.current[nodes.current.length - 1].offsetTop + nodes.current[nodes.current.length - 1].offsetHeight * 2;
+                } else {
+                    // Get target commit node center
+                    targetCenterX = nodes.current[targetI].offsetLeft + nodes.current[targetI].offsetWidth / 2;
+                    targetCenterY = nodes.current[targetI].offsetTop + nodes.current[targetI].offsetHeight / 2;
+                }
 
-                // Get target commit node center
-                var targetCenterX = nodes.current[targetI].offsetLeft + nodes.current[targetI].offsetWidth / 2;
-                var targetCenterY = nodes.current[targetI].offsetTop + nodes.current[targetI].offsetHeight / 2;
+                // Is commit last in branch
+                var sourceLastInBranch = isLastInBranch(commits[i].commit.long);
 
                 // Calculate sizes
                 var top = Math.min(sourceCenterY, targetCenterY);
                 var left = Math.min(sourceCenterX, targetCenterX);
                 var width = Math.max(sourceCenterX, targetCenterX) - left;
                 var height = Math.max(sourceCenterY, targetCenterY) - top;
-
-                var type = width === 0 ? "left" : targetCenterX > sourceCenterX ? "topRight" : "bottomRight";
+                var type = width === 0 ? "left" : targetCenterX > sourceCenterX ? "topRight" : sourceLastInBranch ? "bottomRight" : "topLeft";
+                // var colorIndex = targetI && isFirstInBranch(commits[i].parent[j]) ? targetI : i;
+                var colorIndex = sourceLastInBranch || !targetI ? i : targetI;
 
                 // Save Edge
                 edgesInfo.push({
-                    key: commits[i].commit.long + " " + commits[targetI].commit.long,
+                    key: commits[i].commit.long + " " + commits[i].parent[j],
                     top: top - 2,
                     left: left - 2,
                     width: width + 4,
                     height: height + 4,
                     type,
-                    color: colors.current[commits[i].column % colors.current.length],
+                    color: colors.current[commits[colorIndex].column % colors.current.length],
                 });
             }
         }
 
         // Set edges
         setEdges(edgesInfo);
-    }, [commits, mappedCommits]);
+    }, [commits, mappedCommits, branches]);
 
     // #################################################
     //   RENDER
     // #################################################
 
-    console.log("render");
-
     return (
-        <div className="tree" style={{ width: `${numColumns * 2}rem` }}>
+        <div className="tree" style={{ width: `${numColumns * 2}rem`, maxWidth: `${numColumns * 2}rem`, minWidth: `${numColumns * 2}rem` }}>
             {edges.map(({ key, top, left, width, height, type, color }) => {
                 return (
                     <div

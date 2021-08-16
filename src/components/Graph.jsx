@@ -106,11 +106,6 @@ export default function Graph() {
 
         // Find the max and min of each branch
         const findBranchesMinAndMax = () => {
-            // Get comit branch index
-            // const getCommitBranchIndex = (hash) => {
-            //     for (let i = 0; i < branches.current.length; i++) if (branches.current[i].commits.includes(hash)) return true;
-            // };
-
             for (let i = 0; i < branches.current.length; i++) {
                 const firstCommitI = mappedCommits.current[branches.current[i].commits[0]];
                 const lastCommitI = mappedCommits.current[branches.current[i].commits[branches.current[i].commits.length - 1]];
@@ -123,7 +118,6 @@ export default function Graph() {
                     for (let j = 0; j < sortedCommits[firstCommitI].children.length; j++) {
                         // Ignore children if in a branch to the right
                         const children = sortedCommits[firstCommitI].children[j];
-                        // if (getCommitBranchIndex(children) > i) continue;
 
                         const childrenI = mappedCommits.current[children];
                         if (!childrenI) continue;
@@ -140,14 +134,18 @@ export default function Graph() {
                     for (let j = 0; j < sortedCommits[lastCommitI].parent.length; j++) {
                         // Ignore children if in a branch to the right
                         const parent = sortedCommits[lastCommitI].parent[j];
-                        // if (getCommitBranchIndex(parent) > i) continue;
 
                         const parentI = mappedCommits.current[parent];
-                        if (!parentI) continue;
+                        if (!parentI) maxParent = sortedCommits.length - 1;
                         else maxParent = Math.max(parentI, maxParent);
                     }
                     branches.current[i]["max"] = maxParent;
                 } else branches.current[i]["max"] = lastCommitI;
+
+                if (sortedCommits[firstCommitI].commit.long.includes("7ca09a8ce63dbe2591556a16b02b48548ff3774b")) {
+                    console.log(branches.current[i]);
+                    console.log(branches.current[i]["min"] + " " + branches.current[i]["max"]);
+                }
             }
         };
 
@@ -277,7 +275,7 @@ export default function Graph() {
     // #################################################
 
     // Components to render
-    const treeDOM = hidden.tree ? null : <Tree commits={commits} numColumns={numColumns.current} mappedCommits={mappedCommits.current} />;
+    const treeDOM = hidden.tree ? null : <Tree commits={commits} numColumns={numColumns.current} mappedCommits={mappedCommits.current} branches={branches.current} />;
     const messagesDOM = hidden.messages ? null : <Messages commits={commits} />;
 
     return (
@@ -289,6 +287,9 @@ export default function Graph() {
             </div>
             {treeDOM}
             {messagesDOM}
+
+            <div className="gradient top"></div>
+            <div className="gradient bottom"></div>
         </div>
     );
 }
