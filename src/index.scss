@@ -241,18 +241,18 @@ input[type="number"] {
         width: 100%;
 
         .commit {
-            height: $commitRowHeight * 0.9;
-            margin: $commitRowHeight * 0.1;
+            height: $commitRowHeight;
+            margin: 0 $commitRowHeight * 0.1;
             width: calc(100% - #{$commitRowHeight * 0.2});
             border-radius: 0.2rem;
             cursor: pointer;
 
             &:hover {
-                background-color: rgba(0, 0, 0, 0.05);
+                background-color: rgba(0, 0, 0, 0.03);
             }
 
             &.selected {
-                background-color: rgba(0, 0, 0, 0.1);
+                background-color: rgba(0, 0, 0, 0.08);
             }
         }
     }
@@ -270,25 +270,60 @@ input[type="number"] {
 }
 
 // #######################################
-//      BRANCHES
-// #######################################
-
-.branches {
-    width: 10rem;
-    height: fit-content;
-    background-color: rgba(255, 196, 247, 0.411);
-    z-index: 10;
-}
-
-// #######################################
 //      TREE
 // #######################################
 
 .tree {
-    flex-grow: 1;
+    position: relative;
     height: fit-content;
-    background-color: rgba(196, 241, 255, 0.432);
     z-index: 10;
+
+    .node {
+        position: relative;
+        width: $commitRowHeight;
+        height: $commitRowHeight;
+        padding: $commitRowHeight * 0.2;
+
+        .circle {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(50, 156, 255);
+            border-radius: 100vw;
+        }
+    }
+
+    .edge {
+        position: absolute;
+        background-color: transparent;
+
+        &.left {
+            border-left: solid 4px rgba(0, 0, 0, 0.3);
+        }
+
+        &.topRight {
+            border-top-right-radius: 1rem;
+            border-top: solid 4px rgba(0, 0, 0, 0.3);
+            border-right: solid 4px rgba(0, 0, 0, 0.3);
+        }
+
+        &.topLeft {
+            border-top-left-radius: 1rem;
+            border-top: solid 4px rgba(0, 0, 0, 0.3);
+            border-left: solid 4px rgba(0, 0, 0, 0.3);
+        }
+
+        &.bottomRight {
+            border-bottom-right-radius: 1rem;
+            border-bottom: solid 4px rgba(0, 0, 0, 0.3);
+            border-right: solid 4px rgba(0, 0, 0, 0.3);
+        }
+
+        &.bottomLeft {
+            border-bottom-left-radius: 1rem;
+            border-bottom: solid 4px rgba(0, 0, 0, 0.3);
+            border-left: solid 4px rgba(0, 0, 0, 0.3);
+        }
+    }
 }
 
 // #######################################
@@ -309,6 +344,6 @@ input[type="number"] {
         width: 100%;
         font-size: 0.7rem;
         font-weight: 600;
-        line-height: $commitRowHeight;
+        line-height: $commitRowHeight * 0.9;
     }
 }
