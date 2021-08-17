@@ -65,7 +65,9 @@ export default function Messages({ commits, localBranches, remoteBranches }) {
                     );
                 })}
 
-                <div className="message">{subject}</div>
+                <div className="message" style={{ color: colors.current[column % colors.current.length] }}>
+                    {subject}
+                </div>
             </div>
         );
     };

@@ -4,6 +4,9 @@ import classnames from "classnames";
 // Contexts
 import { Data } from "../contexts/Data";
 
+// Constants
+const EDGE_WIDTH = 3;
+
 const Tree = memo(({ commits, numColumns, mappedCommits, branches }) => {
     console.log("RENDER TREE");
 
@@ -62,10 +65,10 @@ const Tree = memo(({ commits, numColumns, mappedCommits, branches }) => {
                 // Save Edge
                 edgesInfo.push({
                     key: commits[i].commit.long + " " + commits[i].parent[j],
-                    top: top - 2,
-                    left: left - 2,
-                    width: width + 4,
-                    height: height + 4,
+                    top: top - EDGE_WIDTH / 2,
+                    left: left - EDGE_WIDTH / 2,
+                    width: width + EDGE_WIDTH,
+                    height: height + EDGE_WIDTH,
                     type,
                     color: colors.current[commits[colorIndex].column % colors.current.length],
                 });
