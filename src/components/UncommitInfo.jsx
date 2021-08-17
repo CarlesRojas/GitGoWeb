@@ -1,5 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 
-export default function UncommitInfo() {
+const UncommitInfo = memo(() => {
+    console.log("RENDER UNCOMMIT INFO");
+
     return <div className="uncommitInfo"></div>;
-}
+});
+
+export default UncommitInfo;
