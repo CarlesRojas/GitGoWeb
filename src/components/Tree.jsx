@@ -2,16 +2,16 @@ import React, { useRef, useEffect, useState, memo, useContext } from "react";
 import classnames from "classnames";
 
 // Contexts
-import { Data } from "../contexts/Data";
+// import { Data } from "../contexts/Data";
 
 // Constants
 const EDGE_WIDTH = 3;
 
-const Tree = memo(({ commits, numColumns, mappedCommits, branches }) => {
+const Tree = memo(({ commits, numColumns, mappedCommits, branches, colors }) => {
     console.log("RENDER TREE");
 
     // Contexts
-    const { colors } = useContext(Data);
+    // const { colors /*, numColumns, mappedCommits, branches*/ } = useContext(Data);
 
     // Node refs
     const nodes = useRef([]);

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 // Components
 import Graph from "./components/Graph";
-import Info from "./components/Info";
+import Sidebar from "./components/Sidebar";
 import Toolbar from "./components/Toolbar";
 
 export default function App() {
@@ -44,7 +44,7 @@ export default function App() {
             <Toolbar />
             <div className="container">
                 <Graph />
-                <Info />
+                <Sidebar />
             </div>
         </div>
     );

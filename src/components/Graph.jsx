@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import classnames from "classnames";
 
 // Components
@@ -10,32 +10,19 @@ import commitsData from "../resources/commits.json";
 import localBrancesData from "../resources/localBranches.json";
 import remoteBranchesData from "../resources/remoteBranches.json";
 
+// Contexts
+import { Data } from "../contexts/Data";
+
 export default function Graph() {
     console.log("RENDER GRAPH");
 
-    const [commits, setCommits] = useState([]);
-
-    const [localBranches, setLocalBranches] = useState([]);
-    const [remoteBranches, setRemoteBranches] = useState([]);
+    // Contexts
+    const { commits, setCommits, setLocalBranches, setRemoteBranches, mappedCommits, branchMatrix, commitsWithNotLoadedParents, branches, numColumns, selectedCommit, setSelectedCommit, colors } =
+        useContext(Data);
 
     // #################################################
     //   CALCULATE GRAPH
     // #################################################
-
-    // Indicates the index of each commit in the commits array
-    const mappedCommits = useRef({});
-
-    // Matrix of the branches that indicates witch positions are occupied
-    const branchMatrix = useRef([]);
-
-    // Commits that have not loaded parents
-    const commitsWithNotLoadedParents = useRef([]);
-
-    // Branches with the commits they include, and the space they occupy in the matrix
-    const branches = useRef([]);
-
-    // Number of columns
-    const numColumns = useRef(0);
 
     // Calcualte graph. Branches & position of nodes
     const calculateGraph = (sortedCommits) => {
@@ -194,8 +181,6 @@ export default function Graph() {
     //   SELECTED COMMIT
     // #################################################
 
-    const [selectedCommit, setSelectedCommit] = useState("");
-
     // On commit clicked
     const onCommitClick = (selectedHash) => {
         if (selectedHash === selectedCommit) setSelectedCommit("");
@@ -252,6 +237,7 @@ export default function Graph() {
             // Clear timeouts
             clearTimeout(resizeTimeout);
         };
+        // eslint-disable-next-line
     }, []);
 
     // #################################################
@@ -259,8 +245,8 @@ export default function Graph() {
     // #################################################
 
     // Components to render
-    const treeDOM = hidden.tree ? null : <Tree commits={commits} numColumns={numColumns.current} mappedCommits={mappedCommits.current} branches={branches.current} />;
-    const messagesDOM = hidden.messages ? null : <Messages commits={commits} localBranches={localBranches} remoteBranches={remoteBranches} />;
+    const treeDOM = hidden.tree ? null : <Tree commits={commits} numColumns={numColumns.current} mappedCommits={mappedCommits.current} branches={branches.current} colors={colors} />;
+    const messagesDOM = hidden.messages ? null : <Messages />;
 
     return (
         <div className="graph">

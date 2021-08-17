@@ -9,9 +9,9 @@ import { Data } from "../contexts/Data";
 import LocalIcon from "../resources/icons/local.svg";
 import RemoteIcon from "../resources/icons/branch.svg";
 
-export default function Messages({ commits, localBranches, remoteBranches }) {
+export default function Messages() {
     // Contexts
-    const { colors } = useContext(Data);
+    const { commits, localBranches, remoteBranches, colors } = useContext(Data);
 
     // Get the message with its branches
     const getMessage = (currentCommit) => {
