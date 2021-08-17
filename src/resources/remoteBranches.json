@@ -1,0 +1,32 @@
+[
+	{
+		"remote": "origin",
+		"name": "LATEST",
+		"commit": "d5e58e8e5"
+	},
+	{
+		"remote": "origin",
+		"name": "PRERELEASE",
+		"commit": "93c4f26ca"
+	},
+	{
+		"remote": "origin",
+		"name": "TFGJaume",
+		"commit": "fb4a22df9"
+	},
+	{
+		"remote": "origin",
+		"name": "USB",
+		"commit": "db19a93d2"
+	},
+	{
+		"remote": "origin",
+		"name": "branch_from_release_1.1.13",
+		"commit": "d8c2838a5"
+	},
+	{
+		"remote": "origin",
+		"name": "master",
+		"commit": "d5e58e8e5"
+	}
+]

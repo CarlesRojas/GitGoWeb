@@ -1,0 +1,19 @@
+[
+	{
+		"name": "LATEST",
+		"commit": "d5e58e8e5"
+	},
+	{
+		"name": "USB",
+		"commit": "db19a93d2"
+	},
+	{
+		"name": "delete",
+		"commit": "57d942ab4"
+	},
+	{
+		"current": true,
+		"name": "master",
+		"commit": "d5e58e8e5"
+	}
+]

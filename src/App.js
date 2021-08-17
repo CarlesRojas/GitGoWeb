@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 // Components
 import Graph from "./components/Graph";
@@ -17,12 +17,27 @@ export default function App() {
     //     console.log(message.data);
     // };
 
-    // useEffect(() => {
-    //     window.addEventListener("message", recieveMessage);
-    //     return () => {
-    //         window.removeEventListener("message", recieveMessage);
-    //     };
-    // }, []);
+    // On context menu clicked
+    const onContextMenu = (event) => {
+        event.preventDefault();
+    };
+
+    // #################################################
+    //   COMPONENT MOUNT
+    // #################################################
+
+    useEffect(() => {
+        //window.addEventListener("message", recieveMessage);
+        window.addEventListener("contextmenu", onContextMenu);
+        return () => {
+            //window.removeEventListener("message", recieveMessage);
+            window.removeEventListener("contextmenu", onContextMenu);
+        };
+    }, []);
+
+    // #################################################
+    //   RENDER
+    // #################################################
 
     return (
         <div className="app">

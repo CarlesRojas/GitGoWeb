@@ -1,21 +1,20 @@
-import React, { useRef, useEffect, useState, memo } from "react";
+import React, { useRef, useEffect, useState, memo, useContext } from "react";
 import classnames from "classnames";
 
-const Tree = memo(({ commits, numColumns, mappedCommits, branches }) => {
-    // export default function Tree({ commits, numColumns, mappedCommits }) {
+// Contexts
+import { Data } from "../contexts/Data";
 
-    // Colors for branches
-    const colors = useRef(["#82b4ff", "#de82ff", "#ff8282", "#ffb882", "#82ffa1"]);
+const Tree = memo(({ commits, numColumns, mappedCommits, branches }) => {
+    console.log("RENDER TREE");
+
+    // Contexts
+    const { colors } = useContext(Data);
 
     // Node refs
     const nodes = useRef([]);
 
     // Edges
     const [edges, setEdges] = useState([]);
-
-    // #################################################
-    //   COMPONENT MOUNT
-    // #################################################
 
     useEffect(() => {
         if (!nodes.current.length) return;
@@ -75,7 +74,7 @@ const Tree = memo(({ commits, numColumns, mappedCommits, branches }) => {
 
         // Set edges
         setEdges(edgesInfo);
-    }, [commits, mappedCommits, branches]);
+    }, [commits, mappedCommits, branches, colors]);
 
     // #################################################
     //   RENDER

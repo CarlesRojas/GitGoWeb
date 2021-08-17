@@ -6,10 +6,17 @@ import Tree from "./Tree";
 import Messages from "./Messages";
 
 // ROJAS REMOVE
-import jsonData from "../resources/commits.json";
+import commitsData from "../resources/commits.json";
+import localBrancesData from "../resources/localBranches.json";
+import remoteBranchesData from "../resources/remoteBranches.json";
 
 export default function Graph() {
+    console.log("RENDER GRAPH");
+
     const [commits, setCommits] = useState([]);
+
+    const [localBranches, setLocalBranches] = useState([]);
+    const [remoteBranches, setRemoteBranches] = useState([]);
 
     // #################################################
     //   CALCULATE GRAPH
@@ -223,9 +230,12 @@ export default function Graph() {
 
     // On component mount
     useEffect(() => {
+        setLocalBranches(JSON.parse(JSON.stringify(localBrancesData)));
+        setRemoteBranches(JSON.parse(JSON.stringify(remoteBranchesData)));
+
         setCommits(
             calculateGraph(
-                JSON.parse(JSON.stringify(jsonData)).map((commit) => {
+                JSON.parse(JSON.stringify(commitsData)).map((commit) => {
                     return { ...commit, parent: commit.parent.split(" ") };
                 })
             )
@@ -250,7 +260,7 @@ export default function Graph() {
 
     // Components to render
     const treeDOM = hidden.tree ? null : <Tree commits={commits} numColumns={numColumns.current} mappedCommits={mappedCommits.current} branches={branches.current} />;
-    const messagesDOM = hidden.messages ? null : <Messages commits={commits} />;
+    const messagesDOM = hidden.messages ? null : <Messages commits={commits} localBranches={localBranches} remoteBranches={remoteBranches} />;
 
     return (
         <div className="graph">
