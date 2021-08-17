@@ -379,6 +379,7 @@ input[type="number"] {
         }
 
         .branch {
+            min-width: fit-content;
             position: relative;
             display: flex;
             align-items: center;
@@ -405,11 +406,15 @@ input[type="number"] {
         }
 
         .message {
-            display: flex;
-            align-items: center;
+            height: $commitRowHeight * 0.8;
+            width: 100%;
+            overflow: hidden;
             margin-left: 0.3rem;
             font-size: 0.7rem;
             font-weight: 600;
+            text-overflow: ellipsis;
+            line-height: $commitRowHeight * 0.8;
+            white-space: nowrap;
         }
     }
 }
