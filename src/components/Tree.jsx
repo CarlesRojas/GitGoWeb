@@ -20,14 +20,6 @@ const Tree = memo(({ commits, numColumns, mappedCommits, branches }) => {
     useEffect(() => {
         if (!nodes.current.length) return;
 
-        // Check if first on a branch
-        // const isFirstInBranch = (hash) => {
-        //     for (let i = 0; i < branches.length; i++) {
-        //         if ("commits" in branches[i] && branches[i].commits.length && hash === branches[i].commits[0]) return true;
-        //     }
-        //     return false;
-        // };
-
         // Check if last on a branch
         const isLastInBranch = (hash) => {
             for (let i = 0; i < branches.length; i++) {
@@ -66,7 +58,6 @@ const Tree = memo(({ commits, numColumns, mappedCommits, branches }) => {
                 var width = Math.max(sourceCenterX, targetCenterX) - left;
                 var height = Math.max(sourceCenterY, targetCenterY) - top;
                 var type = width === 0 ? "left" : targetCenterX > sourceCenterX ? "topRight" : sourceLastInBranch ? "bottomRight" : "topLeft";
-                // var colorIndex = targetI && isFirstInBranch(commits[i].parent[j]) ? targetI : i;
                 var colorIndex = (sourceLastInBranch && targetCenterX < sourceCenterX) || !targetI ? i : targetI;
 
                 // Save Edge
