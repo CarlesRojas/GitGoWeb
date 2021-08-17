@@ -67,7 +67,7 @@ const Tree = memo(({ commits, numColumns, mappedCommits, branches }) => {
                 var height = Math.max(sourceCenterY, targetCenterY) - top;
                 var type = width === 0 ? "left" : targetCenterX > sourceCenterX ? "topRight" : sourceLastInBranch ? "bottomRight" : "topLeft";
                 // var colorIndex = targetI && isFirstInBranch(commits[i].parent[j]) ? targetI : i;
-                var colorIndex = sourceLastInBranch || !targetI ? i : targetI;
+                var colorIndex = (sourceLastInBranch && targetCenterX < sourceCenterX) || !targetI ? i : targetI;
 
                 // Save Edge
                 edgesInfo.push({

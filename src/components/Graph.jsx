@@ -70,8 +70,8 @@ export default function Graph() {
                 return;
             }
 
-            // One Parent
-            else if (sortedCommits[currCommitI].parent.length === 1) {
+            // Has at least one parent
+            else if (sortedCommits[currCommitI].parent.length >= 1) {
                 // Parent commit
                 var parentCommitI = mappedCommits.current[sortedCommits[currCommitI].parent[0]];
 
@@ -80,88 +80,64 @@ export default function Graph() {
                 // If parent is not already explored -> Keep exploring
                 else if (!isExplored(parentCommitI)) exploreBranch(parentCommitI, branchI);
             }
-
-            // Two Parents
-            else {
-                // First parent commit
-                var firstParentCommitI = mappedCommits.current[sortedCommits[currCommitI].parent[0]];
-
-                // If parent is not loaded
-                if (!firstParentCommitI) commitsWithNotLoadedParents.current.push(sortedCommits[currCommitI].parent[0]);
-                // If first parent is not already explored -> Keep exploring
-                else if (!isExplored(firstParentCommitI)) exploreBranch(firstParentCommitI, branchI);
-
-                // Second parent commit
-                var secondParentCommitI = mappedCommits.current[sortedCommits[currCommitI].parent[1]];
-
-                // If parent is not loaded
-                if (!secondParentCommitI) commitsWithNotLoadedParents.current.push(sortedCommits[currCommitI].parent[1]);
-                // If second parent is not already explored -> Start new branch with the second parent
-                else if (!isExplored(secondParentCommitI)) {
-                    branches.current.push({ commits: [] });
-                    exploreBranch(secondParentCommitI, branches.current.length - 1);
-                }
-            }
         };
 
-        // Find the max and min of each branch
-        const findBranchesMinAndMax = () => {
-            for (let i = 0; i < branches.current.length; i++) {
-                const firstCommitI = mappedCommits.current[branches.current[i].commits[0]];
-                const lastCommitI = mappedCommits.current[branches.current[i].commits[branches.current[i].commits.length - 1]];
+        // Find a branch min and max position
+        const findBranchMinAndMax = (branchI, column) => {
+            // Check if a commit is in a branch prior to this one
+            const isCommitInToTheRight = (hash) => {
+                for (let i = 0; i < branches.current.length; i++) if (column < branches.current[i].column && branches.current[i].commits.includes(hash)) return true;
+                return false;
+            };
 
-                // Get the min postion the branch will occupy
-                if ("children" in sortedCommits[firstCommitI]) {
-                    // Minimum children commit
-                    var minChildren = firstCommitI;
+            // Get first and last commits in the branch
+            const firstCommitI = mappedCommits.current[branches.current[branchI].commits[0]];
+            const lastCommitI = mappedCommits.current[branches.current[branchI].commits[branches.current[branchI].commits.length - 1]];
 
-                    for (let j = 0; j < sortedCommits[firstCommitI].children.length; j++) {
-                        // Ignore children if in a branch to the right
-                        const children = sortedCommits[firstCommitI].children[j];
+            // Result
+            var minMax = { min: firstCommitI, max: lastCommitI };
 
-                        const childrenI = mappedCommits.current[children];
-                        if (!childrenI) continue;
-                        else minChildren = Math.min(childrenI, minChildren);
-                    }
-                    branches.current[i]["min"] = minChildren;
-                } else branches.current[i]["min"] = firstCommitI;
-
-                // Get the max postion the branch will occupy
-                if ("parent" in sortedCommits[lastCommitI]) {
-                    // Maximum parent commit
-                    var maxParent = lastCommitI;
-
-                    for (let j = 0; j < sortedCommits[lastCommitI].parent.length; j++) {
-                        // Ignore children if in a branch to the right
-                        const parent = sortedCommits[lastCommitI].parent[j];
-
-                        const parentI = mappedCommits.current[parent];
-                        if (!parentI) maxParent = sortedCommits.length - 1;
-                        else maxParent = Math.max(parentI, maxParent);
-                    }
-                    branches.current[i]["max"] = maxParent;
-                } else branches.current[i]["max"] = lastCommitI;
-
-                if (sortedCommits[firstCommitI].commit.long.includes("7ca09a8ce63dbe2591556a16b02b48548ff3774b")) {
-                    console.log(branches.current[i]);
-                    console.log(branches.current[i]["min"] + " " + branches.current[i]["max"]);
+            // Get the min postion the branch will occupy
+            if ("children" in sortedCommits[firstCommitI]) {
+                for (let j = 0; j < sortedCommits[firstCommitI].children.length; j++) {
+                    const childrenI = mappedCommits.current[sortedCommits[firstCommitI].children[j]];
+                    if (!childrenI) continue;
+                    else minMax.min = Math.min(childrenI, minMax.min);
                 }
-            }
+                branches.current[branchI]["min"] = Math.min(sortedCommits.length - 1, minMax.min + 1);
+            } else branches.current[branchI]["min"] = firstCommitI;
+
+            // Get the max postion the branch will occupy
+            if ("parent" in sortedCommits[lastCommitI]) {
+                for (let j = 0; j < sortedCommits[lastCommitI].parent.length; j++) {
+                    // Ignore parent if in a branch to the right
+                    const parent = sortedCommits[lastCommitI].parent[j];
+                    if (isCommitInToTheRight(parent)) continue;
+
+                    const parentI = mappedCommits.current[parent];
+                    if (!parentI) minMax.max = sortedCommits.length - 1;
+                    else minMax.max = Math.max(parentI, minMax.max);
+                }
+                branches.current[branchI]["max"] = Math.max(0, minMax.max - 1);
+            } else branches.current[branchI]["max"] = lastCommitI;
+
+            return minMax;
         };
 
-        // Try to place branch that spans from 'minI' to 'maxI' in the 'branch' column
-        const placeBranch = (minI, maxI, branch, i) => {
-            while (branch >= branchMatrix.current.length) branchMatrix.current.push(new Array(sortedCommits.length).fill(false));
+        // Try to place branch that spans from 'minI' to 'maxI' in the 'column'
+        const placeBranch = (minI, maxI, column, i) => {
+            while (column >= branchMatrix.current.length) branchMatrix.current.push(new Array(sortedCommits.length).fill(false));
 
-            if (i > maxI) return { done: true, branch };
+            if (i > maxI) return { done: true, column };
 
-            if (!branchMatrix.current[branch][i]) {
-                const next = placeBranch(minI, maxI, branch, i + 1);
+            if (!branchMatrix.current[column][i]) {
+                const next = placeBranch(minI, maxI, column, i + 1);
+
                 if (next.done) {
-                    branchMatrix.current[branch][i] = true;
+                    branchMatrix.current[column][i] = true;
                     return next;
-                } else return { done: false, branch };
-            } else return { done: false, branch };
+                } else return { done: false, column };
+            } else return { done: false, column };
         };
 
         // Map commits
@@ -178,31 +154,29 @@ export default function Graph() {
             }
         }
 
-        // Sort branches
-        branches.current = branches.current.sort((a, b) => {
-            return b.commits.length - a.commits.length;
-        });
-
-        // Get min and max for each branch
-        findBranchesMinAndMax();
-
         // Place branches
         for (let i = 0; i < branches.current.length; i++) {
-            const { min, max } = branches.current[i];
-
             var result = { done: false, branch: -1 };
+
+            // Try to place as much to the left as posible
             for (let j = 0; true; j++) {
+                const { min, max } = findBranchMinAndMax(i, j);
                 result = placeBranch(min, max, j, min);
-                if (result.done) break;
+
+                // Placed successfully
+                if (result.done) {
+                    branches.current[i].column = result.column;
+                    break;
+                }
             }
 
             // Update numColumns
-            if (numColumns.current < result.branch + 1) numColumns.current = result.branch + 1;
+            if (numColumns.current < result.column + 1) numColumns.current = result.column + 1;
 
             // Save the branch index in each commit
             for (let j = 0; j < branches.current[i].commits.length; j++) {
                 const commitI = mappedCommits.current[branches.current[i].commits[j]];
-                sortedCommits[commitI]["column"] = result.branch;
+                sortedCommits[commitI]["column"] = result.column;
             }
         }
 

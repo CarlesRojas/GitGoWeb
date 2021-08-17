@@ -7,10 +7,10 @@ export default function Messages({ commits }) {
 
     return (
         <div className="messages">
-            {commits.map(({ subject, commit }) => {
+            {commits.map(({ subject, commit }, i) => {
                 return (
                     <div className="commit" key={commit.long}>
-                        {subject}
+                        {i + " " + subject}
                     </div>
                 );
             })}
