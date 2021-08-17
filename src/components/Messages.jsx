@@ -14,10 +14,13 @@ export default function Messages({ commits, localBranches, remoteBranches }) {
     const { colors } = useContext(Data);
 
     // Get the message with its branches
-    const getMessage = (subject, commitHash, column, i) => {
+    const getMessage = (currentCommit) => {
+        const { subject, commit: commitHash, column } = currentCommit;
+
         var branches = [];
         var currentBranch = false;
 
+        // Get local branches in this commit
         for (let j = 0; j < localBranches.length; j++) {
             const { commit, current } = localBranches[j];
             if (commitHash.long.startsWith(commit)) {
@@ -26,6 +29,7 @@ export default function Messages({ commits, localBranches, remoteBranches }) {
             }
         }
 
+        // Get remote branches in this commit
         for (let j = 0; j < remoteBranches.length; j++) {
             const { commit, name } = remoteBranches[j];
             if (commitHash.long.startsWith(commit)) {
@@ -45,11 +49,11 @@ export default function Messages({ commits, localBranches, remoteBranches }) {
         }
 
         // Current commit
-        const current = currentBranch ? <div className="current" style={{ backgroundColor: colors.current[column % colors.current.length] }}></div> : null;
+        // const current = currentBranch ? <div className="current" style={{ backgroundColor: colors.current[column % colors.current.length] }}></div> : null;
 
         return (
             <div className={classNames("commit", { current: currentBranch })} key={commitHash.long}>
-                {current}
+                {/* {current} */}
 
                 {branches.map(({ name, commit, isLocal, hasRemote }) => {
                     // Icons
@@ -76,11 +80,5 @@ export default function Messages({ commits, localBranches, remoteBranches }) {
     //   RENDER
     // #################################################
 
-    return (
-        <div className="messages">
-            {commits.map(({ subject, commit, column }, i) => {
-                return getMessage(subject, commit, column, i);
-            })}
-        </div>
-    );
+    return <div className="messages">{commits.map(getMessage)}</div>;
 }

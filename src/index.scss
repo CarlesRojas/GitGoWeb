@@ -369,14 +369,14 @@ input[type="number"] {
         width: 100%;
         padding: ($commitRowHeight * 0.1) ($commitRowHeight * 0.4);
 
-        .current {
-            position: absolute;
-            height: calc(100% - #{$commitRowHeight * 0.2});
-            width: calc(100% - #{$commitRowHeight * 0.8});
-            z-index: -1;
-            opacity: 0.2;
-            border-radius: 0.3rem;
-        }
+        // .current {
+        //     position: absolute;
+        //     height: calc(100% - #{$commitRowHeight * 0.2});
+        //     width: calc(100% - #{$commitRowHeight * 0.8});
+        //     z-index: -1;
+        //     opacity: 0.2;
+        //     border-radius: 0.3rem;
+        // }
 
         .branch {
             min-width: fit-content;

@@ -5,7 +5,7 @@ export const Data = createContext();
 
 const DataProvider = ({ children }) => {
     // Colors for branches
-    const colors = useRef(["#82b4ff", "#de82ff", "#ff8282", "#ffb882", "#82ffa1"]);
+    const colors = useRef(["#6ba1ff", "#d56bff", "#ff6b6b", "#ffab6b", "#ffe16b", "#70ff6b", "#6bebff"]);
 
     // #################################################
     //   PROVIDE DATA
