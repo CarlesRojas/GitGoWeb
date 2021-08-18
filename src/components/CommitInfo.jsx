@@ -22,8 +22,6 @@ export default function CommitInfo({ commit }) {
           ))
         : null;
 
-    console.log(commit);
-
     return (
         <div className="commitInfo">
             <p className="subject" style={{ color: colors.current[column % colors.current.length] }}>
