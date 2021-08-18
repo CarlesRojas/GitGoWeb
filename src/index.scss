@@ -338,6 +338,7 @@ input[type="number"] {
     height: fit-content;
     z-index: 10;
     overflow: visible;
+    margin-right: 1rem;
 
     .node {
         position: relative;
@@ -446,7 +447,8 @@ input[type="number"] {
             height: $commitRowHeight * 0.8;
             width: 100%;
             overflow: hidden;
-            margin-left: 0.3rem;
+            text-align: right;
+            margin-right: 0.3rem;
             font-size: 0.7rem;
             font-weight: 600;
             text-overflow: ellipsis;

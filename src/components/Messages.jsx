@@ -55,6 +55,10 @@ export default function Messages() {
             <div className={classNames("commit", { current: currentBranch })} key={commitHash.long}>
                 {/* {current} */}
 
+                <div className="message" style={{ color: colors.current[column % colors.current.length] }}>
+                    {subject}
+                </div>
+
                 {branches.map(({ name, commit, isLocal, hasRemote }) => {
                     // Icons
                     const localIcon = isLocal ? <SVG className="icon" src={LocalIcon} /> : null;
@@ -68,10 +72,6 @@ export default function Messages() {
                         </div>
                     );
                 })}
-
-                <div className="message" style={{ color: colors.current[column % colors.current.length] }}>
-                    {subject}
-                </div>
             </div>
         );
     };

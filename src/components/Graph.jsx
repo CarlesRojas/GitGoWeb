@@ -326,8 +326,8 @@ export default function Graph() {
                     );
                 })}
             </div>
-            {treeDOM}
             {messagesDOM}
+            {treeDOM}
 
             <div className="gradient top"></div>
             <div className="gradient bottom"></div>
