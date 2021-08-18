@@ -20,9 +20,10 @@ $tabletWidth: 1100px;
 $mobileWidth: 768px;
 
 $toolbarHeight: 4rem;
-$sidebarHeight: 18rem;
+$sidebarWidth: 20rem;
 $commitRowHeight: 2rem;
 $graphPadding: 4rem;
+$avatarSize: 3rem;
 
 // #######################################
 //      MIXINS
@@ -240,10 +241,10 @@ input[type="number"] {
         width: $toolbarHeight * 0.8;
         margin: $toolbarHeight * 0.1;
         border-radius: 0.3rem;
+        cursor: pointer;
 
         &:hover {
             background-color: rgba(255, 255, 255, 0.03);
-            cursor: pointer;
         }
 
         &:active {
@@ -281,7 +282,7 @@ input[type="number"] {
     position: relative;
     display: flex;
     flex-grow: 1;
-    width: calc(100% - #{$sidebarHeight});
+    width: calc(100% - #{$sidebarWidth});
     overflow: auto;
     padding: $graphPadding;
     padding-right: 0;
@@ -310,7 +311,7 @@ input[type="number"] {
     .gradient {
         position: fixed;
         height: $graphPadding;
-        right: $sidebarHeight + $graphPadding;
+        right: $sidebarWidth + $graphPadding;
         left: $graphPadding;
         z-index: 100;
         background: transparent;
@@ -461,10 +462,14 @@ input[type="number"] {
 
 .sidebar {
     position: relative;
-    height: 100%;
-    min-width: $sidebarHeight;
+    min-width: calc(100% - 1.5rem);
+    min-width: calc(#{$sidebarWidth - 1.5rem});
+    max-width: calc(#{$sidebarWidth - 1.5rem});
+    width: calc(#{$sidebarWidth - 1.5rem});
     z-index: 10;
-    background-color: rgba(198, 255, 196, 0.1);
+    margin: 0.75rem;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 // #######################################
@@ -475,48 +480,152 @@ input[type="number"] {
     position: relative;
     height: 100%;
     width: 100%;
-    background-color: rgba(196, 236, 255, 0.1);
+    padding: 1.5rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .subject {
+        font-size: 1rem;
+        font-weight: 600;
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
     }
 
-    .hash {
+    .hashContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
         .hashTitle {
+            font-size: 0.65rem;
+            font-weight: 500;
+            text-align: center;
+            opacity: 0.2;
         }
 
         .hash {
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-align: center;
+            width: fit-content;
+            opacity: 0.8;
+            cursor: pointer;
+            padding: 0.1rem 0.5rem;
+            margin-top: 0.1rem;
+
+            &.commit {
+                margin-bottom: 0.5rem;
+            }
         }
     }
 
     .authorCommitter {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0;
+        width: 100%;
+
         .elem {
+            position: relative;
+            width: 35%;
+            min-width: 35%;
+            max-width: 35%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
             div {
-                width: 100%;
-                height: 10rem;
+                position: absolute;
+                width: $avatarSize;
+                min-width: $avatarSize;
+                max-width: $avatarSize;
+                height: $avatarSize;
+                min-height: $avatarSize;
+                max-height: $avatarSize;
+                border-radius: 100vw;
+                background-color: rgb(255, 255, 255);
+                z-index: 10;
 
                 svg {
                     width: 100%;
-                    height: 10rem;
+                    height: $avatarSize;
+                    padding: 0.2rem;
                 }
             }
 
             .grabatar {
+                border-radius: 100vw;
+                width: $avatarSize;
+                min-width: $avatarSize;
+                max-width: $avatarSize;
+                height: $avatarSize;
+                min-height: $avatarSize;
+                max-height: $avatarSize;
+                height: $avatarSize;
+                z-index: 20;
             }
 
             a {
+                text-decoration: none;
+                cursor: pointer;
+                color: $textDark;
+                margin-top: 0.1rem;
+                font-size: 0.8rem;
+                font-weight: 500;
+                text-align: center;
+                width: fit-content;
+                opacity: 0.8;
+                padding: 0.4rem 0.5rem 0 0.5rem;
             }
 
             p {
+                font-size: 0.65rem;
+                font-weight: 500;
+                text-align: center;
+                width: fit-content;
+                opacity: 0.2;
+                padding: 0.1rem 0.5rem;
             }
         }
     }
 
     .dateTime {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+
         .date {
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-align: center;
+            width: 100%;
+            opacity: 0.3;
+            padding: 0 0.5rem;
         }
 
         .time {
+            font-size: 0.6rem;
+            font-weight: 500;
+            text-align: center;
+            width: 100%;
+            opacity: 0.2;
+            padding: 0.1rem 0.5rem;
         }
+    }
+
+    .changedFiles {
+        background-color: $backgroundDark;
+        width: 100%;
+        flex-grow: 1;
+        border-radius: 0.5rem;
     }
 }
 
