@@ -190,7 +190,6 @@ export default function Graph() {
     // Node refs
     const scrollRef = useRef();
     const firstCommitRef = useRef();
-    const firstPressDoneRef = useRef(false);
 
     // Select next commit
     useEffect(() => {
@@ -198,10 +197,6 @@ export default function Graph() {
             if (["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(event.code) > -1) {
                 // Prevent scroll
                 event.preventDefault();
-
-                // Only fire once
-                if (firstPressDoneRef.current) return;
-                firstPressDoneRef.current = true;
 
                 // Return if there is no selected commit
                 if (!selectedCommit) return;
@@ -233,19 +228,12 @@ export default function Graph() {
             }
         };
 
-        const onKeyUp = (event) => {
-            event.preventDefault();
-            firstPressDoneRef.current = false;
-        };
-
         // Subscribe to event
         window.addEventListener("keydown", onKeyDown, false);
-        window.addEventListener("keyup", onKeyUp, false);
 
         return () => {
             // Unsubscribe from events
             window.removeEventListener("keydown", onKeyDown, false);
-            window.removeEventListener("keyup", onKeyUp, false);
         };
     }, [commits, mappedCommits, selectedCommit, setSelectedCommit]);
 
