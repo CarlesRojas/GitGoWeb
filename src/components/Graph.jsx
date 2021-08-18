@@ -187,6 +187,68 @@ export default function Graph() {
         else setSelectedCommit(selectedHash);
     };
 
+    // Node refs
+    const scrollRef = useRef();
+    const firstCommitRef = useRef();
+    const firstPressDoneRef = useRef(false);
+
+    // Select next commit
+    useEffect(() => {
+        const onKeyDown = (event) => {
+            if (["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(event.code) > -1) {
+                // Prevent scroll
+                event.preventDefault();
+
+                // Only fire once
+                if (firstPressDoneRef.current) return;
+                firstPressDoneRef.current = true;
+
+                // Return if there is no selected commit
+                if (!selectedCommit) return;
+
+                // Get current commit
+                const currCommitIndex = mappedCommits.current[selectedCommit];
+
+                // Move up
+                if (event.code === "ArrowUp") {
+                    // Return if in the first commit
+                    if (currCommitIndex === 0) return;
+
+                    const commitHash = commits[currCommitIndex - 1].commit.long;
+                    setSelectedCommit(commitHash);
+
+                    scrollRef.current.scrollBy({ top: -firstCommitRef.current.clientHeight });
+                }
+
+                // Move down
+                else if (event.code === "ArrowDown") {
+                    // Return if in the first commit
+                    if (currCommitIndex >= commits.length - 1) return; // ROJAS LOAD MORE COMMITS
+
+                    const commitHash = commits[currCommitIndex + 1].commit.long;
+                    setSelectedCommit(commitHash);
+
+                    scrollRef.current.scrollBy({ top: firstCommitRef.current.clientHeight });
+                }
+            }
+        };
+
+        const onKeyUp = (event) => {
+            event.preventDefault();
+            firstPressDoneRef.current = false;
+        };
+
+        // Subscribe to event
+        window.addEventListener("keydown", onKeyDown, false);
+        window.addEventListener("keyup", onKeyUp, false);
+
+        return () => {
+            // Unsubscribe from events
+            window.removeEventListener("keydown", onKeyDown, false);
+            window.removeEventListener("keyup", onKeyUp, false);
+        };
+    }, [commits, mappedCommits, selectedCommit, setSelectedCommit]);
+
     // #################################################
     //   COMPONENT MOUNT
     // #################################################
@@ -249,10 +311,19 @@ export default function Graph() {
     const messagesDOM = hidden.messages ? null : <Messages />;
 
     return (
-        <div className="graph">
+        <div className="graph" ref={scrollRef}>
             <div className="commits">
                 {commits.map(({ commit }) => {
-                    return <div key={commit.long} className={classnames("commit", { selected: commit.long === selectedCommit })} onClick={() => onCommitClick(commit.long)}></div>;
+                    return (
+                        <div
+                            key={commit.long}
+                            ref={(elem) => {
+                                if (!firstCommitRef.current) firstCommitRef.current = elem;
+                            }}
+                            className={classnames("commit", { selected: commit.long === selectedCommit })}
+                            onClick={() => onCommitClick(commit.long)}
+                        ></div>
+                    );
                 })}
             </div>
             {treeDOM}
