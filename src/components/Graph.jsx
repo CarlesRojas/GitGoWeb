@@ -308,7 +308,7 @@ export default function Graph() {
                             ref={(elem) => {
                                 if (!firstCommitRef.current) firstCommitRef.current = elem;
                             }}
-                            className={classnames("commit", { selected: commit.long === selectedCommit })}
+                            className={classnames("commit clickable", { selected: commit.long === selectedCommit })}
                             onClick={() => onCommitClick(commit.long)}
                         ></div>
                     );

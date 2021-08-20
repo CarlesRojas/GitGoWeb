@@ -23,27 +23,27 @@ export default function Toolbar() {
 
     return (
         <div className="toolbar">
-            <div className="button" onClick={() => onActionClick("pull")}>
+            <div className="button clickable" onClick={() => onActionClick("pull")}>
                 <SVG className="icon" src={PullIcon} />
                 <p className="action">Pull</p>
             </div>
 
-            <div className="button" onClick={() => onActionClick("push")}>
+            <div className="button clickable" onClick={() => onActionClick("push")}>
                 <SVG className="icon" src={PushIcon} />
                 <p className="action">Push</p>
             </div>
 
-            <div className="button" onClick={() => onActionClick("branch")}>
+            <div className="button clickable" onClick={() => onActionClick("branch")}>
                 <SVG className="icon" src={BranchIcon} />
                 <p className="action">Branch</p>
             </div>
 
-            <div className="button" onClick={() => onActionClick("stash")}>
+            <div className="button clickable" onClick={() => onActionClick("stash")}>
                 <SVG className="icon" src={StashIcon} />
                 <p className="action">Stash</p>
             </div>
 
-            <div className="button" onClick={() => onActionClick("pop")}>
+            <div className="button clickable" onClick={() => onActionClick("pop")}>
                 <SVG className="icon" src={PopIcon} />
                 <p className="action">Pop</p>
             </div>

@@ -19,7 +19,7 @@ export default function App() {
 
     // On context menu clicked
     const onContextMenu = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
     };
 
     // #################################################

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import moment from "moment";
 import md5 from "crypto-js/md5";
 import Jdenticon from "react-jdenticon";
@@ -12,15 +12,24 @@ export default function CommitInfo({ commit }) {
     // Contexts
     const { colors } = useContext(Data);
 
+    // Destructure commit
     const { subject, commit: hash, parent, author, committer, column } = commit;
 
-    const parents = parent
-        ? parent.map((parentHash) => (
-              <p className="hash" key={parentHash}>
-                  {parentHash.substring(0, 9)}
-              </p>
-          ))
-        : null;
+    // #################################################
+    //   TOOLTIP
+    // #################################################
+
+    // Defaults
+    const tooltipDefaults = useRef({
+        commitHash: { default: "click to copy the commit hash", clicked: "hash copied" },
+        parentHash: { default: "click to copy the parent commit hash", clicked: "hash copied" },
+        authorEmail: { default: "click to copy the author email", clicked: "email copied" },
+        committerEmail: { default: "click to copy the committer email", clicked: "email copied" },
+    });
+
+    // #################################################
+    //   RENDER
+    // #################################################
 
     return (
         <div className="commitInfo">
@@ -30,27 +39,34 @@ export default function CommitInfo({ commit }) {
 
             <div className="hashContainer">
                 <p className="hashTitle">Commit</p>
-                <p className="hash commit">{hash.long.substring(0, 9)}</p>
+                <p className="hash commit clickable">{hash.long.substring(0, 9)}</p>
             </div>
 
             <div className="hashContainer">
                 <p className="hashTitle">Parents</p>
-                {parents}
+                {parent &&
+                    parent.map((parentHash, i) => (
+                        <p className="hash clickable" key={parentHash}>
+                            {parentHash.substring(0, 9)}
+                        </p>
+                    ))}
             </div>
 
             <div className="authorCommitter">
-                <div className="elem">
+                <div className="elem clickable">
                     <Jdenticon size="48" value={author.email} />
                     <img className="grabatar" src={`https://www.gravatar.com/avatar/${md5(author.email).toString()}?d=blank`} alt="" />
-                    <a href={`mailto:${author.email}`}>{author.name}</a>
-                    <p>Author</p>
+
+                    <p className="name">{author.name}</p>
+                    <p className="title">Author</p>
                 </div>
 
-                <div className="elem">
+                <div className="elem clickable">
                     <Jdenticon className="identicon" size="48" value={author.email} />
                     <img className="grabatar" src={`https://www.gravatar.com/avatar/${md5(committer.email).toString()}?d=blank`} alt="" />
-                    <a href={`mailto:${committer.email}`}>{committer.name}</a>
-                    <p>Committer</p>
+
+                    <p className="name">{committer.name}</p>
+                    <p className="title">Committer</p>
                 </div>
             </div>
 
