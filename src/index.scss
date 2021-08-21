@@ -653,13 +653,24 @@ input[type="number"] {
 // #######################################
 
 .tooltip {
+    pointer-events: none;
+    position: fixed;
+    background-color: rgba(200, 200, 200, 0.9);
+    color: black;
+    opacity: 0;
     padding: 6px 16px;
     font-size: 0.6rem;
     font-weight: 600;
+    white-space: nowrap;
+    transform: translateX(-50%);
+    z-index: 1000;
     @include border-radius(0.5rem);
     @include box-shadow(0 0 15px 0 rgba(0, 0, 0, 0.5));
-    background-color: rgba(200, 200, 200, 0.9);
-    opacity: 1;
+    @include transition(opacity 0.1s ease-in-out);
+
+    &.visible {
+        opacity: 1;
+    }
 }
 
 // #######################################
