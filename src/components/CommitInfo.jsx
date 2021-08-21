@@ -8,7 +8,7 @@ import Tooltip from "./Tooltip";
 import { Data } from "../contexts/Data";
 
 export default function CommitInfo({ commit }) {
-    console.log("RENDER COMMIT INFO");
+    // console.log("RENDER COMMIT INFO");
 
     // Contexts
     const { colors } = useContext(Data);
@@ -23,13 +23,13 @@ export default function CommitInfo({ commit }) {
     return (
         <div className="commitInfo">
             {/* TOOLTIPS */}
-            <Tooltip idName={"tooltip_commitHash"} message={{ default: "click to copy the commit hash", clicked: "hash copied" }} />
+            <Tooltip idName={"tooltip_commitHash"} message={{ default: "click to copy the commit hash", clicked: "commit hash copied" }} />
             {parent &&
                 parent.map((parentHash, i) => (
-                    <Tooltip key={parentHash} idName={`tooltip_parentCommitHash${i}`} message={{ default: "click to copy the parent commit hash", clicked: "hash copied" }} />
+                    <Tooltip key={parentHash} idName={`tooltip_parentCommitHash${i}`} message={{ default: "click to copy the parent commit hash", clicked: "parent hash copied" }} />
                 ))}
-            <Tooltip idName={"tooltip_authorEmail"} message={{ default: "click to copy the author email", clicked: "email copied" }} />
-            <Tooltip idName={"tooltip_committerEmail"} message={{ default: "click to copy the committer email", clicked: "email copied" }} />
+            <Tooltip idName={"tooltip_authorEmail"} message={{ default: "click to copy the author email", clicked: "author email copied" }} />
+            <Tooltip idName={"tooltip_committerEmail"} message={{ default: "click to copy the committer email", clicked: "committer email copied" }} />
 
             {/* REST */}
             <p className="subject" style={{ color: colors.current[column % colors.current.length] }}>

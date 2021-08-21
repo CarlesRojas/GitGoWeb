@@ -42,7 +42,6 @@ export default function Tooltip({ idName, message }) {
             setClicked(false);
             clickedRef.current = false;
             setVisible(true);
-            setPosition(event);
             window.PubSub.emit("onShowTooltip", { tooltipId: idName });
         }, 600);
     };
@@ -57,7 +56,7 @@ export default function Tooltip({ idName, message }) {
             clearTimeout(turnOffTimeout.current);
             turnOffTimeout.current = setTimeout(() => {
                 setVisible(false);
-            }, 200);
+            }, 100);
         }
     };
 
@@ -69,7 +68,6 @@ export default function Tooltip({ idName, message }) {
         // Turn on if not on already
         clearTimeout(turnOnTimeout.current);
         setVisible(true);
-        setPosition(event);
         window.PubSub.emit("onShowTooltip", { tooltipId: idName });
 
         // Turn off tooltip in second
@@ -92,7 +90,7 @@ export default function Tooltip({ idName, message }) {
         const domElem = document.getElementById(idName);
 
         // Subscribe to events
-        domElem.addEventListener("mousemove", setPosition);
+        window.addEventListener("mousemove", setPosition);
         domElem.addEventListener("mouseenter", onMouseEnter);
         domElem.addEventListener("mouseleave", onMouseLeave);
         domElem.addEventListener("click", onClick);
@@ -100,7 +98,7 @@ export default function Tooltip({ idName, message }) {
 
         return () => {
             // Unsubscribe to events
-            domElem.removeEventListener("mousemove", setPosition);
+            window.removeEventListener("mousemove", setPosition);
             domElem.removeEventListener("mouseenter", onMouseEnter);
             domElem.removeEventListener("mouseleave", onMouseLeave);
             domElem.removeEventListener("click", onClick);

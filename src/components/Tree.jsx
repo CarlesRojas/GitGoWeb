@@ -5,7 +5,7 @@ import classnames from "classnames";
 const EDGE_WIDTH = 3;
 
 const Tree = memo(({ commits, numColumns, mappedCommits, branches, colors }) => {
-    console.log("RENDER TREE");
+    // console.log("RENDER TREE");
 
     // Node refs
     const nodes = useRef([]);

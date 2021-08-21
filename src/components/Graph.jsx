@@ -14,7 +14,7 @@ import remoteBranchesData from "../resources/remoteBranches.json";
 import { Data } from "../contexts/Data";
 
 export default function Graph() {
-    console.log("RENDER GRAPH");
+    // console.log("RENDER GRAPH");
 
     // Contexts
     const { commits, setCommits, setLocalBranches, setRemoteBranches, mappedCommits, branchMatrix, commitsWithNotLoadedParents, branches, numColumns, selectedCommit, setSelectedCommit, colors } =

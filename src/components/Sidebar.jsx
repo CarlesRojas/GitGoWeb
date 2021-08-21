@@ -8,7 +8,7 @@ import UncommitInfo from "./UncommitInfo";
 import { Data } from "../contexts/Data";
 
 export default function Sidebar() {
-    console.log("RENDER SIDEBAR");
+    // console.log("RENDER SIDEBAR");
 
     // Contexts
     const { selectedCommit, commits, mappedCommits } = useContext(Data);
