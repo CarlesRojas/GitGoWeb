@@ -8,10 +8,44 @@ import { Data } from "../contexts/Data";
 // Icons
 import LocalIcon from "../resources/icons/local.svg";
 import RemoteIcon from "../resources/icons/remote.svg";
+import SelectIcon from "../resources/icons/select.svg";
+import RenameIcon from "../resources/icons/rename.svg";
+import DeleteIcon from "../resources/icons/delete.svg";
+import PushIcon from "../resources/icons/push.svg";
 
 export default function Messages() {
     // Contexts
     const { commits, localBranches, remoteBranches, colors } = useContext(Data);
+
+    // #################################################
+    //   EVENTS
+    // #################################################
+
+    // On any context action clicked
+    const onContextActionClick = (action) => {
+        if (action === "select") console.log("select");
+        else if (action === "rename") console.log("rename");
+        else if (action === "delete") console.log("delete");
+        else if (action === "push") console.log("push");
+    };
+
+    const onBranchRightClick = (event, branch) => {
+        // Actions
+        const actions = [
+            { name: "Rename", callback: () => onContextActionClick("rename"), icon: RenameIcon },
+            { name: "Delete", callback: () => onContextActionClick("delete"), icon: DeleteIcon },
+            { name: "Push", callback: () => onContextActionClick("push"), icon: PushIcon },
+        ];
+
+        // Add select if it is not the current branch
+        if (!branch.current) actions.unshift({ name: "Select", callback: () => onContextActionClick("select"), icon: SelectIcon });
+
+        window.PubSub.emit("onShowContextMenu", { actions, mousePos: { x: event.clientX, y: event.clientY } });
+    };
+
+    // #################################################
+    //   BRANCHES & MESSAGE
+    // #################################################
 
     // Get the message with its branches
     const getMessage = (currentCommit) => {
@@ -49,7 +83,10 @@ export default function Messages() {
 
         return (
             <div className="commit" key={commitHash.long}>
-                {branches.map(({ name, commit, isLocal, hasRemote, current }) => {
+                {branches.map((branch) => {
+                    // Decostruct
+                    const { name, commit, isLocal, hasRemote, current } = branch;
+
                     // Icons
                     const localIcon = isLocal ? <SVG className="icon" src={LocalIcon} /> : null;
                     const remoteIcon = !isLocal || hasRemote ? <SVG className="icon" src={RemoteIcon} /> : null;
@@ -58,7 +95,7 @@ export default function Messages() {
                     const color = colors.current[column % colors.current.length];
 
                     return (
-                        <div key={name + commit} className={classNames("branch", { current })} style={{ "--branch-color": color }}>
+                        <div key={name + commit} className={classNames("branch", { current })} style={{ "--branch-color": color }} onContextMenu={(event) => onBranchRightClick(event, branch)}>
                             {localIcon}
                             {remoteIcon}
                             {name}

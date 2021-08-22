@@ -20,6 +20,7 @@ $tabletWidth: 1100px;
 $mobileWidth: 768px;
 
 $toolbarHeight: 4rem;
+$contextMenuHeight: 4rem;
 $sidebarWidth: 20rem;
 $commitRowHeight: 2rem;
 $graphPadding: 4rem;
@@ -252,7 +253,7 @@ input[type="number"] {
         align-items: center;
         justify-content: center;
         height: $toolbarHeight * 0.8;
-        width: $toolbarHeight * 0.8;
+        width: $toolbarHeight * 0.85;
         margin: $toolbarHeight * 0.1;
         @include border-radius(0.3rem);
 
@@ -414,20 +415,20 @@ input[type="number"] {
 
         .branch {
             --branch-color: white;
-            background-color: var(--branch-color);
+            pointer-events: all;
             position: relative;
             display: flex;
             align-items: center;
             align-items: center;
             justify-content: center;
             min-width: fit-content;
+            background-color: var(--branch-color);
             color: $backgroundDark;
             margin: 0.2rem 0;
             margin-left: 0.75rem;
             padding: 0 0.5rem;
             font-size: 0.7rem;
             font-weight: 700;
-            pointer-events: all;
             @include transition(transform 0.2s ease-in-out);
             @include border-radius(0.3rem);
 
@@ -658,6 +659,8 @@ input[type="number"] {
 .tooltip {
     pointer-events: none;
     position: fixed;
+    transform: translateX(-50%);
+    z-index: 1000;
     background-color: rgba(200, 200, 200, 0.9);
     color: black;
     opacity: 0;
@@ -665,14 +668,69 @@ input[type="number"] {
     font-size: 0.6rem;
     font-weight: 600;
     white-space: nowrap;
-    transform: translateX(-50%);
-    z-index: 1000;
     @include border-radius(0.5rem);
     @include box-shadow(0 0 15px 0 rgba(0, 0, 0, 0.5));
     @include transition(opacity 0.1s ease-in-out);
 
     &.visible {
         opacity: 1;
+    }
+}
+
+// #######################################
+//      CONTEXT MENU
+// #######################################
+
+.contextMenu {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-50%);
+    height: fit-content;
+    width: fit-content;
+    z-index: 100;
+    background-color: #333333;
+    opacity: 0;
+    @include border-radius(0.5rem);
+    @include box-shadow(0 0 15px 0 rgba(0, 0, 0, 0.5));
+    @include transition(opacity 0.1s ease-in-out);
+
+    &.visible {
+        opacity: 1;
+    }
+
+    .button {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: $contextMenuHeight * 0.8;
+        width: $contextMenuHeight * 0.85;
+        margin: $contextMenuHeight * 0.1;
+        @include border-radius(0.3rem);
+
+        .icon {
+            pointer-events: none;
+            height: $contextMenuHeight * 0.5;
+            max-height: $contextMenuHeight * 0.5;
+            min-height: $contextMenuHeight * 0.5;
+            width: $contextMenuHeight * 0.5;
+            max-width: $contextMenuHeight * 0.5;
+            min-width: $contextMenuHeight * 0.5;
+            opacity: 0.9;
+            padding: $contextMenuHeight * 0.1;
+        }
+
+        .action {
+            pointer-events: none;
+            opacity: 0.5;
+            padding-bottom: $contextMenuHeight * 0.1;
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
     }
 }
 

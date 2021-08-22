@@ -9,6 +9,11 @@ import StashIcon from "../resources/icons/stash.svg";
 import PopIcon from "../resources/icons/pop.svg";
 
 export default function Toolbar() {
+    // #################################################
+    //   EVENTS
+    // #################################################
+
+    // On any button clicked
     const onActionClick = (action) => {
         if (action === "pull") console.log("pull");
         else if (action === "push") console.log("push");

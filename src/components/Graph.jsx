@@ -12,6 +12,7 @@ import remoteBranchesData from "../resources/remoteBranches.json";
 // Contexts
 import { Data } from "../contexts/Data";
 import CommitSelectors from "./CommitSelectors";
+import ContextMenu from "./ContextMenu";
 
 export default function Graph() {
     console.log("RENDER GRAPH");
@@ -227,8 +228,9 @@ export default function Graph() {
             window.removeEventListener("resize", onResize);
 
             // Clear timeouts
-            clearTimeout(resizeTimeout);
+            clearTimeout(resizeTimeout.current);
         };
+
         // eslint-disable-next-line
     }, []);
 
@@ -242,6 +244,8 @@ export default function Graph() {
 
     return (
         <div className="graph" ref={scrollRef}>
+            <ContextMenu />
+
             <CommitSelectors scrollRef={scrollRef} />
 
             {treeDOM}

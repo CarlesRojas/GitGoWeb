@@ -41,4 +41,13 @@ export default class EventsPubSub {
         parameters:     { hash }
         hash:           Hash of the commit being selected or "" if the current one is being diselected
     },
+
+    {
+        event:          onShowContextMenu
+        desciption:     On show the context menu
+        parameters:     { actions, mousePos }
+        actions:        Array of actions, each with: { name, callback, icon }
+        mousePos:       The position of the mouse click with: { x, y }
+    },
+
 */

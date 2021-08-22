@@ -4,6 +4,12 @@ import classnames from "classnames";
 // Contexts
 import { Data } from "../contexts/Data";
 
+// Icons
+import BranchIcon from "../resources/icons/branch.svg";
+import MergeIcon from "../resources/icons/merge.svg";
+import RebaseIcon from "../resources/icons/rebase.svg";
+import ResetIcon from "../resources/icons/reset.svg";
+
 export default function CommitSelectors({ scrollRef }) {
     const { commits, mappedCommits } = useContext(Data);
 
@@ -13,6 +19,14 @@ export default function CommitSelectors({ scrollRef }) {
     // #################################################
     //   EVENTS
     // #################################################
+
+    // On any context action clicked
+    const onContextActionClick = (action, hash) => {
+        if (action === "branch") console.log(`branch ${hash}`);
+        else if (action === "merge") console.log(`merge ${hash}`);
+        else if (action === "rebase") console.log(`rebase ${hash}`);
+        else if (action === "reset") console.log(`reset ${hash}`);
+    };
 
     // On commit clicked
     const onCommitClick = (selectedHash) => {
@@ -25,8 +39,18 @@ export default function CommitSelectors({ scrollRef }) {
     };
 
     // On commit right click
-    const onCommitRightClick = (selectedHash) => {
-        console.log(`menu ${selectedHash}`);
+    const onCommitRightClick = (event, hash) => {
+        // ROJAS if the current branch is in this commit -> Dont show the menu
+
+        // Actions
+        const actions = [
+            { name: "Branch", callback: () => onContextActionClick("branch", hash), icon: BranchIcon },
+            { name: "Merge", callback: () => onContextActionClick("merge", hash), icon: MergeIcon },
+            { name: "Rebase", callback: () => onContextActionClick("rebase", hash), icon: RebaseIcon },
+            { name: "Reset", callback: () => onContextActionClick("reset", hash), icon: ResetIcon },
+        ];
+
+        window.PubSub.emit("onShowContextMenu", { actions, mousePos: { x: event.clientX, y: event.clientY } });
     };
 
     // #################################################
@@ -99,7 +123,7 @@ export default function CommitSelectors({ scrollRef }) {
                         }}
                         className={classnames("commit", "clickable", { selected: commit.long === selectedCommit })}
                         onClick={() => onCommitClick(commit.long)}
-                        onContextMenu={() => onCommitRightClick(commit.long)}
+                        onContextMenu={(event) => onCommitRightClick(event, commit.long)}
                     ></div>
                 );
             })}
