@@ -32,14 +32,15 @@ export default function Messages() {
     const onBranchRightClick = (event, branch) => {
         // Actions
         const actions = [
-            { name: "Rename", callback: () => onContextActionClick("rename"), icon: RenameIcon },
-            { name: "Delete", callback: () => onContextActionClick("delete"), icon: DeleteIcon },
-            { name: "Push", callback: () => onContextActionClick("push"), icon: PushIcon },
+            { name: "Rename", callback: () => onContextActionClick("rename"), icon: RenameIcon, tooltip: "rename this branch" },
+            { name: "Delete", callback: () => onContextActionClick("delete"), icon: DeleteIcon, tooltip: "delete this branch" },
+            { name: "Push", callback: () => onContextActionClick("push"), icon: PushIcon, tooltip: "push this branch" },
         ];
 
         // Add select if it is not the current branch
-        if (!branch.current) actions.unshift({ name: "Select", callback: () => onContextActionClick("select"), icon: SelectIcon });
+        if (!branch.current) actions.unshift({ name: "Checkout", callback: () => onContextActionClick("select"), icon: SelectIcon, tooltip: "checkout this branch" });
 
+        // Show context menu
         window.PubSub.emit("onShowContextMenu", { actions, mousePos: { x: event.clientX, y: event.clientY } });
     };
 

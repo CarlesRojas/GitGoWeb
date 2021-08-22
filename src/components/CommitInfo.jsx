@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import moment from "moment";
 import md5 from "crypto-js/md5";
 import Jdenticon from "react-jdenticon";
-import Tooltip from "./Tooltip";
 
 // Contexts
 import { Data } from "../contexts/Data";
@@ -17,20 +16,53 @@ export default function CommitInfo({ commit }) {
     const { subject, commit: hash, parent, author, committer, column } = commit;
 
     // #################################################
+    //   EVENTS
+    // #################################################
+
+    // On commit clicked
+    const onCommitHashClick = (hash) => {
+        // Show tooltip
+        window.PubSub.emit("onShowTooltip", { message: "commit hash copied", instant: true });
+    };
+
+    // On parent commit clicked
+    const onParentCommitHashClick = (hash) => {
+        // Show tooltip
+        window.PubSub.emit("onShowTooltip", { message: "parent hash copied", instant: true });
+    };
+
+    // On author elem clicked
+    const onAuthorClick = (email) => {
+        // Show tooltip
+        window.PubSub.emit("onShowTooltip", { message: "author email copied", instant: true });
+    };
+
+    // On committer elem clicked
+    const onCommiterClick = (email) => {
+        // Show tooltip
+        window.PubSub.emit("onShowTooltip", { message: "committer email copied", instant: true });
+    };
+
+    // #################################################
+    //   TOOLTIP
+    // #################################################
+
+    // Show the tooltip
+    const onShowTooltip = (message) => {
+        window.PubSub.emit("onShowTooltip", { message, instant: false });
+    };
+
+    // Hide the tooltip
+    const onHideTooltip = () => {
+        window.PubSub.emit("onHideTooltip");
+    };
+
+    // #################################################
     //   RENDER
     // #################################################
 
     return (
         <div className="commitInfo">
-            {/* TOOLTIPS */}
-            <Tooltip idName={"tooltip_commitHash"} message={{ default: "click to copy the commit hash", clicked: "commit hash copied" }} />
-            {parent &&
-                parent.map((parentHash, i) => (
-                    <Tooltip key={parentHash} idName={`tooltip_parentCommitHash${i}`} message={{ default: "click to copy the parent commit hash", clicked: "parent hash copied" }} />
-                ))}
-            <Tooltip idName={"tooltip_authorEmail"} message={{ default: "click to copy the author email", clicked: "author email copied" }} />
-            <Tooltip idName={"tooltip_committerEmail"} message={{ default: "click to copy the committer email", clicked: "committer email copied" }} />
-
             {/* REST */}
             <p className="subject" style={{ color: colors.current[column % colors.current.length] }}>
                 {subject}
@@ -38,7 +70,7 @@ export default function CommitInfo({ commit }) {
 
             <div className="hashContainer">
                 <p className="hashTitle">Commit</p>
-                <p id={"tooltip_commitHash"} className="hash commit clickable">
+                <p className="hash commit clickable" onClick={() => onCommitHashClick(hash)} onMouseEnter={() => onShowTooltip("click to copy the commit hash")} onMouseLeave={onHideTooltip}>
                     {hash.long.substring(0, 9)}
                 </p>
             </div>
@@ -47,14 +79,20 @@ export default function CommitInfo({ commit }) {
                 <p className="hashTitle">Parents</p>
                 {parent &&
                     parent.map((parentHash, i) => (
-                        <p className="hash clickable" id={`tooltip_parentCommitHash${i}`} key={parentHash}>
+                        <p
+                            className="hash clickable"
+                            key={parentHash}
+                            onClick={() => onParentCommitHashClick(hash)}
+                            onMouseEnter={() => onShowTooltip("click to copy the parent commit hash")}
+                            onMouseLeave={onHideTooltip}
+                        >
                             {parentHash.substring(0, 9)}
                         </p>
                     ))}
             </div>
 
             <div className="authorCommitter">
-                <div className="elem clickable" id={"tooltip_authorEmail"}>
+                <div className="elem clickable" onClick={() => onAuthorClick(author.email)} onMouseEnter={() => onShowTooltip("click to copy the author email")} onMouseLeave={onHideTooltip}>
                     <Jdenticon size="48" value={author.email} />
                     <img className="grabatar" src={`https://www.gravatar.com/avatar/${md5(author.email).toString()}?d=blank`} alt="" />
 
@@ -62,7 +100,7 @@ export default function CommitInfo({ commit }) {
                     <p className="title">Author</p>
                 </div>
 
-                <div className="elem clickable" id={"tooltip_committerEmail"}>
+                <div className="elem clickable" onClick={() => onCommiterClick(committer.email)} onMouseEnter={() => onShowTooltip("click to copy the committer email")} onMouseLeave={onHideTooltip}>
                     <Jdenticon className="identicon" size="48" value={author.email} />
                     <img className="grabatar" src={`https://www.gravatar.com/avatar/${md5(committer.email).toString()}?d=blank`} alt="" />
 

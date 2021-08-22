@@ -44,12 +44,13 @@ export default function CommitSelectors({ scrollRef }) {
 
         // Actions
         const actions = [
-            { name: "Branch", callback: () => onContextActionClick("branch", hash), icon: BranchIcon },
-            { name: "Merge", callback: () => onContextActionClick("merge", hash), icon: MergeIcon },
-            { name: "Rebase", callback: () => onContextActionClick("rebase", hash), icon: RebaseIcon },
-            { name: "Reset", callback: () => onContextActionClick("reset", hash), icon: ResetIcon },
+            { name: "Branch", callback: () => onContextActionClick("branch", hash), icon: BranchIcon, tooltip: "create a branch on this commit" },
+            { name: "Merge", callback: () => onContextActionClick("merge", hash), icon: MergeIcon, tooltip: "merge this commit into the current branch" },
+            { name: "Rebase", callback: () => onContextActionClick("rebase", hash), icon: RebaseIcon, tooltip: "rebase current branch on this commit" },
+            { name: "Reset", callback: () => onContextActionClick("reset", hash), icon: ResetIcon, tooltip: "reset current branch to this commit" },
         ];
 
+        // Show context menu
         window.PubSub.emit("onShowContextMenu", { actions, mousePos: { x: event.clientX, y: event.clientY } });
     };
 

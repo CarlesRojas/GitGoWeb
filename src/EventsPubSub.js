@@ -46,8 +46,23 @@ export default class EventsPubSub {
         event:          onShowContextMenu
         desciption:     On show the context menu
         parameters:     { actions, mousePos }
-        actions:        Array of actions, each with: { name, callback, icon }
+        actions:        Array of actions, each with: { name, callback, icon, tooltip }
         mousePos:       The position of the mouse click with: { x, y }
     },
+
+    {
+        event:          onShowTooltip
+        desciption:     On show the tooltip
+        parameters:     { message, instant }
+        message:        The message fir the tooltip
+        instant:        If true, the tooltip will show without waiting 1s
+    },
+
+    {
+        event:          onHideTooltip
+        desciption:     On hide the tooltip
+        parameters:     { }
+    },
+
 
 */

@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 import SVG from "react-inlinesvg";
+
+// Hooks
 import useClickOutside from "../hooks/useClickOutside";
 
 export default function ContextMenu() {
@@ -10,7 +12,7 @@ export default function ContextMenu() {
     // Info
     const info = useRef({ actions: [], mousePos: { x: 0, y: 0 } });
 
-    // Shown
+    // Visible
     const [visible, setVisible] = useState(false);
     const visibleRef = useRef(false);
 
@@ -38,6 +40,24 @@ export default function ContextMenu() {
             setPos({ left: newLeft, top: newTop });
         }
     };
+
+    // #################################################
+    //   TOOLTIP
+    // #################################################
+
+    // Show the tooltip
+    const onShowTooltip = (message) => {
+        window.PubSub.emit("onShowTooltip", { message, instant: false });
+    };
+
+    // Hide the tooltip
+    const onHideTooltip = () => {
+        window.PubSub.emit("onHideTooltip");
+    };
+
+    // #################################################
+    //   EVENTS
+    // #################################################
 
     // Show new context menu
     const onShowContextMenu = ({ actions, mousePos }) => {
@@ -125,9 +145,9 @@ export default function ContextMenu() {
 
     return (
         <div className={classNames("contextMenu", { visible })} ref={contextMenuRef} style={{ left: pos.left, top: pos.top }}>
-            {info.current.actions.map(({ name, callback, icon }) => {
+            {info.current.actions.map(({ name, callback, icon, tooltip }) => {
                 return (
-                    <div className="button clickable" onClick={callback} key={name}>
+                    <div className="button clickable" onClick={callback} key={name} onMouseEnter={() => onShowTooltip(tooltip)} onMouseLeave={onHideTooltip}>
                         <SVG className="icon" src={icon} />
                         <p className="action">{name}</p>
                     </div>

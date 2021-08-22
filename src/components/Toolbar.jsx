@@ -23,32 +23,51 @@ export default function Toolbar() {
     };
 
     // #################################################
+    //   TOOLTIP
+    // #################################################
+
+    // Show the tooltip
+    const onShowTooltip = (message) => {
+        window.PubSub.emit("onShowTooltip", { message, instant: false });
+    };
+
+    // Hide the tooltip
+    const onHideTooltip = () => {
+        window.PubSub.emit("onHideTooltip");
+    };
+
+    // #################################################
     //   RENDER
     // #################################################
 
     return (
         <div className="toolbar">
-            <div className="button clickable" onClick={() => onActionClick("pull")}>
+            <div
+                className="button clickable"
+                onClick={() => onActionClick("pull")}
+                onMouseEnter={() => onShowTooltip("fetch & merge the remote branch to the current branch")}
+                onMouseLeave={onHideTooltip}
+            >
                 <SVG className="icon" src={PullIcon} />
                 <p className="action">Pull</p>
             </div>
 
-            <div className="button clickable" onClick={() => onActionClick("push")}>
+            <div className="button clickable" onClick={() => onActionClick("push")} onMouseEnter={() => onShowTooltip("push this branch to its remote counterpart")} onMouseLeave={onHideTooltip}>
                 <SVG className="icon" src={PushIcon} />
                 <p className="action">Push</p>
             </div>
 
-            <div className="button clickable" onClick={() => onActionClick("branch")}>
+            <div className="button clickable" onClick={() => onActionClick("branch")} onMouseEnter={() => onShowTooltip("create a branch on the current commit")} onMouseLeave={onHideTooltip}>
                 <SVG className="icon" src={BranchIcon} />
                 <p className="action">Branch</p>
             </div>
 
-            <div className="button clickable" onClick={() => onActionClick("stash")}>
+            <div className="button clickable" onClick={() => onActionClick("stash")} onMouseEnter={() => onShowTooltip("save changes to apply them later")} onMouseLeave={onHideTooltip}>
                 <SVG className="icon" src={StashIcon} />
                 <p className="action">Stash</p>
             </div>
 
-            <div className="button clickable" onClick={() => onActionClick("pop")}>
+            <div className="button clickable" onClick={() => onActionClick("pop")} onMouseEnter={() => onShowTooltip("apply the changes from your stash")} onMouseLeave={onHideTooltip}>
                 <SVG className="icon" src={PopIcon} />
                 <p className="action">Pop</p>
             </div>

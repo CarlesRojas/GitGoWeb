@@ -1,22 +1,27 @@
 import React, { useEffect, useState, useRef } from "react";
 import classnames from "classnames";
 
-export default function Tooltip({ idName, message }) {
+export default function Tooltip() {
     // State
     const [pos, setPos] = useState({ left: 0, top: 0 });
+
+    // Mouse Position
+    const [message, setMessage] = useState("");
+
+    // Visible
     const [visible, setVisible] = useState(false);
-    const [clicked, setClicked] = useState(false);
+    const visibleRef = useRef(false);
 
     // References
     const tooltipRef = useRef();
-    const clickedRef = useRef(false);
+    const instantRef = useRef(false);
 
-    // Timeout
+    // Timeouts
     const turnOnTimeout = useRef();
     const turnOffTimeout = useRef();
 
     // On mouse move
-    const setPosition = (event) => {
+    const setTooltipPosition = (event) => {
         if (tooltipRef.current) {
             let newLeft = event.clientX;
             let newTop = event.clientY + 20;
@@ -38,56 +43,42 @@ export default function Tooltip({ idName, message }) {
     //   EVENTS
     // #################################################
 
-    // On mouse enter
-    const onMouseEnter = (event) => {
-        // Turn on tooltip
+    // On show tooltip
+    const onShowTooltip = ({ message, instant }) => {
         clearTimeout(turnOnTimeout.current);
-        turnOnTimeout.current = setTimeout(() => {
-            setClicked(false);
-            clickedRef.current = false;
+        clearTimeout(turnOffTimeout.current);
+        instantRef.current = instant;
+
+        // Show instantaniously
+        if (instant) {
+            setMessage(message);
             setVisible(true);
-            window.PubSub.emit("onShowTooltip", { tooltipId: idName });
+            visibleRef.current = true;
+
+            // Close instant message after a second
+            turnOffTimeout.current = setTimeout(() => {
+                setVisible(false);
+                visibleRef.current = false;
+            }, 1000);
+        }
+
+        // Show after a second
+        turnOnTimeout.current = setTimeout(() => {
+            setMessage(message);
+            setVisible(true);
+            visibleRef.current = true;
         }, 600);
     };
 
-    // On mouse leave
-    const onMouseLeave = () => {
-        // Prevent the tooltip from turning on
+    // On hide the context menu
+    const onHideTooltip = () => {
+        // Don't hide if the message was instant
+        if (instantRef.current) return;
+
+        // Hide
         clearTimeout(turnOnTimeout.current);
-
-        // Turn off tooltip
-        if (!clickedRef.current) {
-            clearTimeout(turnOffTimeout.current);
-            turnOffTimeout.current = setTimeout(() => {
-                setVisible(false);
-            }, 100);
-        }
-    };
-
-    // On click
-    const onClick = (event) => {
-        setClicked(true);
-        clickedRef.current = true;
-
-        // Turn on if not on already
-        clearTimeout(turnOnTimeout.current);
-        setVisible(true);
-        window.PubSub.emit("onShowTooltip", { tooltipId: idName });
-
-        // Turn off tooltip in second
-        clearTimeout(turnOffTimeout.current);
-        turnOffTimeout.current = setTimeout(() => {
-            setVisible(false);
-        }, 1000);
-    };
-
-    // On another tooltip show
-    const onOtherTooltipShow = ({ tooltipId }) => {
-        if (idName !== tooltipId) {
-            clearTimeout(turnOnTimeout.current);
-            clearTimeout(turnOffTimeout.current);
-            setVisible(false);
-        }
+        setVisible(false);
+        visibleRef.current = false;
     };
 
     // #################################################
@@ -95,22 +86,16 @@ export default function Tooltip({ idName, message }) {
     // #################################################
 
     useEffect(() => {
-        const domElem = document.getElementById(idName);
-
         // Subscribe to events
-        window.addEventListener("mousemove", setPosition);
-        domElem.addEventListener("mouseenter", onMouseEnter);
-        domElem.addEventListener("mouseleave", onMouseLeave);
-        domElem.addEventListener("click", onClick);
-        window.PubSub.sub("onShowTooltip", onOtherTooltipShow);
+        window.addEventListener("mousemove", setTooltipPosition);
+        window.PubSub.sub("onShowTooltip", onShowTooltip);
+        window.PubSub.sub("onHideTooltip", onHideTooltip);
 
         return () => {
             // Unsubscribe to events
-            window.removeEventListener("mousemove", setPosition);
-            domElem.removeEventListener("mouseenter", onMouseEnter);
-            domElem.removeEventListener("mouseleave", onMouseLeave);
-            domElem.removeEventListener("click", onClick);
-            window.PubSub.unsub("onShowTooltip", onOtherTooltipShow);
+            window.removeEventListener("mousemove", setTooltipPosition);
+            window.PubSub.unsub("onShowTooltip", onShowTooltip);
+            window.PubSub.unsub("onHideTooltip", onHideTooltip);
 
             // Clear timeouts
             clearTimeout(turnOnTimeout.current);
@@ -126,7 +111,7 @@ export default function Tooltip({ idName, message }) {
 
     return (
         <div className={classnames("tooltip", { visible })} style={{ left: pos.left, top: pos.top }} ref={tooltipRef}>
-            {clicked ? message.clicked : message.default}
+            {message}
         </div>
     );
 }

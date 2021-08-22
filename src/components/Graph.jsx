@@ -13,6 +13,7 @@ import remoteBranchesData from "../resources/remoteBranches.json";
 import { Data } from "../contexts/Data";
 import CommitSelectors from "./CommitSelectors";
 import ContextMenu from "./ContextMenu";
+import Tooltip from "./Tooltip";
 
 export default function Graph() {
     console.log("RENDER GRAPH");
@@ -245,6 +246,7 @@ export default function Graph() {
     return (
         <div className="graph" ref={scrollRef}>
             <ContextMenu />
+            <Tooltip />
 
             <CommitSelectors scrollRef={scrollRef} />
 
