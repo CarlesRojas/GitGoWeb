@@ -45,6 +45,20 @@ export default function Messages() {
     };
 
     // #################################################
+    //   TOOLTIP
+    // #################################################
+
+    // Show the tooltip
+    const onShowTooltip = (message) => {
+        window.PubSub.emit("onShowTooltip", { message, instant: false });
+    };
+
+    // Hide the tooltip
+    const onHideTooltip = () => {
+        window.PubSub.emit("onHideTooltip");
+    };
+
+    // #################################################
     //   BRANCHES & MESSAGE
     // #################################################
 
@@ -96,7 +110,14 @@ export default function Messages() {
                     const color = colors.current[column % colors.current.length];
 
                     return (
-                        <div key={name + commit} className={classNames("branch", { current })} style={{ "--branch-color": color }} onContextMenu={(event) => onBranchRightClick(event, branch)}>
+                        <div
+                            key={name + commit}
+                            className={classNames("branch", { current })}
+                            style={{ "--branch-color": color }}
+                            onContextMenu={(event) => onBranchRightClick(event, branch)}
+                            onMouseEnter={() => onShowTooltip("double click to checkout this branch")}
+                            onMouseLeave={onHideTooltip}
+                        >
                             {localIcon}
                             {remoteIcon}
                             {name}
