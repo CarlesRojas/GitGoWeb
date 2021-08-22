@@ -413,6 +413,8 @@ input[type="number"] {
         padding: ($commitRowHeight * 0.1) ($commitRowHeight * 0.4);
 
         .branch {
+            --branch-color: white;
+            background-color: var(--branch-color);
             position: relative;
             display: flex;
             align-items: center;
@@ -421,24 +423,20 @@ input[type="number"] {
             min-width: fit-content;
             color: $backgroundDark;
             margin: 0.2rem 0;
-            margin-left: 0.5rem;
+            margin-left: 0.75rem;
             padding: 0 0.5rem;
             font-size: 0.7rem;
             font-weight: 700;
             pointer-events: all;
-            @include transition(transform 0.1s ease-in-out);
+            @include transition(transform 0.2s ease-in-out);
             @include border-radius(0.3rem);
 
             &:hover {
                 transform: scale(1.05);
             }
 
-            &.first {
-                margin-left: 0.2rem;
-            }
-
             &.current {
-                background-color: rgb(241, 241, 241) !important;
+                box-shadow: 0 0 0 2.5px $backgroundDark, 0 0 0 5px var(--branch-color);
             }
 
             .icon {
@@ -457,7 +455,7 @@ input[type="number"] {
             height: $commitRowHeight * 0.8;
             width: 100%;
             overflow: hidden;
-            margin-left: 0.5rem;
+            margin-left: 0.75rem;
             font-size: 0.7rem;
             font-weight: 600;
             text-overflow: ellipsis;

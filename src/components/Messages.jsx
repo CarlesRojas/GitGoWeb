@@ -8,7 +8,6 @@ import { Data } from "../contexts/Data";
 // Icons
 import LocalIcon from "../resources/icons/local.svg";
 import RemoteIcon from "../resources/icons/remote.svg";
-import CurrentIcon from "../resources/icons/current.svg";
 
 export default function Messages() {
     // Contexts
@@ -52,13 +51,14 @@ export default function Messages() {
             <div className="commit" key={commitHash.long}>
                 {branches.map(({ name, commit, isLocal, hasRemote, current }) => {
                     // Icons
-                    const currentIcon = current ? <SVG className="icon" src={CurrentIcon} /> : null;
                     const localIcon = isLocal ? <SVG className="icon" src={LocalIcon} /> : null;
                     const remoteIcon = !isLocal || hasRemote ? <SVG className="icon" src={RemoteIcon} /> : null;
 
+                    // Color
+                    const color = colors.current[column % colors.current.length];
+
                     return (
-                        <div key={name + commit} className={classNames("branch", { current })} style={{ backgroundColor: colors.current[column % colors.current.length] }}>
-                            {currentIcon}
+                        <div key={name + commit} className={classNames("branch", { current })} style={{ "--branch-color": color }}>
                             {localIcon}
                             {remoteIcon}
                             {name}
