@@ -34,4 +34,11 @@ export default class EventsPubSub {
         parameters:     { tooltipId }
         tooltipId:      The id of the tooltip being shown
     },
+
+    {
+        event:          onCommitSelected
+        desciption:     On a commit being selected
+        parameters:     { hash }
+        hash:           Hash of the commit being selected or "" if the current one is being diselected
+    },
 */

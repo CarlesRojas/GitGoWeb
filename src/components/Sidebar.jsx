@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 
 // Components
 import CommitInfo from "./CommitInfo";
@@ -11,7 +11,10 @@ export default function Sidebar() {
     // console.log("RENDER SIDEBAR");
 
     // Contexts
-    const { selectedCommit, commits, mappedCommits } = useContext(Data);
+    const { commits, mappedCommits } = useContext(Data);
+
+    // Selected commit
+    const [selectedCommit, setSelectedCommit] = useState("");
 
     // Current commit
     const currCommitIndex = selectedCommit in mappedCommits.current ? mappedCommits.current[selectedCommit] : null;
@@ -19,6 +22,31 @@ export default function Sidebar() {
 
     // Get the current sidebar content
     var render = currCommit ? <CommitInfo commit={currCommit} /> : <UncommitInfo />;
+
+    // #################################################
+    //   EVENTS
+    // #################################################
+
+    // On commit selected
+    const onCommitSelected = ({ hash }) => {
+        setSelectedCommit(hash);
+    };
+
+    // #################################################
+    //   COMPONENT MOUNT
+    // #################################################
+
+    useEffect(() => {
+        // Subscribe to events
+        window.PubSub.sub("onCommitSelected", onCommitSelected);
+
+        return () => {
+            // Unsubscribe to events
+            window.PubSub.unsub("onCommitSelected", onCommitSelected);
+        };
+
+        // eslint-disable-next-line
+    }, []);
 
     // #################################################
     //   RENDER

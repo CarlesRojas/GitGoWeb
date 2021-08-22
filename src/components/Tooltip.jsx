@@ -34,6 +34,10 @@ export default function Tooltip({ idName, message }) {
         }
     };
 
+    // #################################################
+    //   EVENTS
+    // #################################################
+
     // On mouse enter
     const onMouseEnter = (event) => {
         // Turn on tooltip
@@ -86,6 +90,10 @@ export default function Tooltip({ idName, message }) {
         }
     };
 
+    // #################################################
+    //   COMPONENT MOUNT
+    // #################################################
+
     useEffect(() => {
         const domElem = document.getElementById(idName);
 
@@ -111,6 +119,10 @@ export default function Tooltip({ idName, message }) {
 
         // eslint-disable-next-line
     }, []);
+
+    // #################################################
+    //   RENDER
+    // #################################################
 
     return (
         <div className={classnames("tooltip", { visible })} style={{ left: pos.left, top: pos.top }} ref={tooltipRef}>

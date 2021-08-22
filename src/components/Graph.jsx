@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef, useContext } from "react";
-import classnames from "classnames";
 
 // Components
 import Tree from "./Tree";
@@ -12,13 +11,16 @@ import remoteBranchesData from "../resources/remoteBranches.json";
 
 // Contexts
 import { Data } from "../contexts/Data";
+import CommitSelectors from "./CommitSelectors";
 
 export default function Graph() {
-    // console.log("RENDER GRAPH");
+    console.log("RENDER GRAPH");
 
     // Contexts
-    const { commits, setCommits, setLocalBranches, setRemoteBranches, mappedCommits, branchMatrix, commitsWithNotLoadedParents, branches, numColumns, selectedCommit, setSelectedCommit, colors } =
-        useContext(Data);
+    const { commits, setCommits, setLocalBranches, setRemoteBranches, mappedCommits, branchMatrix, commitsWithNotLoadedParents, branches, numColumns, colors } = useContext(Data);
+
+    // Scroll ref
+    const scrollRef = useRef();
 
     // #################################################
     //   CALCULATE GRAPH
@@ -178,66 +180,6 @@ export default function Graph() {
     };
 
     // #################################################
-    //   SELECTED COMMIT
-    // #################################################
-
-    // On commit clicked
-    const onCommitClick = (selectedHash) => {
-        if (selectedHash === selectedCommit) setSelectedCommit("");
-        else setSelectedCommit(selectedHash);
-    };
-
-    // Node refs
-    const scrollRef = useRef();
-    const firstCommitRef = useRef();
-
-    // Select next commit
-    useEffect(() => {
-        const onKeyDown = (event) => {
-            if (["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(event.code) > -1) {
-                // Prevent scroll
-                event.preventDefault();
-
-                // Return if there is no selected commit
-                if (!selectedCommit) return;
-
-                // Get current commit
-                const currCommitIndex = mappedCommits.current[selectedCommit];
-
-                // Move up
-                if (event.code === "ArrowUp") {
-                    // Return if in the first commit
-                    if (currCommitIndex === 0) return;
-
-                    const commitHash = commits[currCommitIndex - 1].commit.long;
-                    setSelectedCommit(commitHash);
-
-                    scrollRef.current.scrollBy({ top: -firstCommitRef.current.clientHeight });
-                }
-
-                // Move down
-                else if (event.code === "ArrowDown") {
-                    // Return if in the first commit
-                    if (currCommitIndex >= commits.length - 1) return; // ROJAS LOAD MORE COMMITS
-
-                    const commitHash = commits[currCommitIndex + 1].commit.long;
-                    setSelectedCommit(commitHash);
-
-                    scrollRef.current.scrollBy({ top: firstCommitRef.current.clientHeight });
-                }
-            }
-        };
-
-        // Subscribe to event
-        window.addEventListener("keydown", onKeyDown, false);
-
-        return () => {
-            // Unsubscribe from events
-            window.removeEventListener("keydown", onKeyDown, false);
-        };
-    }, [commits, mappedCommits, selectedCommit, setSelectedCommit]);
-
-    // #################################################
     //   COMPONENT MOUNT
     // #################################################
 
@@ -300,20 +242,8 @@ export default function Graph() {
 
     return (
         <div className="graph" ref={scrollRef}>
-            <div className="commits">
-                {commits.map(({ commit }) => {
-                    return (
-                        <div
-                            key={commit.long}
-                            ref={(elem) => {
-                                if (!firstCommitRef.current) firstCommitRef.current = elem;
-                            }}
-                            className={classnames("commit clickable", { selected: commit.long === selectedCommit })}
-                            onClick={() => onCommitClick(commit.long)}
-                        ></div>
-                    );
-                })}
-            </div>
+            <CommitSelectors scrollRef={scrollRef} />
+
             {treeDOM}
             {messagesDOM}
 

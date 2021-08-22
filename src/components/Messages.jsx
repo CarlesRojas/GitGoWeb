@@ -7,7 +7,8 @@ import { Data } from "../contexts/Data";
 
 // Icons
 import LocalIcon from "../resources/icons/local.svg";
-import RemoteIcon from "../resources/icons/branch.svg";
+import RemoteIcon from "../resources/icons/remote.svg";
+import CurrentIcon from "../resources/icons/current.svg";
 
 export default function Messages() {
     // Contexts
@@ -18,14 +19,13 @@ export default function Messages() {
         const { subject, commit: commitHash, column } = currentCommit;
 
         var branches = [];
-        var currentBranch = false;
 
         // Get local branches in this commit
         for (let j = 0; j < localBranches.length; j++) {
             const { commit, current } = localBranches[j];
             if (commitHash.long.startsWith(commit)) {
-                if (current) currentBranch = true;
-                branches.push({ ...localBranches[j], isLocal: true });
+                if (current) branches.unshift({ ...localBranches[j], isLocal: true });
+                else branches.push({ ...localBranches[j], isLocal: true });
             }
         }
 
@@ -48,20 +48,17 @@ export default function Messages() {
             }
         }
 
-        // Current commit
-        // const current = currentBranch ? <div className="current" style={{ backgroundColor: colors.current[column % colors.current.length] }}></div> : null;
-
         return (
-            <div className={classNames("commit", { current: currentBranch })} key={commitHash.long}>
-                {/* {current} */}
-
-                {branches.map(({ name, commit, isLocal, hasRemote }) => {
+            <div className="commit" key={commitHash.long}>
+                {branches.map(({ name, commit, isLocal, hasRemote, current }) => {
                     // Icons
+                    const currentIcon = current ? <SVG className="icon" src={CurrentIcon} /> : null;
                     const localIcon = isLocal ? <SVG className="icon" src={LocalIcon} /> : null;
                     const remoteIcon = !isLocal || hasRemote ? <SVG className="icon" src={RemoteIcon} /> : null;
 
                     return (
-                        <div key={name + commit} className="branch" style={{ backgroundColor: colors.current[column % colors.current.length] }}>
+                        <div key={name + commit} className={classNames("branch", { current })} style={{ backgroundColor: colors.current[column % colors.current.length] }}>
+                            {currentIcon}
                             {localIcon}
                             {remoteIcon}
                             {name}

@@ -28,9 +28,6 @@ const DataProvider = ({ children }) => {
     // Number of columns
     const numColumns = useRef(0);
 
-    // Selected commit
-    const [selectedCommit, setSelectedCommit] = useState("");
-
     // #################################################
     //   BRANCH COLORS
     // #################################################
@@ -57,8 +54,6 @@ const DataProvider = ({ children }) => {
                 commitsWithNotLoadedParents,
                 branches,
                 numColumns,
-                selectedCommit,
-                setSelectedCommit,
 
                 // BRANCH COLORS
                 colors,
