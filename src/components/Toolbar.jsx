@@ -2,6 +2,7 @@ import React from "react";
 import SVG from "react-inlinesvg";
 
 // Icons
+import FetchIcon from "../resources/icons/fetch.svg";
 import PullIcon from "../resources/icons/pull.svg";
 import PushIcon from "../resources/icons/push.svg";
 import BranchIcon from "../resources/icons/branch.svg";
@@ -42,6 +43,11 @@ export default function Toolbar() {
 
     return (
         <div className="toolbar">
+            <div className="button clickable" onClick={() => onActionClick("push")} onMouseEnter={() => onShowTooltip("fetch changes in the remote")} onMouseLeave={onHideTooltip}>
+                <SVG className="icon" src={FetchIcon} />
+                <p className="action">Fetch</p>
+            </div>
+
             <div
                 className="button clickable"
                 onClick={() => onActionClick("pull")}

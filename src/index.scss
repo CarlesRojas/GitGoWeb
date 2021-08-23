@@ -288,7 +288,9 @@ input[type="number"] {
     position: relative;
     display: flex;
     flex-grow: 1;
-    width: calc(100% - #{$sidebarWidth});
+    width: calc(100% - #{$sidebarWidth + $graphPadding * 1.1});
+    min-width: calc(100% - #{$sidebarWidth + $graphPadding * 1.1});
+    max-width: calc(100% - #{$sidebarWidth + $graphPadding * 1.1});
     overflow: auto;
     margin-right: $graphPadding;
     padding: $graphPadding;
@@ -403,14 +405,18 @@ input[type="number"] {
     flex-grow: 1;
     height: fit-content;
     z-index: 10;
+    position: relative;
 
     .commit {
         position: relative;
         display: flex;
+        align-items: center;
         height: $commitRowHeight;
         max-height: $commitRowHeight;
         min-height: $commitRowHeight;
         width: 100%;
+        min-width: 100%;
+        max-width: 100%;
         padding: ($commitRowHeight * 0.1) ($commitRowHeight * 0.4);
 
         .branch {
@@ -454,7 +460,7 @@ input[type="number"] {
 
         .message {
             height: $commitRowHeight * 0.8;
-            width: 100%;
+            width: fit-content;
             overflow: hidden;
             margin-left: 0.75rem;
             font-size: 0.7rem;
@@ -462,6 +468,65 @@ input[type="number"] {
             text-overflow: ellipsis;
             line-height: $commitRowHeight * 0.8;
             white-space: nowrap;
+            display: flex;
+            flex-grow: 1;
+        }
+
+        .space {
+            flex-grow: 1;
+        }
+
+        .name {
+            padding-right: 0.5rem;
+            text-align: right;
+            width: 6rem;
+            min-width: 6rem;
+            max-width: 6rem;
+            color: $textDark;
+            opacity: 0.2;
+            font-size: 0.8rem;
+            font-weight: 500;
+            line-height: $commitRowHeight * 0.8;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .picture {
+            padding-right: 0.5rem;
+            position: relative;
+            height: $commitRowHeight * 0.8;
+            min-height: $commitRowHeight * 0.8;
+            max-height: $commitRowHeight * 0.8;
+
+            div {
+                position: absolute;
+                height: $commitRowHeight * 0.8;
+                max-height: $commitRowHeight * 0.8;
+                min-height: $commitRowHeight * 0.8;
+                width: $commitRowHeight * 0.8;
+                max-width: $commitRowHeight * 0.8;
+                min-width: $commitRowHeight * 0.8;
+                z-index: -1;
+                background-color: rgb(255, 255, 255);
+                @include border-radius(100vw);
+
+                svg {
+                    height: $commitRowHeight * 0.8;
+                    width: 100%;
+                    padding: 0.2rem;
+                }
+            }
+
+            .grabatar {
+                height: $commitRowHeight * 0.8;
+                max-height: $commitRowHeight * 0.8;
+                min-height: $commitRowHeight * 0.8;
+                width: $commitRowHeight * 0.8;
+                max-width: $commitRowHeight * 0.8;
+                min-width: $commitRowHeight * 0.8;
+                z-index: 20;
+                @include border-radius(100vw);
+            }
         }
     }
 }
@@ -472,10 +537,9 @@ input[type="number"] {
 
 .sidebar {
     position: relative;
-    width: calc(#{$sidebarWidth - 1.5rem});
-    max-width: calc(#{$sidebarWidth - 1.5rem});
-    min-width: calc(100% - 1.5rem);
-    min-width: calc(#{$sidebarWidth - 1.5rem});
+    width: $sidebarWidth - 1.5rem;
+    max-width: $sidebarWidth - 1.5rem;
+    min-width: $sidebarWidth - 1.5rem;
     z-index: 10;
     background-color: rgba(255, 255, 255, 0.05);
     margin: 0.75rem;
@@ -503,6 +567,7 @@ input[type="number"] {
         font-size: 1rem;
         font-weight: 600;
         text-align: center;
+        word-break: break-word;
     }
 
     .hashContainer {
@@ -573,7 +638,6 @@ input[type="number"] {
             }
 
             .grabatar {
-                height: $avatarSize;
                 height: $avatarSize;
                 max-height: $avatarSize;
                 min-height: $avatarSize;
@@ -649,7 +713,6 @@ input[type="number"] {
     position: relative;
     height: 100%;
     width: 100%;
-    background-color: rgba(255, 213, 196, 0.1);
 }
 
 // #######################################

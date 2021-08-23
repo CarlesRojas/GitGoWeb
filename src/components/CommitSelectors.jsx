@@ -32,6 +32,7 @@ export default function CommitSelectors({ scrollRef }) {
     const onCommitClick = (selectedHash) => {
         if (selectedHash === selectedCommit) {
             setSelectedCommit("");
+            window.PubSub.emit("onCommitSelected", { hash: "" });
         } else {
             setSelectedCommit(selectedHash);
             window.PubSub.emit("onCommitSelected", { hash: selectedHash });

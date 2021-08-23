@@ -241,7 +241,7 @@ export default function Graph() {
 
     // Components to render
     const treeDOM = hidden.tree ? null : <Tree commits={commits} numColumns={numColumns.current} mappedCommits={mappedCommits.current} branches={branches.current} colors={colors} />;
-    const messagesDOM = hidden.messages ? null : <Messages />;
+    const messagesDOM = hidden.messages ? null : <Messages numColumns={numColumns.current} />;
 
     return (
         <div className="graph" ref={scrollRef}>

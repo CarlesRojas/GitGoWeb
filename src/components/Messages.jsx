@@ -1,6 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef, useEffect, useState } from "react";
 import classNames from "classnames";
 import SVG from "react-inlinesvg";
+import md5 from "crypto-js/md5";
+import Jdenticon from "react-jdenticon";
 
 // Contexts
 import { Data } from "../contexts/Data";
@@ -13,9 +15,13 @@ import RenameIcon from "../resources/icons/rename.svg";
 import DeleteIcon from "../resources/icons/delete.svg";
 import PushIcon from "../resources/icons/push.svg";
 
-export default function Messages() {
+export default function Messages({ numColumns }) {
     // Contexts
     const { commits, localBranches, remoteBranches, colors } = useContext(Data);
+
+    // Message ref
+    const messagesRef = useRef();
+    const [showAuthor, setShowAuthor] = useState(true);
 
     // #################################################
     //   EVENTS
@@ -29,6 +35,7 @@ export default function Messages() {
         else if (action === "push") console.log("push");
     };
 
+    // On branch right click
     const onBranchRightClick = (event, branch) => {
         // Actions
         const actions = [
@@ -42,6 +49,12 @@ export default function Messages() {
 
         // Show context menu
         window.PubSub.emit("onShowContextMenu", { actions, mousePos: { x: event.clientX, y: event.clientY } });
+    };
+
+    // On messages resize
+    const onResize = () => {
+        const bounds = messagesRef.current.getBoundingClientRect();
+        setShowAuthor(bounds.width > 500);
     };
 
     // #################################################
@@ -64,7 +77,7 @@ export default function Messages() {
 
     // Get the message with its branches
     const getMessage = (currentCommit) => {
-        const { subject, commit: commitHash, column } = currentCommit;
+        const { subject, commit: commitHash, column, author } = currentCommit;
 
         var branches = [];
 
@@ -98,6 +111,7 @@ export default function Messages() {
 
         return (
             <div className="commit" key={commitHash.long}>
+                {/* BRANCHES */}
                 {branches.map((branch) => {
                     // Decostruct
                     const { name, commit, isLocal, hasRemote, current } = branch;
@@ -125,16 +139,54 @@ export default function Messages() {
                     );
                 })}
 
+                {/* MESSAGE */}
                 <div className="message" style={{ color: colors.current[column % colors.current.length] }}>
                     {subject}
                 </div>
+
+                {/* NAME */}
+                {showAuthor && <p className="name">{author.name}</p>}
+
+                {/* PICTURE */}
+                {showAuthor && (
+                    <div className="picture">
+                        <Jdenticon size="48" value={author.email} />
+                        <img className="grabatar" src={`https://www.gravatar.com/avatar/${md5(author.email).toString()}?d=blank`} alt="" />
+                    </div>
+                )}
             </div>
         );
     };
 
     // #################################################
+    //   COMPONENT MOUNT
+    // #################################################
+
+    // On component mount
+    useEffect(() => {
+        // Subscribe to events
+        window.addEventListener("resize", onResize);
+        onResize();
+
+        return () => {
+            // Unsubscribe from events
+            window.removeEventListener("resize", onResize);
+        };
+
+        // eslint-disable-next-line
+    }, []);
+
+    // #################################################
     //   RENDER
     // #################################################
 
-    return <div className="messages">{commits.map(getMessage)}</div>;
+    return (
+        <div
+            className="messages"
+            ref={messagesRef}
+            style={{ width: `calc(100% - ${numColumns * 2 + 2}rem)`, maxWidth: `calc(100% - ${numColumns * 2 + 2}rem)`, minWidth: `calc(100% - ${numColumns * 2 + 2}rem)` }}
+        >
+            {commits.map(getMessage)}
+        </div>
+    );
 }
